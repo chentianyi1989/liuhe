@@ -1,0 +1,87 @@
+/*-- alert提示框 --*/
+#_alert_,#_alert_2{position:fixed;background-color:rgba(50,50,50,0.2);width:100%;height:100%;left:0;top:0;z-index:88;}
+._alert_{width:265px;background:#fff;border:2px #CBC7C7 solid;box-sizing:border-box;border-radius:4px;font-size:12px;line-height:18px;position:fixed;left:50%;top:50%;margin-left:-135px;margin-top:-130px;min-height:150px; color: #666;}
+._alert_>.title{height:44px;position:relative;border-bottom:1px #D7D7D7 solid;margin:0 15px;}
+._alert_>.title>span{height:45px;border-bottom:3px #ea721a solid;position:absolute;line-height:46px;padding:0 3px;font-size:13px;}
+._alert_  .btn_close{position:absolute;width:24px;height:24px;top:15px;right:2px;cursor:pointer;}
+._alert_  .btn_close:hover>span{transform:rotate(180deg);-moz-transform:rotate(180deg);-webkit-transform:rotate(180deg);-o-transform:rotate(180deg);-ms-transform:rotate(180deg);}
+._alert_  .btn_close>span{width:18px;height:18px;display:block;background:url(/common/statics/img/icon/mdl-icon.png) no-repeat -11px -80px;border:none;
+    transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;-ms-transition:all .2s ease-in-out;}
+._alert_ .btn_ok:active{background:#0b954d;color:#094124;text-shadow:0 1px #51ba83;box-shadow:2px 2px 10px rgba(0,0,0,0.20) inset}
+._alert_ .btn_ok{box-shadow:1px 1px 2px #000;cursor:pointer;width:92px;line-height:32px;font-size:14px;background:#808080;color:#fff;text-align:center;border:0;display:block;margin:20px auto;letter-spacing:6px;word-spacing:6px;padding-left:6px;
+    -webkit-transition:all .1s linear;-moz-transition:all .1s linear;-o-transition:all .1s linear;-ms-transition:all .1s linear;transition:all .1s linear; }
+._alert_ .btn_ok:hover{background:#ea721a;}
+._alert_>p{text-align:center;padding:23px 29px 6px 26px;}
+._alert_.anim{animation:0.3s key_alert ease-out;-webkit-animation:0.3s key_alert ease-out;-ms-animation:0.3s key_alert ease-out;transform-origin:center;-webkit-transform-origin:center;-ms-transform-origin:center;}
+@-webkit-keyframes key_alert{0%{-webkit-transform:scale(0.5);opacity:0.8;} 100% {-webkit-transform:scale(1);}}
+@-moz-keyframes key_alert{0%{-moz-transform:scale(0.5);;opacity:0.8;} 100% {-moz-transform:scale(1);}}
+@keyframes key_alert{0%{transform:scale(0.5);opacity:0.8;}     100% {transform:scale(1);} }
+@-ms-keyframes key_alert{0%{-ms-transform:scale(0.5);opacity:0.8;}100%{-ms-transform:scale(1);}}
+._alert_  p{max-height:170px;overflow-y:auto;}
+/*-- alert提示框 结束--*/
+/*-- confim提示框  --*/
+#_confim_,#_confim_2{position:fixed;background-color:rgba(50,50,50,0.2);width:100%;height:100%;left:0;top:0;z-index:86;}
+._confim_{width:265px;background:#fff;border:2px #CBC7C7 solid;box-sizing:border-box;border-radius:4px;font-size:12px;line-height:18px;position:fixed;left:50%;top:50%;margin-left:-135px;margin-top:-130px;min-height:150px; color: #666;}
+._confim_>.title{height:44px;position:relative;border-bottom:1px #D7D7D7 solid;margin:0 15px;}
+._confim_>.title>span{height:45px;border-bottom:3px #ea721a solid;position:absolute;line-height:46px;padding:0 3px;font-size:13px;}
+._confim_  .btn_close{position:absolute;width:24px;height:24px;top:15px;right:2px;cursor:pointer;}
+._confim_  .btn_close:hover>span{transform:rotate(180deg);-moz-transform:rotate(180deg);-webkit-transform:rotate(180deg);-o-transform:rotate(180deg);-ms-transform:rotate(180deg);}
+._confim_  .btn_close>span{width:18px;height:18px;display:block;background:url(/common/statics/img/icon/mdl-icon.png) no-repeat -11px -80px;border:none;
+    transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;-ms-transition:all .2s ease-in-out;}
+._confim_ .btn_ok:active,._confim_ .btn_cancel:active{background:#0b954d;color:#094124;text-shadow:0 1px #51ba83;box-shadow:2px 2px 10px rgba(0,0,0,0.20) inset}
+._confim_ .btn_ok,._confim_ .btn_cancel{box-shadow:1px 1px 2px #000;cursor:pointer;width:92px;line-height:32px;font-size:14px;background-color:#808080;color:#fff;text-align:center;border:0;margin:20px auto;letter-spacing:6px;word-spacing:6px;padding-left:6px;
+    -webkit-transition:all .1s linear;-moz-transition:all .1s linear;-o-transition:all .1s linear;-ms-transition:all .1s linear;transition:all .1s linear; }
+._confim_ .btn_ok:hover,._confim_ .btn_cancel:hover{background:#ea721a;}
+._confim_>p{text-align:center;padding:23px 29px 6px 26px;}
+._confim_ .btn_div{width:78%;margin:0 auto;}
+._confim_ .btn_cancel{float:right;}
+#_confim_2 .btn_ok,#_confim_2 .btn_cancel{letter-spacing:1px!important;word-spacing:0px!important;}
+._confim_.anim{animation:0.3s key_alert ease-out;-webkit-animation:0.3s key_alert ease-out;-ms-animation:0.3s key_alert ease-out;transform-origin:center;-webkit-transform-origin:center;-ms-transform-origin:center;}
+/*-- confim提示框 结束  --*/
+body a[onclick],body a[id],button{cursor:pointer;}
+.cz_menu a:after {
+	content: "|";
+    position: relative;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    height: 1px;
+    color: #ff0000;
+    width: 50%;
+}
+.cz_menu a:last-child:after {
+	content: "";
+    position: relative;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    height: 1px;
+    color: #ff0000;
+    width: 50%;
+}
+/*解决低版本ie的bug*/
+._bug_placeholder{color:#999;}
+.lotterylist>li.current>a{ color:red; }
+.cz_menu a.current span {
+    color: #fc9721;
+}
+/*-- IE 弹窗 --*/
+.ie-alert-wrap { background: #fff;  position: fixed; left: 50%; top: 50%; margin:-280px 0  0 -480px;  color: red; z-index: 9999; font-size: 24px; text-align: center;  }
+.ie-alert-wrap a { color: #0072c6; }
+.ie-alert-wrap { width:960px; padding:10px; font-size:14px;line-height:24px;color:#454545;font-family:'Microsoft YaHei'}
+.ie-alert-wrap h1{font-size:40px;line-height:80px;font-weight:100;margin-bottom:10px;}
+.ie-alert-wrap h2{font-size:20px;line-height:25px;font-weight:100;margin:10px 0;}
+.ie-alert-wrap em{color:red}
+.ie-alert-wrap p{margin-bottom:10px;}
+.ie-alert-wrap hr{margin:20px 0;border:0;border-top:1px solid #dadada}
+.ie-alert-wrap img{width:34px;height:34px;border:0;float:left;margin-right:10px;}
+.ie-alert-wrap span{display:block;font-size:12px;line-height:12px;}
+.ie-alert-wrap .clean{clear:both;}
+.ie-alert-wrap .browser{ padding:10px 0;overflow: hidden;}
+.ie-alert-wrap .browser li{width:118px;height:34px;line-height:22px;float:left;list-style:none;background:url(/common/statics/img/tips/browser-34.png?160513) no-repeat;padding-left:40px}
+.ie-alert-wrap .browser .browser-firefox{background-position:0 -34px}
+.ie-alert-wrap .browser .browser-ie{background-position:0 -68px}
+.ie-alert-wrap .browser .browser-2345{background-position:0 -102px}
+.ie-alert-wrap .browser .browser-qq{background-position:0 -136px}
+.ie-alert-wrap .browser .browser-360{background-position:0 -170px}
+.ie-alert-bg { background: #000; opacity: 0.8; filter: progid:DXImageTransform.Microsoft.Alpha(opacity=80); width:100%; height: 100%; position: fixed; left: 0; top: 0; z-index: 9998  }

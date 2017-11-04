@@ -1,0 +1,72 @@
+@charset "utf-8";
+/*重庆时时彩开奖样式*/
+.menu1 { margin:20px 0 0 8px;}
+.menu1 a span {display:block; float:left;}
+.menu1 a b{ display:block; width: 27px;height: 27px; font-size: 0px;text-indent: -99999px; margin-top: 10px;}
+.menu1 a i{display:block;text-align: center; font-style: normal; font-weight: bolder; color: #007DB9;}
+.skin_gray .menu1 a i{color: #000;}
+
+
+.menu1 .T_HK6 span{margin-left:10px;}
+.menu1 .T_HK6 b {margin-top:3px; width:25px; background: url("../images/ball_hk6.png") no-repeat;}
+.menu1 .T_HK6 .b01,.menu1 .T_HK6 .b1 {	background-position: 0 0px;}
+.menu1 .T_HK6 .b02,.menu1 .T_HK6 .b2{	background-position: 0 -27px;}
+.menu1 .T_HK6 .b03,.menu1 .T_HK6 .b3{	background-position: 0 -54px;}
+.menu1 .T_HK6 .b04 {	background-position: 0 -81px;}
+.menu1 .T_HK6 .b05 {	background-position: 0 -108px;}
+.menu1 .T_HK6 .b06 {	background-position: 0 -135px;}
+.menu1 .T_HK6 .b07 {	background-position: 0 -162px;}
+.menu1 .T_HK6 .b08 {	background-position: 0 -189px;}
+.menu1 .T_HK6 .b09 {	background-position: 0 -216px;}
+.menu1 .T_HK6 .b10 {	background-position: 0 -243px;}
+.menu1 .T_HK6 .b11 {	background-position: 0 -270px;}
+.menu1 .T_HK6 .b12 {	background-position: 0 -297px;}
+.menu1 .T_HK6 .b13 {	background-position: 0 -324px;}
+.menu1 .T_HK6 .b14 {	background-position: 0 -351px;}
+.menu1 .T_HK6 .b15 {	background-position: 0 -378px;}
+.menu1 .T_HK6 .b16 {	background-position: 0 -405px;}
+.menu1 .T_HK6 .b17 {	background-position: 0 -432px;}
+.menu1 .T_HK6 .b18 {	background-position: 0 -459px;}
+.menu1 .T_HK6 .b19 {	background-position: 0 -486px;}
+.menu1 .T_HK6 .b20 {	background-position: 0 -513px;}
+.menu1 .T_HK6 .b21 {	background-position: 0 -540px;}
+.menu1 .T_HK6 .b22 {	background-position: 0 -567px;}
+.menu1 .T_HK6 .b23 {	background-position: 0 -594px;}
+.menu1 .T_HK6 .b24 {	background-position: 0 -621px;}
+.menu1 .T_HK6 .b25 {	background-position: 0 -648px;}
+.menu1 .T_HK6 .b26 {	background-position: 0 -675px;}
+.menu1 .T_HK6 .b27 {	background-position: 0 -701px;}
+.menu1 .T_HK6 .b28 {	background-position: 0 -728px;}
+.menu1 .T_HK6 .b29 {	background-position: 0 -755px;}
+.menu1 .T_HK6 .b30 {	background-position: 0 -782px;}
+.menu1 .T_HK6 .b31 {	background-position: 0 -809px;}
+.menu1 .T_HK6 .b32 {	background-position: 0 -836px;}
+.menu1 .T_HK6 .b33 {	background-position: 0 -863px;}
+.menu1 .T_HK6 .b34 {	background-position: 0 -890px;}
+.menu1 .T_HK6 .b35 {	background-position: 0 -917px;}
+.menu1 .T_HK6 .b36 {	background-position: 0 -944px;}
+.menu1 .T_HK6 .b37 {	background-position: 0 -971px;}
+.menu1 .T_HK6 .b38 {	background-position: 0 -998px;}
+.menu1 .T_HK6 .b39 {	background-position: 0 -1025px;}
+.menu1 .T_HK6 .b40 {	background-position: 0 -1052px;}
+.menu1 .T_HK6 .b41 {	background-position: 0 -1079px;}
+.menu1 .T_HK6 .b42 {	background-position: 0 -1106px;}
+.menu1 .T_HK6 .b43 {	background-position: 0 -1133px;}
+.menu1 .T_HK6 .b44 {	background-position: 0 -1160px;}
+.menu1 .T_HK6 .b45 {	background-position: 0 -1187px;}
+.menu1 .T_HK6 .b46 {	background-position: 0 -1214px;}
+.menu1 .T_HK6 .b47 {	background-position: 0 -1242px;}
+.menu1 .T_HK6 .b48 {	background-position: 0 -1269px;}
+.menu1 .T_HK6 .b49 {	background-position: 0 -1296px;}
+/****/
+/*--six lottery颜色分组--*/
+.col-r { font-weight: 700; color:#f13131; }
+.col-01,.col-02,.col-07,.col-08,.col-12,.col-13,.col-18,.col-19,.col-23,.col-24,.col-29,.col-30,.col-34,.col-35,.col-40,.col-45,.col-46 {
+    background: #d90000; border-radius: 50%; width: 20px; height: 20px; text-align: center; line-height: 20px; color: #fff; display: inline-block; margin-right: 4px; }
+.col-03,.col-04,.col-09,.col-10,.col-14,.col-15,.col-20,.col-25,.col-26,.col-31,.col-36,.col-37,.col-41,.col-42,.col-47,.col-48 {
+    background: #3990b4; border-radius: 50%; width: 20px; height: 20px; text-align: center; line-height: 20px; color:#fff; display: inline-block; margin-right: 4px;
+}
+.col-05,.col-06,.col-11,.col-16,.col-17,.col-21,.col-22,.col-27,.col-28,.col-32,.col-33,.col-38,.col-39,.col-43,.col-44,.col-49 {
+    background: #47b53a; border-radius: 50%; width: 20px; height: 20px; text-align: center; line-height: 20px; color:#fff; display: inline-block; margin-right: 4px;
+}
+.foot_box .about_box{border-top: 1px #CFCFCF solid; margin-top: 10px;text-align: center; margin-bottom:20px; padding-top: 0 ; width: 990px}

@@ -1,0 +1,25 @@
+/*默认属性清除*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,p,blockquote,th,td
+{margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6
+{font-size:100%}
+ol,ul
+{list-style:none;}
+address,caption,cite,code,dfn,em,strong,th,var
+{font-style:normal; font-weight:normal;}
+table
+{border-collapse:collapse;border-spacing:0;}
+fieldset,img
+{border:0;}
+caption,th
+{text-align:left;}
+q:before,q:after
+{content:'';}
+ .clearfix:after { content:""; display:table;}
+.clearfix:before{display:none;}
+.clearfix:after { clear:both;}
+.clearfix { *zoom:1;}
+a {
+    outline: none; 
+    behavior:expression(this.onFocus=this.blur());  
+}

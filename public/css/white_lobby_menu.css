@@ -1,0 +1,278 @@
+/** 下面的css 仅用于购彩大厅的 头部 和 左边menu  (不要加入和其无关功能的css) **/
+/* 下面是购彩大厅的通用架构*/
+/* body,html{overflow-y:hidden;}这里禁止浏览器内置滚动条是为了阻止内置滚动条产生时影响body的宽度，导致出现滚动条的时候body会减少 */
+ul,li { list-style: none;}
+.iframeDivList{width:100%;display:block;position:relative;}
+.iframeDivList>#__iframe_list_{width:100%;height:100%;display:block;position:relative;}
+/* 注： #__iframe_list_的height 必须是100%，必须是继承父级dom的高度，否则影响滚动条插件的高度计算 */
+.div_iframe , .div_iframe>iframe{width:100%;height:100%;display:block;padding:0;margin:0;}
+.div_iframe{position:relative;}
+.live-main-wrap{margin-right:-20px;}
+#_tip_loading_{position:fixed;width:100%;height:100%;left:0;top:0;background-color:rgba(1,1,1,0.7);z-index:13;}
+#_tip_loading_>div{text-align:center;width:50%;height:100px;position:absolute;top:50%;margin-top:-80px;left:50%;margin-left:-25%;font-weight:600;letter-spacing:1px;font-size:20px;color:#fff;}
+html,body{width:100%;height:100%;margin:0;padding:0;}
+body *,body{box-sizing: border-box;}
+body{width:100%;background-color:#262a2c;font-size:12px;font-family: STHeiti,"Microsoft YaHei", "微软雅黑", "SimSun", "宋体",arial;}
+dl,dt,dd,ul,ol,li{margin:0;padding:0;}
+body a[onclick],body a[id],button{cursor:pointer;}
+/*通用*/
+.main-wrap{background:#fff;width: 100%;height: 100%;display: block;min-width: 465px;}
+a{text-decoration: none;}
+.live-main-wrap {height:100%;float:left;position: relative;z-index:0;min-width:400px;}
+/* start: 通用头部*/
+.top-login-bg  input:-webkit-autofill{-webkit-box-shadow: 0 0 0 1000px #fff inset;-webkit-text-fill-color:#666;}
+/*-- 头部 --*/
+.new-header{position:relative;z-index:7;margin-left: -1px;}
+.new-header>button{position:absolute;z-index:3;left:50%;width:40px;margin-left:-19px;height:20px;bottom:-20px;border:none;border-bottom-left-radius:5px;border-bottom-right-radius:5px;outline:none;}
+.new-header>button{background:url(../../img/lottery/next_a.png) no-repeat 0 -20px;background-clip:border-box;}
+.new-header>button._open { background:url(../../img/lottery/next_a.png) no-repeat 0 0;  }
+.new-header .download .down-text { position: absolute; z-index: 2; right: 10px; font-size:14px; color: #666;top:5px; cursor: pointer;}
+.new-header .download {position:absolute;right:8px;bottom:10px;width:150px;height:30px; }
+.new-header .download a { font-size: 26px; float: left;}
+.header-user,#header_user_login { background: #e7e7e7; height: 53px;border-left: 1px solid #ccc; padding:0 15px; color: #666; font-size: 14px; border-bottom: 1px solid #ccc; overflow: hidden;  }
+.header-user { line-height:53px; }
+.header-user a { color: #666; }
+.header-user a:hover { color: #333; }
+.user-name { float:left;}
+.user-money { float: left;  padding:0 0px 0 20px; }
+.money-btn { float: right; margin-left:20px; }
+.money-btn button { background:#666A72; float: left; border:1px solid #a8a8a8; width: 52px; height: 24px; line-height: 20px; color: #fff; border-radius:5px; margin:15px 10px 0 0; font-size: 14px; outline: none; cursor: pointer;}
+.user-center { float: left; }
+.user-center ul li{ float:left; margin-left:14px;cursor:pointer; }
+.user-center ul li:hover *{color:#d32036;}
+.user-center ul li i { font-size: 20px;  width:19px; height: 19px; float: left; margin:16px 5px 0 0; }
+.bull{position:relative; background: #fff; height:40px; padding:10px 10px 3px 10px;line-height:18px; color:#666; border-left: 1px solid #ccc; border-bottom: 1px solid #ccc; overflow:hidden; margin-bottom:0px;white-space: nowrap; box-sizing: border-box; }
+.bull marquee {display:block;margin:0 0 0 24px;}
+.bull .icon-acc { color:#999; font-size: 18px; float: left;}
+/*-- login --*/
+.lottery_login { float: left; margin-top:12px;}
+.top-login-bg,.top-login-bg2 {float:left;width:157px;height:32px;background:#fff;margin-right:7px; border: 1px solid #ccc}
+.top-login-bg2{width:130px;}
+.top-login-bg .icon-6,.top-login-bg .icon-lock-icon { font-size:19px; float: left; margin:6px 5px 0 5px; color:#8d8d8e }
+/*.user-icon,.poss-icon { background: url(../../img/lottery/user-icon99.png) no-repeat; width: 16px; height: 21px; float: left; margin:5px 5px 0 10px; }
+.poss-icon {background:url(../../img/lottery/poss-icon99.png) no-repeat; width:18px;}*/
+.top_loginip,.top_loginmm { width:122px; height:30px; line-height:31px; border:0; background: #fff; float: left; color: #666; outline: none }
+.lottery_anniu { background-color:#d32036; width:80px; height: 30px; color:#fff; font-size:15px;border-radius:2px;cursor:pointer; border:0; margin-top:2px; vertical-align: top; margin-right: 7px; outline: none;}
+.top_loginmm {width:65px;padding-left:5px;outline:none;display:inline-block;margin-right:-5px; }
+.need_captcha{ float:left; position:relative;margin-right:5px;box-sizing: border-box;}.need_captcha *{box-sizing: border-box;}
+.need_captcha .top_click{padding-left:23px;position:absolute;width:100%;height:100%;z-index:4;line-height:32px;text-align:left;color:#909090;cursor:pointer;background-color:#fff;border-radius:1px;border: 1px solid #ccc}
+.need_captcha .yanzhengma{z-index:3;position:relative;}
+.need_captcha .yanzhengma img.login_img{width:62px;height:28px;float:right;background-color:#636169; vertical-align:top; }
+.need_captcha img{cursor:pointer;}
+.register_captcha_span {margin:1px 1px 0 0 !important; float: right;}
+/* end: 通用头部*/
+/* 通用 左边menu*/
+#live-main-list .mCSB_dragger .mCSB_dragger_bar{float:right;}
+.live-main-list .main-tit,.live-main-list .main-top,.icon-refresh-icon{cursor:pointer;}
+.main-top .icon-down,.icon-attr-down,.icon-attr-up{ width:22px; height: 22px; display:block; float: left; margin:8px 10px 0 15px;}
+.icon-refresh-icon {color:#333;width:35px;height:31px;padding:7px 0 0 5px;display:block;position:absolute;z-index:4;right:5px;top:4px;font-size:16px;}
+.icon-hall-icon,.icon-star-icon,.icon-time-icon,.icon-down-icon {  float: left; width: 22px; margin:11px 10px 0 15px; font-size: 18px;}
+.icon-star-icon,.icon-time-icon,.icon-down-icon { margin:8px 10px 0 15px; font-size: 20px;}
+.main-top .icon-up { background-position: 0 -360px; }
+.icon-attr-up,.icon-attr-down { width:15px; height: 10px; float: right; margin: 15px 20px 0 0; color: #666; font-size: 10px; }
+/** * 各站 視訊LIVE-導覽列 */
+.live-menu-wrap{float: left;height: auto;position: relative;width:208px;}
+.live-main-list{max-height:880px;box-sizing: border-box;position: relative;min-height:400px;overflow-y:hidden;;}
+.live-main-list *{box-sizing: border-box;}
+.menu-set-width{width: 186px}
+.live-main-list .menu-control{display: none;}
+.live-menu{float: left;height: 50px;width: 100%;}
+.live-nav{position:relative;}
+.live-nav .nav-li{display: block;}
+.live-nav .nav-li.args-85{display: none;}
+.live-nav .nav-li.args-42{float: right;margin-top: -69px;}
+.live-nav .nav-li .nav-btn i{background: url(../../img/lottery/lot-icon-sm.png?20170119) no-repeat; width:27px; height: 27px; display: block; float: left; margin: 5px 16px 0 15px;}
+.live-nav .lot1 .nav-btn i{background-position:0 0px; }
+.live-nav .lot2 .nav-btn i{background-position:0 -29px; }
+.live-nav .lot3 .nav-btn i{background-position:0 -57px; }
+.live-nav .lot4 .nav-btn i{background-position:0 -86px; }
+.live-nav .lot5 .nav-btn i{background-position:0 -115px; }
+.live-nav .lot7 .nav-btn i{background-position:0 -143px; }
+.live-nav .lot9 .nav-btn i{background-position:0 -172px; }
+.live-nav .lot10 .nav-btn i{background-position:0 -201px; }
+.live-nav .lot11 .nav-btn i{background-position:0 -229px; }
+.live-nav .lot12 .nav-btn i{background-position:0 -258px; }
+.live-nav .lot13 .nav-btn i{background-position:0 -286px; }
+.live-nav .lot14 .nav-btn i{background-position:0 -258px; }
+.live-nav .lot15 .nav-btn i{background-position:0 -258px; }
+.live-nav .lot16 .nav-btn i{background-position:0 -344px; }
+.live-nav .lot17 .nav-btn i{background-position:0 -372px; }
+.live-nav .lot18 .nav-btn i{background-position:0 -401px; }
+.live-nav .lot19 .nav-btn i{background-position:0 -430px; }
+.live-nav .lot20 .nav-btn i{background-position:0 -458px; }
+.live-nav .lot21 .nav-btn i{background-position:0 -487px; }
+.live-nav .lot22 .nav-btn i{background-position:0 -516px; }
+.live-nav .lot23 .nav-btn i{background-position:0 -544px; }
+.live-nav .lot24 .nav-btn i{background-position:0 -573px; }
+.live-nav .lot25 .nav-btn i{background-position:0 -602px; }
+.live-nav .lot26 .nav-btn i{background-position:0 -630px; }
+.live-nav .lot27 .nav-btn i{background-position:0 -630px; }
+.live-nav .lot28 .nav-btn i{background-position:0 -659px; }
+.live-nav .lot29 .nav-btn i{background-position:0 -630px; }
+.live-nav .lot30 .nav-btn i{background-position:0 -687px; }
+.live-nav .lot31 .nav-btn i{background-position:0 -716px; }
+.live-nav .lot32 .nav-btn i{background-position:0 -745px; }
+.live-nav .lot33 .nav-btn i{background-position:0 -773px; }
+.live-nav .lot34 .nav-btn i{background-position:0 -802px; }
+.live-nav .lot41 .nav-btn i{background-position:0 -831px; }
+.live-nav .lot41-1 .nav-btn i{background-position:0 -891px; }
+.live-nav .lot42 .nav-btn i{background-position:0 -861px; }
+.live-nav .lot51 .nav-btn i{background-position:0 -921px; }
+.live-nav .lot52 .nav-btn i{background-position:0 -951px; }
+.live-nav .lot999 .nav-btn i{background-position:0 -981px; }
+.live-nav .nav-li .nav-btn{display: block;width: 208px;height: 38px;color: #333;text-decoration: none;line-height: 38px;font-size:14px;border-bottom: 1px solid #ccc;box-sizing: border-box;cursor: pointer;}
+.live-nav .nav-li .nav-btn i{transition: all .3s ease;}
+.live-nav .nav-li.args-42 .nav-btn{width: 73px;}
+.live-nav .nav-li .nav-btn.cur-btn{cursor: -default;}
+.live-nav .nav-li .nav-btn.cur-btn,.live-nav .nav-li .nav-btn:hover i{ background-position: left bottom; }
+.live-nav .lot1 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-1.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot2 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-2.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot3 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-3.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot4 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-4.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot5 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-5.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot6 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-6.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot7 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-7.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot8 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-8.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot9 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-9.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot10 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-10.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot11 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-11.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot12 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-12.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot13 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-13.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot14 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-14.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot15 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-15.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot16 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-16.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot17 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-17.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot18 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-18.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot19 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-19.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot20 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-20.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot21 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-21.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot22 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-22.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot23 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-23.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot24 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-24.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot25 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-25.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot26 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-26.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot27 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-27.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot28 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-28.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot29 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-29.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot30 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-30.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot31 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-31.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot32 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-32.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot33 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-33.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot34 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-34.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot41 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-41.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot41-1 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-41-1.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot42 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-42.png) left bottom;background-size: 27px 27px; }
+.live-nav .lot51 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-51.png?20170119) left bottom;background-size: 27px 27px; }
+.live-nav .lot52 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-52.png?20170119) left bottom;background-size: 27px 27px; }
+.live-nav .lot999 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-999.png) left bottom;background-size: 27px 27px; }
+.main-tit,.main-top{height: 38px; width: 100%; background: #e7e7e7; line-height: 38px; color: #333; font-size: 16px; border-bottom:1px solid #ccc;}
+.main-top a{color: #333; display: block; }
+/*画面小於800MENU*/
+@media screen and (max-width:980px){
+    .new-header{display: none; }
+    .fixed-btn.live-main-list .menu-control{width: 68px;}
+    .live-nav .nav-li .nav-btn{width: 40px;height: 40px;transition: width .5s;}
+    .live-nav .nav-li.args-39,  .live-nav .nav-li.args-42{float: none;margin-top: 0;}
+    .live-nav .nav-li.args-39 .nav-btn, .live-nav .nav-li.args-42 .nav-btn{width: 68px;}
+    .live-nav .nav-li .nav-btn i{background: url(../../img/lottery/lot-icon-big.png?v=20170121) no-repeat; width: 40px; height: 40px;}
+    .live-nav .lot1 .nav-btn i{background-position:0 0px; }
+    .live-nav .lot2 .nav-btn i{background-position:0 -40px; }
+    .live-nav .lot3 .nav-btn i{background-position:0 -81px; }
+    .live-nav .lot4 .nav-btn i{background-position:0 -121px; }
+    .live-nav .lot5 .nav-btn i{background-position:0 -161px; }
+    .live-nav .lot7 .nav-btn i{background-position:0 -161px; }
+    .live-nav .lot9 .nav-btn i{background-position:0 -242px; }
+    .live-nav .lot10 .nav-btn i{background-position:0 -282px; }
+    .live-nav .lot11 .nav-btn i{background-position:0 -322px; }
+    .live-nav .lot12 .nav-btn i{background-position:0 -362px; }
+    .live-nav .lot13 .nav-btn i{background-position:0 -403px; }
+    .live-nav .lot14 .nav-btn i{background-position:0 -362px; }
+    .live-nav .lot15 .nav-btn i{background-position:0 -362px; }
+    .live-nav .lot16 .nav-btn i{background-position:0 -483px; }
+    .live-nav .lot17 .nav-btn i{background-position:0 -524px; }
+    .live-nav .lot18 .nav-btn i{background-position:0 -564px; }
+    .live-nav .lot19 .nav-btn i{background-position:0 -604px; }
+    .live-nav .lot20 .nav-btn i{background-position:0 -644px; }
+    .live-nav .lot21 .nav-btn i{background-position:0 -684px; }
+    .live-nav .lot22 .nav-btn i{background-position:0 -725px; }
+    .live-nav .lot23 .nav-btn i{background-position:0 -766px; }
+    .live-nav .lot24 .nav-btn i{background-position:0 -806px; }
+    .live-nav .lot25 .nav-btn i{background-position:0 -806px; }
+    .live-nav .lot26 .nav-btn i{background-position:0 -886px; }
+    .live-nav .lot27 .nav-btn i{background-position:0 -886px; }
+    .live-nav .lot28 .nav-btn i{background-position:0 -926px; }
+    .live-nav .lot29 .nav-btn i{background-position:0 -886px; }
+    .live-nav .lot30 .nav-btn i{background-position:0 -967px; }
+    .live-nav .lot31 .nav-btn i{background-position:0 -1007px; }
+    .live-nav .lot32 .nav-btn i{background-position:0 -1047px; }
+    .live-nav .lot33 .nav-btn i{background-position:0 -1086px; }
+    .live-nav .lot34 .nav-btn i{background-position:0 -1128px; }
+    .live-nav .lot51 .nav-btn i{background-position:0 -1252px; }
+    .live-nav .lot41 .nav-btn i{background-position:0 -1169px; }/*北京28*/
+    .live-nav .lot52 .nav-btn i{background-position:0 -1294px; }
+    .live-nav .lot42 .nav-btn i{background-position:0 -1210px; }
+    .live-nav .lot41-1 .nav-btn i{background-position:0 -1336px; }
+
+
+
+    .live-nav .lot7,.live-nav .lot10{display: none; }
+    .live-nav .lot1 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-1.png) left bottom; }
+    .live-nav .lot2 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-2.png) left bottom; }
+    .live-nav .lot3 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-3.png) left bottom; }
+    .live-nav .lot4 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-4.png) left bottom; }
+    .live-nav .lot5 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-5.png) left bottom; }
+    .live-nav .lot6 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-6.png) left bottom; }
+    .live-nav .lot7 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-7.png) left bottom; }
+    .live-nav .lot8 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-8.png) left bottom; }
+    .live-nav .lot9 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-9.png) left bottom; }
+    .live-nav .lot10 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-10.png) left bottom; }
+    .live-nav .lot11 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-11.png) left bottom; }
+    .live-nav .lot12 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-12.png) left bottom; }
+    .live-nav .lot13 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-13.png) left bottom; }
+    .live-nav .lot14 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-14.png) left bottom; }
+    .live-nav .lot15 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-15.png) left bottom; }
+    .live-nav .lot16 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-16.png) left bottom; }
+    .live-nav .lot17 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-17.png) left bottom; }
+    .live-nav .lot18 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-18.png) left bottom; }
+    .live-nav .lot19 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-19.png) left bottom; }
+    .live-nav .lot20 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-20.png) left bottom; }
+    .live-nav .lot21 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-21.png) left bottom; }
+    .live-nav .lot22 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-22.png) left bottom; }
+    .live-nav .lot23 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-23.png) left bottom; }
+    .live-nav .lot24 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-24.png) left bottom; }
+    .live-nav .lot25 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-25.png) left bottom; }
+    .live-nav .lot26 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-26.png) left bottom; }
+    .live-nav .lot27 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-27.png) left bottom; }
+    .live-nav .lot28 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-28.png) left bottom; }
+    .live-nav .lot29 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-29.png) left bottom; }
+    .live-nav .lot30 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-30.png) left bottom; }
+    .live-nav .lot31 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-31.png) left bottom; }
+    .live-nav .lot32 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-32.png) left bottom; }
+    .live-nav .lot33 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-33.png) left bottom; }
+    .live-nav .lot34 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-34.png) left bottom; }
+    .live-nav .lot42 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-42.png) left bottom; }
+    .live-nav .lot51 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-51.png) left bottom; }
+    .live-nav .lot52 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-52.png) left bottom; }
+    .live-nav .lot41-1 .nav-btn:hover i{background:url(../../img/lottery/lot-icon-41-1.png) left bottom; }
+    .main-wrap .live-choose{background: none;width: 59px;height: 32px;}
+    .live-menu-wrap{width: 76px;}
+    .lot-text,.icon-attr-down,.icon-attr-up,.main-top,.main-tit{display: none; }
+    .live-nav .nav-li .nav-btn{border-bottom: 0;}
+    .icon-refresh-icon { display: none; }
+    .live-nav .nav-li{display: block; float: left;}
+}
+
+/*新春红包背景gif*/
+.nav-li.lot999{background: url(../../img/lottery/fireworks.gif) 142px 0 no-repeat;background-size: 54px 54px;}
+/*画面小於375MENU*/
+@media screen and (max-width: 390px){.live-menu-wrap{width: 66px;}}
+/*画面小於320MENU*/
+@media screen and (max-width: 360px){ .live-menu-wrap{width: 66px;}}
+/****** bg *********/
+
+.live-logo { margin:16px 0 16px 15px !important;}
+.live-main-list { border-right: 1px solid #ccc;}
+
+#hot_main-item-999,#main-item-999 {color:rgba(2,2,10,1); 
+   color:#ff4646;
+}

@@ -1,0 +1,70 @@
+<?php
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+
+Route::group(['domain' => env("m_domain","admin.liuhe"), 'namespace' => 'admin'],function ($router){
+    Route::get('/','index\\IndexController@index');
+    
+    
+    //用户管理
+    Route::get('/members/member','members\\MemberController@index')->name("members.member");
+    Route::post('/members/member/list','members\\MemberController@memberList')->name("members.member.list");
+    Route::post('/members/member/add','members\\MemberController@add')->name("members.member.add");
+    
+    
+    Route::get('/members/gameRecord','members\\GameRecordController@index')->name("members.gameRecord");
+    Route::post('/members/gameRecord/list','members\\GameRecordController@gameRecordList')->name("members.gameRecord.list");
+    
+    Route::get('/members/loginLog','members\\LoginLogController@index')->name("members.loginLog");
+    Route::post('/members/loginLog/list','members\\LoginLogController@loginLogList')->name("members.loginLog.list");
+    
+    
+    // 游戏管理
+    Route::get('/game/game_result','game\\GameResultController@index')->name("game.gameResult");
+    Route::post('/game/game_result/list','game\\GameResultController@gameResultList')->name("game.gameResult.list");
+    
+    Route::get('/game/game','game\\GameController@index')->name("game.game");
+    Route::post('/game/game/list','game\\GameController@gameList')->name("game.game.list");
+    
+    Route::get('/game/ball','game\\BallController@index')->name("game.ball");
+    Route::post('/game/ball/list','game\\BallController@ballList')->name("game.ball.list");
+    
+  
+    
+});
+
+
+Route::group(['domain' => env("m_domain","liuhe"), 'namespace' => 'home'],function ($router){
+    
+    Route::get('/','IndexController@index')->name("home");
+    
+    Route::get('/index2','IndexController@index2');
+    Route::post('/bet','IndexController@bet')->name("home.bet");
+    
+    
+    Route::get('/uesr/game_record','RecordController@gameRecord')->name("user.game_record");
+    Route::get('/uesr/game_result','RecordController@gameResultRecord')->name("user.game_result");
+    
+    
+    
+    
+    Route::post('/uesr/login','LoginController@login')->name("user.login");
+    Route::get('/uesr/logout','LoginController@logout')->name("user.logout");
+    
+    Route::post('/login','IndexController@ajaxLogin')->name("home.login");
+});
+
+
+
+
+

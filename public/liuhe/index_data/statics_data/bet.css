@@ -1,0 +1,961 @@
+@charset "utf-8";
+body {
+    color: #626262;
+    margin: 0;
+    padding: 0;
+    font-size: 12px !important;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    /*body千万不要有background*/
+}
+body
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    font-size: 12px;
+}
+
+table th,table td {
+    border: 1px solid;
+    text-align: center;
+    padding: 0;
+}
+
+#main {
+    width: 820px;
+    float: left;
+    overflow: hidden;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.color_lv {
+    color: #19940D;
+}
+
+.n_anniu {
+    margin: 0;
+    width: 605px;
+    float: left;
+}
+
+.checkbox {
+    margin: 15px 0.5ex;
+    float: left;
+}
+
+.lottery_info_left {
+    height: 30px;
+    line-height: 30px;
+    color: #762D08;
+    /*width: 300px;*/
+}
+
+.floatleft {
+    float: left;
+}
+
+.lottery_info {
+    line-height: 30px;
+    width: 827px;
+    background: #ECECEC
+}
+
+.lottery_info_right {
+    height: 30px;
+    line-height: 30px;
+    margin: 0 10px 0 0;
+    text-align: right;
+    /*width: 430px;*/
+}
+
+.floatright {
+    float: right;
+}
+
+.period_info .draw_number {
+    float: left;
+    width: 190px;
+}
+
+.lottery_info,
+#header .result,
+#drawInfo {
+    height: 30px;
+    line-height: 28px;
+}
+
+.lottery_info .name {
+    font-weight: bold;
+}
+
+.lottery_info #gameName {
+    color: #FF0000;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#header {
+    margin-bottom: 5px;
+    overflow: hidden;
+    border: 1px solid #e1e1e1;
+}
+
+#header .result {
+    color: #F30A0A;
+    font-weight: bold;
+}
+
+#bresult {
+    font-size: 14px;
+}
+
+#drawNumber {
+    color: #a40000;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.lottery_info #gameName {
+    color: #1200FF;
+}
+
+#drawInfo {
+    float: right;
+    width: 420px;
+    text-align: right;
+}
+
+#drawInfo .draw_number {
+    font-weight: bold;
+    float: right;
+}
+
+#drawInfo ul {
+    float: right;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+#drawInfo li {
+    float: left;
+}
+
+#header .period_info {
+    clear: both;
+    overflow: hidden;
+    height: 25px;
+    line-height: 25px;
+}
+
+#header .period_info label {
+    float: left;
+    width: 230px;
+}
+
+#cdClose {
+    color: #009944;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#cdDraw {
+    color: #a40000;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#cdRefresh {
+    float: right;
+}
+
+#cdRefresh span {
+    color: blue;
+}
+
+.bet_panel {
+    clear: both;
+}
+
+.bet_panel .mt {
+    margin-top: 15px;
+}
+
+.bet_panel .mb {
+    margin-bottom: 15px;
+}
+
+.bet_panel th,
+.bet_panel td {
+    cursor: pointer;
+}
+
+.bet_panel .name {
+    background: none repeat 0 0 #fff;
+}
+
+#quick_sec_table td {
+    cursor: pointer;
+    height: 27px;
+}
+
+#quick_sec_table td.active {
+    background-color: #FBDBB8;
+}
+
+#quick_sec_table .hover {
+    color: red;
+}
+
+#quick_sec_table .on {
+    color: red;
+    background: none repeat 0 0 #FBDBB8;
+}
+
+#bntquick {
+    float: right;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.status_panel th,
+.status_panel td {
+    cursor: auto;
+}
+
+.status_panel .check {
+    cursor: pointer;
+}
+
+.status_panel .checkSelected {
+    background-color: #FBDBB8;
+    cursor: pointer;
+}
+
+.bet_panel .head th,
+.bet_panel .head td,
+.bet_panel .games th,
+.bet_panel .games td {
+    cursor: auto;
+}
+
+.betType1 .name:hover,
+.betType1 .odds:hover {
+    text-decoration: underline;
+}
+
+.balls_panel {
+    width: 700px;
+    overflow: hidden;
+}
+
+.balls_panel .table_ball {
+    width: auto;
+    float: left;
+}
+
+.balls_panel .table_ball .odds {
+    width: 42px;
+}
+
+#historyResult {
+    float: left;
+    width: auto;
+    margin-left: 10px;
+}
+
+#historyResult td {
+    padding: 0;
+    margin: 0;
+}
+
+#historyResult .period {
+    padding: 0 4px;
+}
+
+#historyResult .other {
+    width: 30px;
+}
+
+#historyResult .tie {
+    color: #299a26;
+}
+
+#historyResult .D {
+    color: red;
+}
+
+.bet_panel td {
+    height: 28px;
+    line-height: 28px;
+}
+
+table thead th,
+table .head th {
+    height: 24px;
+    line-height: 24px;
+}
+
+.bet_panel .odds {
+    color: red;
+    font-weight: bold;
+    font-size: 12px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.bet_closed .odds {
+    /*color: #999;*/
+    font-weight: 100;
+}
+
+.betType0 .name {
+    width: 60px;
+}
+
+.betType0 .odds {
+    width: 90px;
+}
+
+.betType1 .name {
+    width: 35px;
+}
+
+.betType1 .odds {
+    width: 42px;
+}
+
+.betType1 .table4 .amount {
+    width: 40px;
+}
+
+.bet_panel .amount input {
+    width: 48px;
+    border: #b0b0b0 1px solid;
+    padding: 0 2px;
+}
+
+.bet_panel .amount .input_focus,
+.control .input_focus {
+    background: #FFFFCC;
+    border: 1px solid #FF8800;
+    color: black;
+}
+
+.bet_panel .nt {
+    border-top: none;
+}
+
+.bet_panel table .close td,
+.bet_panel table .close .name {
+    background: #eee;
+}
+
+.status_panel {
+    margin-top: 15px;
+}
+
+.status_panel .selected {
+    background: #ffffa2;
+}
+
+#changlong,
+#quick_sec_table {
+    float: right;
+    width: 160px;
+}
+
+#changlong .table_side {
+    width: 210px;
+    background: url("../images/right_bg4.png") repeat-x repeat-y left top;
+    color: #fff;
+}
+
+#changlong tbody th {
+    text-align: left;
+    font-weight: normal;
+    text-indent: 3px;
+    height: 19px;
+}
+
+#changlong tbody td {
+    color: red;
+    width: 33%;
+}
+
+
+/*.control {text-align: left; color: #690925; float:left;}*/
+
+.control {
+    text-align: left;
+    color: #690925;
+    float: right;
+}
+
+.bcontrol {
+    margin: 15px auto;
+}
+
+#betcount {
+    color: red;
+    font-size: 14px;
+}
+
+.bcontrol .lefts {
+    left: 6px;
+    position: absolute;
+    color: #444;
+}
+
+.control .left {
+    left: 6px;
+    position: absolute;
+    top: 46px;
+}
+
+.control .left a {
+    background: url("../images/tab1.png") no-repeat 0 -33px;
+    color: #fff;
+    display: inline-block;
+    height: 33px;
+    line-height: 25px;
+    margin: 5px 0 0 5px;
+    text-decoration: none;
+    width: 66px;
+}
+
+.control .left .on {
+    background: url("../images/tab1.png") no-repeat 0 0;
+    color: #fff;
+    font-weight: 700;
+}
+
+.control .quickAmount {
+    padding-bottom: 10px;
+}
+
+.control .quickAmount input {
+    border: 1px solid #B0B0B0;
+    height: 18px;
+    padding: 0 2px;
+    width: 65px;
+}
+
+
+/*.control .buttons { width: 560px; margin-top:12px; float:right; margin-left:245px;}*/
+
+.control .buttons {
+    width: 560px;
+    margin-top: 12px;
+    float: right;
+}
+
+.control .button {
+    background: url("../images/tab2.png") no-repeat 0 0;
+    border: medium none;
+    font-size: 14px;
+    color: #fff;
+    height: 41px;
+    line-height: 21px;
+    width: 66px;
+    margin: 0 0 0 8px;
+}
+
+.control .quickbutton {
+    background: url("../images/tab4.png") no-repeat 0 0;
+    border: medium none;
+    color: #fff;
+    height: 41px;
+    line-height: 21px;
+    width: 66px;
+}
+
+.skin_blue .control .quickbutton {
+    background: url("../images/blue/tab4.png") no-repeat 0 0;
+}
+
+.bet_panel .selected {
+    background: none repeat 0 0 #FBDBB8;
+}
+
+.control .button_hover,
+.control .button:hover {
+    color: #FFE400;
+}
+
+.control label {
+    font-weight: bold;
+}
+
+#resultPanel .ballTable th,
+#resultPanel .ballTable td {
+    height: 22px;
+    line-height: 22px;
+}
+
+#resultPanel .ballTable .head {
+    color: blue;
+}
+
+#resultPanel .ballTable .title {
+    color: #762d08;
+    width: 70px;
+}
+
+#resultPanel .ballTable .max {
+    color: red;
+}
+
+#resultPanel a {
+    float: left;
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
+    cursor: pointer;
+    color: #626262;
+    font-size: 12px;
+    overflow: hidden;
+    background: url(../images/hong_bg.png) repeat-x 0 0;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    font-weight: normal;
+}
+
+#resultPanel .selected a {
+    background-position: 0 -59px;
+    background: url(../images/huang_bg.png) 0 0;
+    color: #fff;
+    font-weight: bold;
+}
+
+#resultPanel .tabTitle th {
+    height: 30px;
+    line-height: 30px;
+}
+
+#resultPanel .tabContents td {
+    width: 24px;
+    vertical-align: top;
+    height: 16px;
+    line-height: 16px;
+    border-top: none;
+}
+
+#resultPanel .tabContents td {
+    border-top: medium none;
+}
+
+#quick_sec_table .red {
+    color: red;
+}
+
+#quick_sec_table .red {
+    color: red;
+}
+
+#quick_sec_table .blue {
+    color: #2836f4;
+}
+
+#quick_sec_table .green {
+    color: rgb(37, 200, 45);
+}
+
+.box {
+    width: 754px;
+    font-size: 12px;
+}
+
+.box ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+.box .tab {
+    height: 30px;
+    border: #f07e8f solid 1px;
+    border-right: none;
+    background: url(../images/hong_bg.png) repeat-x 0 0;
+}
+
+.box .tab li {
+    float: left;
+    border-right: #f07e8f solid 1px;
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 12px;
+    overflow: hidden;
+    background: url(../images/hong_bg.png) repeat-x 0 0;
+    width: 215px;
+}
+
+.box .tab li.on {
+    background: url(../images/huang_bg.png) 0 0;
+    color: #511b00;
+    font-weight: bold;
+}
+
+.box .tab_con {
+    border-right: #f07e8f solid 1px;
+    border-right: none;
+    background: #fff;
+    width: 754px;
+}
+
+.box .tab_con li {
+    display: none;
+}
+
+.box .tab_con table tr td {
+    height: 32px;
+}
+
+.box .tab_con #tab_con_1 {
+    display: block;
+}
+
+.cq_box {
+    width: 124px;
+    float: left;
+    margin-top: 0;
+}
+
+.cq_box .tab li {
+    width: 40px;
+}
+
+.cq_box .tab_con {
+    width: 124px;
+    margin: 0 0 0 0;
+    float: none;
+}
+
+.box .tab_con #tab2_con_1 {
+    display: block;
+}
+
+.table_lm .odds {
+    width: 70px;
+}
+
+.table_lm .name {
+    width: 47px;
+}
+
+.table_zh2 .name {
+    width: 60px;
+}
+
+.table_zh2 .odds {
+    width: 70px;
+}
+
+#changlong a {
+    color: #762D08;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+.tab {
+    width: 100%;
+    margin: 0 0 0 0;
+    padding: 0;
+    margin-bottom: 2px;
+}
+
+.tab li {
+    margin: 0 0;
+    list-style: none;
+}
+
+.tab_title02 {
+    height: 29px;
+    line-height: 29px;
+    background: url(../images/tab_bg10.png) repeat-x left -93px;
+}
+
+.tab_title02 a {
+    font-weight: bold;
+    display: block;
+    width: 88px;
+    height: 29px;
+    font-size: 12px;
+    color: #7d7d7d;
+    background: url(../images/tab_bg10.png) no-repeat left -29px;
+    text-shadow: 1px 1px 0 white;
+    margin: 0 5px 0 0;
+    text-align: center;
+    float: left;
+    text-decoration: none;
+}
+
+.tab_title02 a:hover,
+.tab_title02 .on {
+    color: #98292e;
+    font-weight: bold;
+    background: url(../images/tab_bg10.png) no-repeat left top;
+}
+
+
+/*========================================= skin_blue ===========================================*/
+
+.skin_red .bet_panel .hover,
+.skin_red .bet_panel .close .hover {
+    background: none repeat 0 0 #FFEAD3;
+}
+
+.skin_red .bet_panel .selected {
+    background: none repeat 0 0 #FBDBB8;
+}
+
+.skin_red .lottery_info .name,
+.skin_red #drawInfo .draw_number {
+    color: #762D08;
+}
+
+.skin_red .lottery_info .name {
+    margin-left: 1em;
+}
+
+.skin_red table,
+.skin_red table th,
+.skin_red table td {
+    border-color: #EABF8F;
+    color: #762D08;
+    background-color: #FFF
+}
+
+.skin_red table thead th,
+.skin_red table .head th {
+    background: #FF9726;
+    color: #fff;
+    font-weight: normal;
+    height: 28px;
+}
+
+.skin_red table .head2 th {
+    background-color: #FFCAD0;
+    font-weight: bold;
+    height: 28px;
+}
+
+.skin_blue #changlong tbody th {
+    background: none repeat 0 0 #fff;
+}
+
+.skin_blue .bet_panel .odds,
+.skin_blue .bet_panel .ha {
+    /*background: none repeat  0 0 #fff;*/
+}
+
+
+/*.skin_red .bet_panel .hover,.skin_red .bet_panel .close .hover {background: none repeat  0 0 #F6D3E4;}*/
+
+.skin_red .bet_panel .selected {
+    background: none repeat 0 0 #FBDBB8;
+}
+
+.skin_red .lottery_info .name,
+.skin_red #drawInfo .draw_number {
+    color: #762D08;
+}
+
+.skin_red .lottery_info .name {
+    margin-left: 1em;
+}
+
+.skin_red table,
+.skin_red table th,
+.skin_red table td {
+    /*border-color: #E6B3BE;*/
+    color: #762D08;
+    background-color: #FFF
+}
+
+.skin_red table .head2 th {
+    background-color: #FFCAD0;
+    font-weight: bold;
+    height: 28px;
+}
+
+.skin_gray .bet_panel .hover,
+.skin_gray .bet_panel .close .hover {
+    background: none repeat 0 0 #F7F7F7;
+}
+
+.skin_gray .bet_panel .selected {
+    background: none repeat 0 0 #FBDBB8;
+}
+
+.skin_gray #changlong tbody th {
+    background: none repeat 0 0 #fff;
+}
+
+.skin_gray .bet_panel .odds,
+.skin_gray .bet_panel .ha {
+    /*background: none repeat  0 0 #fff;*/
+}
+
+.lhc_center {
+    margin:10px auto 0 auto;/* margin:0 auto 40px auto;*/
+    width: 1000px;background-color:#fff;
+}
+.lhc_center:after{clear:both;}
+
+/*add by DDG */
+
+.table_ball tbody tr th[class*="sple-"],
+.table_ball tbody tr td[class*="sple-"] {
+    background-color: #FBDBB8;
+    cursor: pointer;
+}
+
+.table_ball tbody tr th[class*="an-"],
+.table_ball tbody tr td[class*="an-"] {
+    background-color: #FBDBB8;
+    cursor: pointer;
+}
+
+.table_ball tbody tr th[class*="col-"],
+.table_ball tbody tr td[class*="col-"] {
+    background-color: #FBDBB8;
+    cursor: pointer;
+}
+
+.table_ball tbody tr th.GTMselected,
+.table_ball tbody tr td.GTMselected {
+    background-color: #FBDBB8;
+    cursor: pointer;
+}
+
+.table_ball tbody tr td.GTMselected input {
+    background-color: #fff;
+}
+
+.table_zh2 tbody tr th.GTMselected,
+.table_zh2 tbody tr td.GTMselected {
+    background-color: #FBDBB8;
+    cursor: pointer;
+}
+.table_ball tbody tr th.flx,
+.table_ball tbody tr td.flx {
+    background-color: #FBDBB8;
+    cursor: pointer;
+}
+.table_ball tbody tr th.clear-plain-select{
+    background-color:#F9F2EB;
+}
+.table_ball tbody tr td.clear-plain-select {
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.table_zh2 tbody tr td.GTMselected input {
+    background-color: #fff;
+}
+
+.hidden {
+    display: none;
+}
+
+.about-chara,
+.about {
+    overflow: hidden;
+    float: left;
+}
+
+.about-chara .box-tit {
+    height: 110px;
+    overflow: hidden;
+}
+
+.about-chara ul li {
+    float: left;
+    width: 248px;
+    background: #fffbe5;
+    text-align: center;
+    margin: 2px 2px 0 0;
+    height: 235px;
+    overflow: hidden;
+}
+
+.about-chara ul li:last-child {
+    margin-right: 0;
+    width: 250px;
+}
+
+.red {
+    color: #cc1c22
+}
+
+.chara-tit {
+    line-height: 40px;
+    height: 43px;
+    padding-top: 15px;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.chara-lable {
+    line-height: 22px;
+    text-align: left;
+    padding-left: 10px;
+    height: 48px;
+    margin-left: 10px;
+    padding-top: 10px;
+    font-size: 14px;
+    float: left;
+    width: 180px;
+}
+
+.about .box-tit {
+    height: 58px;
+}
+
+.about-info {
+    background: #fffbe5;
+    padding: 40px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.about-info img {
+    margin-bottom: 40px;
+}
+
+.about-info p {
+    text-indent: 2em;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.chara-int {
+    outline: none;
+}
+
+.chara-box {
+    width: 170px;
+    margin-top: 5px;
+}
+
+.chara-right {
+    float: right;
+    width: 180px
+}
+
+.off-check{
+ opacity:0.5;
+ color:rgb(84, 84, 84);
+}
