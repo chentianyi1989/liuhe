@@ -25,8 +25,19 @@ class GameRecordController extends Controller
             $name = $request->get('username');
             $mod = $mod->where('username', 'like', "%$name%");
         }
+        //
+        $page = $mod->with('member')->orderBy('created_at', 'desc')->paginate(config('admin.page-size'));
         
-        $page = $mod->orderBy('created_at', 'desc')->paginate(config('admin.page-size'));
+//         print_r($page->tojson());
+        
+//         foreach ($page as $item =>$v) {
+//             echo $v->member->username;
+//         }
+        
+//         print_r($page->tojson());
+//         return json_encode($page);
+//         return $page;
+//         $page->items()
         return $this->toPage($page);
     }
 }

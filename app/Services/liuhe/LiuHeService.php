@@ -10,8 +10,6 @@ use App\Models\GameRecord;
 
 class LiuHeService{
     
-    
-    
     public function initBall (){
         
         $balls = [];
@@ -19,6 +17,10 @@ class LiuHeService{
             $balls[$x] = ["code"=>$x,"money"=>0];
         }
         return $balls;
+    }
+    
+    public function payout () {
+        
     }
     
     public function calculationResult () {

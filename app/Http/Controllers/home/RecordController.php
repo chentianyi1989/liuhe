@@ -11,12 +11,39 @@ use App\Models\GameRecord;
 class RecordController extends Controller {
     
     
+    public function delGameRecord (Request $request) {
+        if ($request->has("id")){
+            $id = $request->get("id");
+            $_user = auth('member')->user();
+            if ($_user){
+                $gameRecord = GameRecord::where("member_id","$_user->id")->where("id","$id")->delete();
+                return redirect()->action('home\RecordController@gameRecord');
+            }else {
+                return $this-> responseErr("请先登录！");
+            }
+        }
+    }
+    
     public function gameRecord (Request $request) {
         
         $_user = auth('member')->user();
         if ($_user){
-            $gameRecord = GameRecord::where("member_id","$_user->id")->orderBy('created_at', 'desc')->paginate(2);
+            
+            $gameResult = GameResult::where("finish","0")->first();
+            $gameRecord = GameRecord::where("member_id","$_user->id")->where("code","$gameResult->code")->orderBy('created_at', 'desc')->paginate(9999);
             return view('home.user.game_record',compact("gameRecord"));
+        }else {
+            return $this-> responseErr("请先登录！");
+        }
+    }
+    
+    public function gameRecordHistory (Request $request) {
+        
+        $_user = auth('member')->user();
+        if ($_user){
+            $gameResult = GameResult::where("finish","0")->first();
+            $gameRecord = GameRecord::where("member_id","$_user->id")->where("code","!=","6")->orderBy('created_at', 'desc')->paginate(config('admin.page-size'));
+            return view('home.user.game_record_history',compact("gameRecord"));
         }else {
             return $this-> responseErr("请先登录！");
         }
@@ -25,7 +52,7 @@ class RecordController extends Controller {
     public function gameResultRecord (Request $request) {
         $_user = auth('member')->user();
         if ($_user){
-            $gameResult = GameResult::where("finish","1")->orderBy('lottery_at', 'desc')->paginate(5);
+            $gameResult = GameResult::where("finish","1")->orderBy('lottery_at', 'desc')->paginate(config('admin.page-size'));
             foreach ($gameResult as $key => $val) {
                 $result = $val["pingma_result"];
                 $result = explode(",",$result);
@@ -45,7 +72,6 @@ class RecordController extends Controller {
         }else {
             return $this-> responseErr("请先登录！");
         }
-        
     }
     
     public function rechargeRecord (Request $request) {

@@ -30,12 +30,35 @@ class IndexController extends Controller {
             
             $_user = auth('member')->user();
             if ($_user){
-                $haomas= $request["haomas"];
-                $tema_haomas = $haomas["tema"];
+                
+                
                 $gameReord = [];
-                $gameReord["tema"] = json_encode($tema_haomas,JSON_UNESCAPED_UNICODE);//         $gameReord["tema"] = '[{"moeny":"2","sx":"猴","code":"1"}]';
-                $pingma_haomas = $haomas["pingma"];
-                $gameReord["pingma"] = json_encode($pingma_haomas,JSON_UNESCAPED_UNICODE);
+                $haomas= $request["haomas"];
+                
+//                 print_r($haomas);
+                
+//                 echo "tema->".array_key_exists("tema",$haomas);
+//                 echo "pingma->".array_key_exists("pingma",$haomas);
+//                 if (array_key_exists("tema",$haomas)==true&& array_key_exists("pingma",$haomas)==true) {
+//                     return $this->responseErr("请选择号码！");
+//                 }
+                $flag = false;
+                if(array_key_exists("tema",$haomas)) {
+                    $tema_haomas = $haomas["tema"];
+                    $gameReord["tema"] = json_encode($tema_haomas,JSON_UNESCAPED_UNICODE);//         $gameReord["tema"] = '[{"moeny":"2","sx":"猴","code":"1"}]';
+                    $flag = true;
+                }
+                
+                if (array_key_exists("pingma",$haomas)) {
+                    $pingma_haomas = $haomas["pingma"];
+                    $gameReord["pingma"] = json_encode($pingma_haomas,JSON_UNESCAPED_UNICODE);
+                    $flag = true;
+                }
+                
+                if ($flag == false) {
+                    return $this->responseErr("请选择号码！");
+                }
+                
                 $gameReord["member_id"] = $_user->id;
                 $gameReord["code"] = $haomas["code"];
                 
@@ -48,7 +71,7 @@ class IndexController extends Controller {
             }
             
         }catch (\Exception $e){
-//             $error_code = $e->errorInfo[1];
+//             print_r($e);
             return $this-> responseErr("下单失败！");
         }
     }

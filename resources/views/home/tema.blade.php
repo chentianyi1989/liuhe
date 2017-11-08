@@ -5,10 +5,8 @@
     <div class="control n_anniu">
         <div class="buttons">
             <label class="checkdefault">
-                <span class="color_lv bold">玩法说明：</span>
-            </label>
-            <label class="quickAmount"><span class="color_lv bold">每期开奖1个号码，每个号码赔率为40</span>
-            </label>
+                <span class="color_lv bold">玩法说明：</span></label>
+            <label class="quickAmount"><span class="color_lv bold">每期开奖1个号码，每个号码赔率为40</span></label>
         </div>
         <div class="buttons">
             <label class="checkdefault">
@@ -48,5 +46,7 @@
 		</tr>
 	</thead>
 </table>
+
+
 <!-- <form method="post" action="{{ route('home.bet') }}" id="form_tema_bet"> -->
 <!-- </form> -->

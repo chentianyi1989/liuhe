@@ -54,6 +54,26 @@ class MemberController extends Controller
         return $result;
     }
     
+    public function updateUser (Request $request){
+        
+        try{
+            
+            $phone = $request->get('phone');
+            $name = $request->get('name');
+            $id = $request->get("id");
+            $member = Member::findOrFail($id);
+            
+            $data["name"] = $name;
+            $data["phone"] = $phone;
+            $member->update($data);
+            $result["code"] = "0";
+        }catch (\Exception $e){
+            $result["code"] = "99";
+        }
+        
+        return $result;
+    }
+    
     public function showGameRecordInfo(Request $request, $id)
     {
         $mod = new GameRecord();

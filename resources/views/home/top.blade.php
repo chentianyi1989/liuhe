@@ -41,6 +41,7 @@
            	<div class="user-center"><ul>
            		<li ><a href="{{ route('user.game_result') }}"><i class="icon-7"></i>开奖记录</a></li>
            		<li ><a href="{{ route('user.game_record') }}"><i class="icon-3"></i>下注记录</a></li>
+           		<li ><a href="{{ route('user.game_record_history') }}"><i class="icon-3"></i>下注历史</a></li>
                 <!--          	
                 <li onclick="__openWin('other',_static_const.online_service)"><a><i class="icon-4"></i>在线客服</a></li> 
            		<li onclick="__openWin('user_center','/userCenter/privateMsg.html')"><a><i class="icon-Shape-47"></i>消息中心</a></li>

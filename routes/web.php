@@ -20,6 +20,7 @@ Route::group(['domain' => env("m_domain","admin.liuhe"), 'namespace' => 'admin']
     Route::get('/members/member','members\\MemberController@index')->name("members.member");
     Route::post('/members/member/list','members\\MemberController@memberList')->name("members.member.list");
     Route::post('/members/member/add','members\\MemberController@add')->name("members.member.add");
+    Route::post('/members/member/update','members\\MemberController@updateUser')->name("members.member.update");
     
     
     Route::get('/members/gameRecord','members\\GameRecordController@index')->name("members.gameRecord");
@@ -52,7 +53,11 @@ Route::group(['domain' => env("m_domain","liuhe"), 'namespace' => 'home'],functi
     Route::post('/bet','IndexController@bet')->name("home.bet");
     
     
+    
     Route::get('/uesr/game_record','RecordController@gameRecord')->name("user.game_record");
+    Route::get('/uesr/del_game_record','RecordController@delGameRecord')->name("user.del_game_record");
+    Route::get('/uesr/game_record_history','RecordController@gameRecordHistory')->name("user.game_record_history");
+    
     Route::get('/uesr/game_result','RecordController@gameResultRecord')->name("user.game_result");
     
     

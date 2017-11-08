@@ -14,6 +14,11 @@ $(function () {
 	}); 
 });
 
+
+function formatMemberUsername (val,row){
+	return val.username;
+}
+
 </script>
 
 
@@ -38,7 +43,7 @@ $(function () {
 	<thead>
 		<tr>
 			<th data-options="field:'id'" width="5%">ID</th>
-			<th data-options="field:'member_id'" width="15%">用户名</th>
+			<th data-options="field:'member'" formatter="formatMemberUsername" width="15%">用户名</th>
 			<th data-options="field:'code'" width="15%">期数</th>
 			<th data-options="field:'tema'" width="15%">特码</th>
 			<th data-options="field:'pingma'" width="15%">平码</th>

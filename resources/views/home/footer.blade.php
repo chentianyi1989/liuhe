@@ -2,10 +2,10 @@
     <div class="container">
         <div class="footer-img-box">
             <a href="" class="pullLeft bbin">
-                <img src="{{ asset('/web/images/xierdun/bbinlogo.png') }}" alt="">
+<!--                 <img src="{{ asset('/web/images/xierdun/bbinlogo.png') }}" alt=""> -->
             </a>
             <a href="" class="pullLeft ub">
-                <img src="{{ asset('/web/images/xierdun/ublogo.png') }}" alt="">
+<!--                 <img src="{{ asset('/web/images/xierdun/ublogo.png') }}" alt=""> -->
             </a>
         </div>
         <div class="article-menu">

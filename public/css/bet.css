@@ -198,20 +198,20 @@ table th,table td {
     background: none repeat 0 0 #fff;
 }
 
-#quick_sec_table td {
+.quick_sec_table td {
     cursor: pointer;
     height: 27px;
 }
 
-#quick_sec_table td.active {
+.quick_sec_table td.active {
     background-color: #FBDBB8;
 }
 
-#quick_sec_table .hover {
+.quick_sec_table .hover {
     color: red;
 }
 
-#quick_sec_table .on {
+.quick_sec_table .on {
     color: red;
     background: none repeat 0 0 #FBDBB8;
 }
@@ -364,7 +364,7 @@ table .head th {
 }
 
 #changlong,
-#quick_sec_table {
+.quick_sec_table {
     float: right;
     width: 160px;
 }
@@ -550,19 +550,19 @@ table .head th {
     border-top: medium none;
 }
 
-#quick_sec_table .red {
+.quick_sec_table .red {
     color: red;
 }
 
-#quick_sec_table .red {
+.quick_sec_table .red {
     color: red;
 }
 
-#quick_sec_table .blue {
+.quick_sec_table .blue {
     color: #2836f4;
 }
 
-#quick_sec_table .green {
+.quick_sec_table .green {
     color: rgb(37, 200, 45);
 }
 

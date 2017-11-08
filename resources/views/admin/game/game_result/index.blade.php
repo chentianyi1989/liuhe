@@ -41,7 +41,11 @@ function initState (val,row) {
 		<tr>
 			<th data-options="field:'id'" width="15%">ID</th>
 			<th data-options="field:'code'" width="15%">期号</th>
-			<th data-options="field:'result'" width="15%">结果</th>
+			<th data-options="field:'pingma_result'" width="15%">平码结果</th>
+			<th data-options="field:'tema_result'" width="15%">特码结果</th>
+			<th data-options="field:'created_at'" width="15%">开盘时间</th>
+			<th data-options="field:'lottery_at'" width="15%">开奖时间</th>
+			
 		</tr>
 	</thead>
 </table>

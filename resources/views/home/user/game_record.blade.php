@@ -15,17 +15,20 @@
 					<th>特码</th>
 					<th>平码</th>
 					<th>时间</th>
+					<th>操作</th>
 				<tr>
 			</thead>
 			<tbody>
 				@foreach($gameRecord as $gr)
+					<?php 
+					     $temas = json_decode($gr->tema);
+					     $pingmas = json_decode($gr->pingma);
+					?>
 					<tr>
 						<td>{{ $gr->code }}</td>
 						<td>{{ $gr->id }}</td>
-						<td>
-							<?php 
-							     $temas = json_decode($gr->tema);
-							?>
+						<td style="vertical-align:top;">
+							@if($temas)
 							<table>
 								<tr>
 									<th>号码</th><th>生肖</th><th>金额</th>
@@ -38,10 +41,26 @@
 								</tr>
 								@endforeach
 							</table>
-							
+							@endif
 						</td>
-						<td>{{ $gr->pingma }}</td>
+						<td style="vertical-align:top;">
+							@if($pingmas)
+							<table>
+								<tr>
+									<th>号码</th><th>生肖</th><th>金额</th>
+								</tr>
+								@foreach($pingmas as $pingma)
+								<tr >
+									<td>{{$pingma->code}}</td>
+									<td>{{$pingma->sx}}</td>
+									<td>{{$pingma->money}}</td>
+								</tr>
+								@endforeach
+							</table>
+							@endif
+						</td>
 						<td>{{ $gr->created_at }}</td>
+						<td><a href="{{route('user.del_game_record')}}?id={{ $gr->id }}" onclick="return confirm('确认要撤销订单：{{ $gr->id }}？')">撤销</a></td>
 					</tr>
 				@endforeach
 			</tbody>
