@@ -19,7 +19,38 @@ class LiuHeService{
         return $balls;
     }
     
-    public function payout () {
+    public function payout ($gameResult,$gameRecords) {
+        
+        $pingma_balls = $gameResult["pingma"];
+        $tema_ball = $gameResult["tema"];
+        
+        $tema_money = 0;
+        $pingma_money = 0;
+        
+        foreach ($gameRecords as $key => $value) {
+            
+            $pingma = $value->pingma;
+            $tema = $value->tema;
+            
+            $pms = json_decode($pingma);
+            $tms = json_decode($tema);
+            
+            is_array($pms)?null:$pms = array();
+            foreach ($tms as $k => $v) {
+                if($v->code == $tema_ball) {
+                    $pingma_money += $v->money * 6;
+                }
+            }
+            
+            is_array($tms)?null:$tms = array();
+            foreach ($tms as $k => $v) {
+                if($v->code == $tema_ball) {
+                    $tema_money += $v->money * 40;
+                }
+            }
+        }
+        
+        
         
     }
     
@@ -37,24 +68,34 @@ class LiuHeService{
             $pingma = $value->pingma;
             $tema = $value->tema;
             
-            
             $pms = json_decode($pingma);
             $tms = json_decode($tema);
-            
+            $tema_money = 0;
+            $pingma_money = 0;
             // 累计平码下注额
+            is_array($pms)?null:$pms = array();
             foreach ($pms as $k => $v) {
                 $ball_pingma = $balls_pingma[$v->code];
-               
                 $money = $ball_pingma["money"] + $v->money;
                 $balls_pingma[$v->code]["money"] = $money;
+                
+                $pingma_money += $v->money;
             }
             
 //             累计特码下注额
+            is_array($tms)?null:$tms = array();
             foreach ($tms as $k => $v) {
                 $ball_tema = $balls_tema[$v->code];
                 $money = $ball_tema["money"] + $v->money;
                 $balls_tema[$v->code]["money"] = $money;
+                
+                $tema_money += $v->money;
             }
+            
+            $value->update([
+                "tema_money"=>$tema_money,
+                "pingma_money"=>$pingma_money,
+            ]);
         }
         echo "平码：<br/>";
         print_r($balls_pingma);
@@ -62,7 +103,6 @@ class LiuHeService{
         echo "特码：<br/>";
         print_r($balls_tema);
         echo "<br/>";
-        
         
         $pingma_result =  $this->calculationPingMaResult($balls_pingma);
         echo "平码结果：<br/>";
@@ -77,7 +117,11 @@ class LiuHeService{
         $rs = $this->mergeResult($tema_result,$pingma_result);
         echo "开奖结果：<br/>";
         print_r($rs);
+        return $rs;
+//         return ["code"=>$code,"result"=>$rs];
     }
+    
+    
     
     /**
      * 计算特码结果
