@@ -27,15 +27,19 @@
     
 </head>
 <body>
+
+
 	<div style="position: relative;height: auto; min-height: 100%;">
 		<div >
 				@include('home.top') 
 				<div style="clear:both;"></div>
 		</div>
+		
 		<div>
      			@include('home.notes') 
      			<div style="clear:both;"></div>
-     	</div>		
+     	</div>	
+     	<img alt="" src="{{asset('/mabao/130.png')}}" style="width: 400px;position:absolute;padding-left: 30px;">	
      	<div style=" padding-bottom: 82px;">		
      			@yield('content')
      			<div style="clear:both;"></div>
