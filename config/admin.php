@@ -13,5 +13,15 @@ return [
     'state'=>[
         "1"=>'启用',
         "0"=>"停用"
+    ],
+    'pingma_odds'=>6,
+    'tema_odds'=>15,
+    
+    
+    'log_member_moneny'=>[
+        'type'=>
+            ['recharge'=>'1','withdrawal'=>'2','payout'=>'3','sysUpdate'=>'4']
+        
     ]
+    
 ];

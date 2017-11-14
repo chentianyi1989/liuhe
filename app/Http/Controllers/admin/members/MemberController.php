@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\admin\members;
-
-
+use App\Models\LogMemberMoney;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Member;
+
 class MemberController extends Controller
 {
     public function index(Request $request)
@@ -40,24 +41,26 @@ class MemberController extends Controller
         $username = $request->get('username');
         $name = $request->get('name');
         
-        
         try{
-            $data = $request->all();
-            $data["money"] = 0;
-            $data["password"] = "123456";
-            Member::create($data);
-            $result["code"] = "0";
+            
+            $member = Member::where("username",$username)->get();
+            if (!$member) {
+                $data = $request->all();
+                $data["money"] = 0;
+                $data["password"] = "123456";
+                Member::create($data);
+                return $this->responseSuccess("添加用户$username 成功！");
+            }
+            return $this-> responseErr("用户名：$username 已经存在！");
         }catch (\Exception $e){
-            $result["code"] = "99";
+            return $this-> responseErr("添加用户$username 失败！");
         }
-        
-        return $result;
     }
     
     public function updateUser (Request $request){
         
         try{
-            
+            $username = $request->get('username');
             $phone = $request->get('phone');
             $name = $request->get('name');
             $id = $request->get("id");
@@ -68,111 +71,65 @@ class MemberController extends Controller
             $member->update($data);
             $result["code"] = "0";
         }catch (\Exception $e){
-            $result["code"] = "99";
+            return $this-> responseErr("修改用户$username 失败！");
         }
         
-        return $result;
+        return $this->responseSuccess("修改用户$username 成功！");
+    }
+    public function recharge (Request $request) {
+        $id = $request->get("id");
+        $money = $request->get('money');
+//         echo is_numeric($money)."  $money    $id";
+        
+        if(is_numeric($money)&&$money>=0&&$id) {
+            DB::transaction(function() use($id,$money){
+                $member = Member::findOrFail($id);
+                $money = $member->money+$money;
+                $member->update([
+                    'money'=>$money
+                ]);
+                
+                LogMemberMoney::create([
+                    "money"=>$money,
+                    "created_by"=>'',
+                    "info"=>"充值",
+                    "type"=>config('log_member_moneny.type.recharge'),
+                    'member_id'=>$member->id
+                ]);
+            });
+            return $this->responseSuccess('充值成功');
+        }else{
+            return $this-> responseErr("充值失败！");
+        }
+        
+    }
+    public function withdrawal (Request $request) {
+        
+        $id = $request->get("id");
+        $money = $request->get('money');
+        if(is_numeric($money)&&$money>=0&&$id) {
+            
+            DB::transaction(function()use($id,$money) {
+                $member = Member::findOrFail($id);
+                $money = $member->money-$money;
+                $member->update([
+                    'money'=>$money
+                ]);
+                
+                LogMemberMoney::create([
+                    "money"=>$money,
+                    "created_by"=>'',
+                    "info"=>"提现",
+                    "type"=>config('log_member_moneny.type.withdrawal'),
+                    'member_id'=>$member->id
+                ]);
+            });
+            return $this->responseSuccess('取现成功');
+        }else{
+            return $this-> responseErr("取现失败！");
+        }
     }
     
-    public function showGameRecordInfo(Request $request, $id)
-    {
-        $mod = new GameRecord();
-        $start_at = $end_at = $api_type ='';
-        if ($request->has('api_type'))
-        {
-            $api_type = $request->get('api_type');
-            $mod = $mod->where('api_type', $api_type);
-        }
-        if ($request->has('start_at'))
-        {
-            $start_at = $request->get('start_at');
-            $mod = $mod->where('betTime', '>=', $start_at);
-        }
-        if ($request->has('end_at'))
-        {
-            $end_at = $request->get('end_at');
-            $mod = $mod->where('betTime', '<=',$end_at);
-        }
-
-        $mod = $mod->where('member_id', $id);
-
-        $data = $mod->orderBy('created_at', 'desc')->paginate(config('admin.page-size'));
-
-        $total_netAmount = $mod->sum('netAmount');
-        $total_betAmount = $mod->sum('betAmount');
-
-        return view('admin.member.showGameRecordInfo', compact('data','start_at', 'end_at', 'api_type', 'total_netAmount', 'total_betAmount', 'id'));
-    }
-
-    public function showRechargeInfo(Request $request, $id)
-    {
-        $mod = new Recharge();
-
-        $status = $payment_type = '';
-
-        if ($request->has('status'))
-        {
-            $status = $request->get('status');
-            $mod = $mod->where('status', $status);
-        }
-
-        if ($request->has('payment_type'))
-        {
-            $payment_type = $request->get('payment_type');
-            $mod = $mod->where('payment_type', $payment_type);
-        }
-
-        $mod = $mod->where('member_id', $id);
-
-        $data = $mod->orderBy('created_at', 'asc')->paginate(config('admin.page-size'));
-
-        $total_recharge = $mod->sum('money');
-        $total_diff_money = $mod->sum('diff_money');
-
-        return view('admin.member.showRechargeInfo', compact('data', 'status', 'payment_type', 'total_recharge', 'total_diff_money', 'id'));
-    }
-
-    public function showDrawingInfo(Request $request, $id)
-    {
-        $mod = new Drawing();
-
-        $status = '';
-
-        if ($request->has('status'))
-        {
-            $status = $request->get('status');
-            $mod = $mod->where('status', $status);
-        }
-        $mod = $mod->where('member_id', $id);
-
-        $data = $mod->orderBy('created_at', 'asc')->paginate(config('admin.page-size'));
-
-        $total_money = $mod->sum('money');
-        $total_counter_fee = $mod->sum('counter_fee');
-
-        return view('admin.member.showDrawingInfo', compact('data', 'status', 'total_money', 'total_counter_fee', 'id'));
-    }
-
-    public function showDividendInfo(Request $request, $id)
-    {
-        $mod = new Dividend();
-
-        $type = '';
-
-        if ($request->has('type'))
-        {
-            $type = $request->get('type');
-            $mod = $mod->where('type', $type);
-        }
-
-        $mod = $mod->where('member_id', $id);
-
-        $data = $mod->orderBy('created_at', 'asc')->paginate(config('admin.page-size'));
-
-        $total_money = $mod->sum('money');
-
-        return view('admin.member.showDividendInfo', compact('data','total_money', 'type','id'));
-    }
 
     public function export(Request $request)
     {
@@ -202,123 +159,4 @@ class MemberController extends Controller
         })->download('xls');
     }
 
-    public function create()
-    {
-        return view('admin.member.create');
-    }
-
-    /**
-     *
-     * 创建
-     *
-     * @param Request $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function store(Request $request)
-    {
-        $validator = $this->verify($request, 'member.store');
-
-        if ($validator->fails())
-        {
-            $messages = $validator->messages()->toArray();
-            return responseWrong($messages);
-        }
-
-        $data = $request->all();
-
-        Member::create($data);
-
-        return responseSuccess('','', route('member.index'));
-    }
-
-    /**
-     *
-     * 编辑
-     *
-     * @param $id
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function edit($id)
-    {
-        $data= Member::findOrFail($id);
-
-        return view('admin.member.edit', compact('data'));
-    }
-
-    public function update(Request $request, $id)
-    {
-//        $validator = $this->verify($request, 'member.update');
-//
-//        if ($validator->fails())
-//        {
-//            $messages = $validator->messages()->toArray();
-//            return responseWrong($messages);
-//        }
-
-        if ($request->has('qk_pwd'))
-        {
-            $q = (string)$request->get('qk_pwd');
-            if (!is_numeric($request->get('qk_pwd')) || strlen($q) != 6)
-            return responseWrong('取款密码为6位数字');
-        }
-
-        $member= Member::findOrFail($id);
-        $old_money = $member->money;
-        $old_fs_money = $member->money;
-        $new_money = $request->get('money');
-        $new_fs_money = $request->get('fs_money');
-        if (!$request->has('password'))
-        {
-            if ($request->has('qk_pwd'))
-                $member->update([
-                    'money' => $request->get('money'),
-                    'fs_money' => $request->get('fs_money'),
-                    'email' => $request->get('email'),
-                    'phone' => $request->get('phone'),
-                    'qk_pwd' => $request->get('qk_pwd')
-                ]);
-            else
-                $member->update([
-                    'money' => $request->get('money'),
-                    'fs_money' => $request->get('fs_money'),
-                    'email' => $request->get('email'),
-                    'phone' => $request->get('phone'),
-                ]);
-        }else{
-            $member->update($request->all());
-        }
-
-        //如果
-        if ($old_money != $new_money || $old_fs_money != $new_fs_money)
-        {
-            $user = Auth::user();
-            AdminActionMoneyLog::create([
-                'member_id' => $member->id,
-                'user_id' => $user->id,
-                'old_money' => $old_money,
-                'new_money' => $new_money,
-                'old_fs_money' => $old_fs_money,
-                'new_fs_money' => $new_fs_money
-            ]);
-        }
-
-        return responseSuccess('','', route('member.index'));
-    }
-
-    public function destroy($id)
-    {
-        Member::destroy($id);
-
-        return respS();
-    }
-
-    public function check($id, $status)
-    {
-        $mod = Member::findOrFail($id);
-        $mod->update([
-            'status' => $status
-        ]);
-
-        return respS();
-    }
 }

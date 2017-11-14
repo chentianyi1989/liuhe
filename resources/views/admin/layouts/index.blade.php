@@ -19,7 +19,14 @@
 	
 	<script type="text/javascript">
 		var _menus = {"menus":[
-			{"menuid":"1","icon":"icon-sys","menuname":"系统管理",
+			{"menuid":"3","icon":"icon-sys","menuname":"游戏管理",
+				"menus":[
+					{"menuname":"游戏结果记录","icon":"icon-nav","url":"{{ route('game.gameResult') }}"},
+					{"menuname":"游戏设置","icon":"icon-nav","url":"{{ route('game.game') }}"},
+			        {"menuname":"号码设置","icon":"icon-nav","url":"{{ route('game.ball') }}"},
+			        {"menuname":"游戏监控","icon":"icon-nav","url":"{{ route('game.info') }}"},
+				]
+			},{"menuid":"1","icon":"icon-sys","menuname":"系统管理",
 				"menus":[
 			        {"menuname":"管理员设置","icon":"icon-nav","url":"#{$ctx}/admin/user/user.php"},
 			        
@@ -29,12 +36,6 @@
 			        {"menuname":"用户列表","icon":"icon-nav","url":"{{ route('members.member') }}"},
 			        {"menuname":"游戏记录","icon":"icon-nav","url":"{{ route('members.gameRecord') }}"},
 			        {"menuname":"登陆日志","icon":"icon-nav","url":"{{ route('members.loginLog') }}"},
-				]
-			},{"menuid":"3","icon":"icon-sys","menuname":"游戏管理",
-				"menus":[
-					{"menuname":"游戏结果记录","icon":"icon-nav","url":"{{ route('game.gameResult') }}"},
-					{"menuname":"游戏设置","icon":"icon-nav","url":"{{ route('game.game') }}"},
-			        {"menuname":"号码设置","icon":"icon-nav","url":"{{ route('game.ball') }}"},
 				]
 			},{"menuid":"3","icon":"icon-sys","menuname":"财务管理",
 				"menus":[

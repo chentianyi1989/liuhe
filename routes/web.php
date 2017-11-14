@@ -21,6 +21,8 @@ Route::group(['domain' => env("m_domain","admin.liuhe"), 'namespace' => 'admin']
     Route::post('/members/member/list','members\\MemberController@memberList')->name("members.member.list");
     Route::post('/members/member/add','members\\MemberController@add')->name("members.member.add");
     Route::post('/members/member/update','members\\MemberController@updateUser')->name("members.member.update");
+    Route::post('/members/member/recharge','members\\MemberController@recharge')->name("members.member.recharge");
+    Route::post('/members/member/withdrawal','members\\MemberController@withdrawal')->name("members.member.withdrawal");
     
     
     Route::get('/members/gameRecord','members\\GameRecordController@index')->name("members.gameRecord");
@@ -39,6 +41,8 @@ Route::group(['domain' => env("m_domain","admin.liuhe"), 'namespace' => 'admin']
     
     Route::get('/game/ball','game\\BallController@index')->name("game.ball");
     Route::post('/game/ball/list','game\\BallController@ballList')->name("game.ball.list");
+    
+    Route::get('/game/info','game\\GameInfoController@index')->name("game.info");
     
   
     

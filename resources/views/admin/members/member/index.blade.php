@@ -5,15 +5,15 @@
 
 @include('admin.layouts.context')
 <script type="text/javascript">
-<!--
+
 
 $(function () {
-	initBallInt();
+	initUserInt();
 
 	
 });
 
-function initBallInt() {
+function initUserInt() {
 	$("#dataList").datagrid({
 		url:"{{ route('members.member.list') }}",
 		loadMsg: '数据加载中,请稍候...',
@@ -21,69 +21,58 @@ function initBallInt() {
 		singleSelect:true
 		
 	}); 
-	
 }
 
-
-var zodiac = {
-@foreach(config('ball.zodiac') as $k => $v)
-	"{{$k}}":"{{$v}}",
-@endforeach
-};
-
-
-var colour = {
-@foreach(config('ball.colour') as $k => $v)
-	"{{$k}}":"{{$v}}",
-@endforeach
-};
-
-function initZodiac (val,row) {
-	return zodiac[val];
-}
-
-function initColour (val,row) {
-	return colour[val];
-}
-//-->
-
-
-function openAddUser (){
-
-
-	$("#div_addUser").window('open');
-
-}
-
-function closeAddUser () {
-	$("#div_addUser").window('close');
-}
-
-function submitAddUserForm(){
-	$('#form_addUser').form('submit',{
+function submitWindow (obj) {
+	var form = $(obj).parents('form');
+	form.form('submit',{
 		onSubmit:function(){
-			return $(this).form('enableValidation').form('validate');
 		},
 	 	success:function(data){
-			alert(data);
 			data = eval('(' + data + ')');  
-			
-			if (data["code"]==0) {
+			if(data["code"]=='1') {
 				searchForm ();
-				clearAddUserForm();
-				closeAddUser();
-			}else if(data["code"]==1) {
-
+				form.form('clear');
+				form.parents('div').window('close');
 				alert(data["msg"]);
-			}else if (data["code"]==99) {
-				clearAddUserForm();
-				closeAddUser();
+			}else if (data["code"]=='99') {
+				alert(data["msg"]);
 			}
 		}
-	});
+	});	
 }
-function clearAddUserForm(){
-	$('#form_addUser').form('clear');
+function closeWindow (obj) {
+	$(obj).parents('form').parents('div').window('close');
+}
+function clearForm(obj) {
+	$(obj).parents('form').form('clear');
+}
+function openRecharge (){
+
+	var row = $('#dataList').datagrid('getSelected');
+	
+	if(row) {
+		$("#div_rechargeUser input[name='id']").val(row.id);
+		$("#div_rechargeUser").window('open');
+		
+	}else {
+		alert("请先选择一条记录");
+	}
+}
+
+function openWithdrawal (){
+	
+	var row = $('#dataList').datagrid('getSelected');
+	if(row) {
+		$("#div_withdrawalUser input[name='id']").val(row.id);
+		$("#div_withdrawalUser").window('open');
+	}else {
+		alert("请先选择一条记录");
+	}
+}
+
+function openAddUser (){
+	$("#div_addUser").window('open');
 }
 
 function openUpdateUser() {
@@ -94,6 +83,7 @@ function openUpdateUser() {
 		$("#div_updateUser input[name='name']").val(row.name);
 		$("#div_updateUser input[name='phone']").val(row.phone);
 		$("#div_updateUser input[name='id']").val(row.id);
+		$("#div_updateUser input[name='username']").val(row.username);
 		var title = "修改用户："+row.username;
 		$("#div_updateUser").window({"title":title}).window('open');
 		
@@ -101,34 +91,6 @@ function openUpdateUser() {
 		alert("请先选择一条记录");
 	}
 }
-
-function closeUpdateUser() {
-	$("#div_updateUser").window('close');
-}
-
-function submitupdateUserForm (obj) {
-
-	var form = $(obj).parents('form');
-	form.form('submit',{
-		onSubmit:function(){
-		},
-	 	success:function(data){
-			data = eval('(' + data + ')');  
-			if (data["code"]==0) {
-				searchForm ();
-				form.form('clear');
-				
-			}else if(data["code"]==1) {
-
-				alert(data["msg"]);
-			}else if (data["code"]==99) {
-				clearAddUserForm();
-				closeAddUser();
-			}
-		}
-	});
-}
-
 
 // 查询
 function searchForm (){
@@ -171,10 +133,6 @@ function clearSearchUserForm(){
     </div>
 </div>
 
-
-
-
-
 <div id="div_addUser" class="easyui-window" title="添加用户"
     data-options="inline:true,modal:true,closed:true,iconCls:'icon-save'" 
     style="width:800px;height:400px;padding:10px;top:100px;">
@@ -193,9 +151,9 @@ function clearSearchUserForm(){
 			</tr>
 		</table>
 		<div style="text-align:center;padding:5px">
-        	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitAddUserForm()">提交</a>
-        	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="clearAddUserForm()">清空</a>
-        	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="closeAddUser()">关闭</a>
+        	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitWindow(this)">提交</a>
+        	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="clearForm(this)">清空</a>
+        	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="closeWindow(this)">关闭</a>
         </div>
 	</form>
 	
@@ -207,11 +165,8 @@ function clearSearchUserForm(){
 
 	<form id="form_updateUser" method="post" action="{{ route('members.member.update') }}">
 		<input type="hidden" name="id">
+		<input type="hidden" name="username">
 		<table cellpadding="5">
-			<tr>
-				<td>用户名:</td>
-				<td></td>
-			</tr>
 			<tr>
 				<td>姓名:</td>
 				<td>
@@ -230,13 +185,54 @@ function clearSearchUserForm(){
 			</tr>
 		</table>
 		<div style="text-align:center;padding:5px">
-    	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitupdateUserForm(this)">提交</a>
+    	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitWindow(this)">提交</a>
     	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="clearForm(this)">清空</a>
-    	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="closeUpdateUser()">关闭</a>
+    	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="closeWindow(this)">关闭</a>
     </div>
 	</form>
 </div>
 
+<div id="div_rechargeUser" class="easyui-window" title="用户充值"
+    data-options="inline:true,modal:true,closed:true,iconCls:'icon-save'" 
+    style="width:800px;height:400px;padding:10px;top:100px;">
+	
+	<form method="post" action="{{ route('members.member.recharge') }}">
+		<input type="hidden" name="id">
+		<table cellpadding="5">
+			<tr>
+				<td>充值金额:</td>
+				<td><input type="text" name="money"/></td>
+			</tr>
+			<tr>
+				<td>备注:</td>
+				<td><input type="text" name="info"/></td>
+			</tr>
+		</table>
+		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitWindow(this)">提交</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="closeWindow(this)">关闭</a>
+	</form>
+</div>
+
+<div id="div_withdrawalUser" class="easyui-window" title="用户取现"
+    data-options="inline:true,modal:true,closed:true,iconCls:'icon-save'" 
+    style="width:800px;height:400px;padding:10px;top:100px;">
+	
+	<form method="post" action="{{ route('members.member.withdrawal') }}">
+		<input type="hidden" name="id">
+		<table cellpadding="5">
+			<tr>
+				<td>取现金额:</td>
+				<td><input type="text" name="money"/></td>
+			</tr>
+			<tr>
+				<td>备注:</td>
+				<td><input type="text" name="info"/></td>
+			</tr>
+		</table>
+		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitWindow(this)">提交</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="closeWindow(this)">关闭</a>
+	</form>
+</div>
 
 <table id="dataList" >
 	<thead>
