@@ -92,7 +92,7 @@ class MemberController extends Controller
                     "money"=>$money,
                     "created_by"=>'',
                     "info"=>"充值",
-                    "type"=>config('log_member_moneny.type.recharge'),
+                    "type"=>config('admin.log_member_moneny.type.recharge'),
                     'member_id'=>$member->id
                 ]);
             });
@@ -103,7 +103,6 @@ class MemberController extends Controller
         
     }
     public function withdrawal (Request $request) {
-        
         $id = $request->get("id");
         $money = $request->get('money');
         if(is_numeric($money)&&$money>=0&&$id) {
@@ -118,11 +117,11 @@ class MemberController extends Controller
                     "money"=>$money,
                     "created_by"=>'',
                     "info"=>"提现",
-                    "type"=>config('log_member_moneny.type.withdrawal'),
+                    "type"=>config('admin.log_member_moneny.type.withdrawal'),
                     'member_id'=>$member->id
                 ]);
             });
-            return $this->responseSuccess('取现成功');
+                return $this->responseSuccess('取现成功');
         }else{
             return $this-> responseErr("取现失败！");
         }
