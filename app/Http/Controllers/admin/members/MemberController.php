@@ -84,9 +84,8 @@ class MemberController extends Controller
         if(is_numeric($money)&&$money>=0&&$id) {
             DB::transaction(function() use($id,$money){
                 $member = Member::findOrFail($id);
-                $money = $member->money+$money;
                 $member->update([
-                    'money'=>$money
+                    'money'=>$member->money+$money
                 ]);
                 
                 LogMemberMoney::create([
@@ -111,9 +110,8 @@ class MemberController extends Controller
             
             DB::transaction(function()use($id,$money) {
                 $member = Member::findOrFail($id);
-                $money = $member->money-$money;
                 $member->update([
-                    'money'=>$money
+                    'money'=>$member->money-$money
                 ]);
                 
                 LogMemberMoney::create([
