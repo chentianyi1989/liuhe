@@ -88,23 +88,29 @@ class LiuHeService{
             $tema = $value->tema;
             $member_id = $value->member_id;
             
+            
+            echo "游戏记录id：$value->id<br/>";
+            
             if ($tema!=null&&$tema!='') {
                 $tms = json_decode($tema);
                 is_array($tms)?null:$tms = array();
                 foreach ($tms as $k => $v) {
                     if($v->code == $tema_ball) {
-                        echo "特码派彩：$v->code,".$v->money * $this->tema_odds;
-                        $tema_money += $v->money * $this->tema_odds;
+                        $p_m = $v->money * $this->tema_odds;
+                        echo "特码派彩：$v->code,"."money:$v->money ,payout:$p_m" ;
+                        $tema_money += $p_m;
                     }
                 }
             }
+            echo "<br/>";
             if ($pingma!=null&&$pingma!='') {
                 $pms = json_decode($pingma);
                 is_array($pms)?null:$pms = array();
                 foreach ($pms as $k => $v) {
                     foreach ($pingma_balls as $pm){
                         if($v->code == $pm) {
-                            echo "平码派彩：$v->code,".$v->money * $this->pingma_odds;
+                            $p_m = $v->money * $this->pingma_odds;
+                            echo "平码派彩：$v->code,"."money:$v->money ,payout:$p_m";
                             $pingma_money += $v->money * $this->pingma_odds;
                         }
                     }
@@ -114,21 +120,23 @@ class LiuHeService{
             if ($total_monty>0) {
                 // 发放中奖金额给用户
                 $member = Member::findOrFail($member_id);
-                $money = $member->money+$total_monty;
-                DB::transaction(function() use($member,$money,$value){
-                    $member->update([
-                        "money"=>$money,
-                    ]);
-                    LogMemberMoney::create([
-                        "money"=>$money,
-                        "created_by"=>'sys',
-                        "info"=>"派彩中奖的游戏记录",
-                        "type"=>'3',
-                        'game_record_id'=>$value->id,
-                        'member_id'=>$value->member_id
-                    ]);
+//                 DB::transaction(function() use($member,$money,$value){
+                $member->update([
+                    "money"=>$member->money+$total_monty,
+                ]);
+                LogMemberMoney::create([
+                    "money"=>$total_monty,
+                    "created_by"=>'sys',
+                    "info"=>"派彩中奖的游戏记录",
+                    "type"=>'3',
+                    'game_record_id'=>$value->id,
+                    'member_id'=>$value->member_id
+                ]);
+                $value->update([
+                    'money'=>$total_monty
+                ]);
                     
-                });
+//                 });
             }
         }
     }
