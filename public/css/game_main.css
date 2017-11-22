@@ -194,7 +194,7 @@ a,a:hover {text-decoration: none;}
 .lot-gd1 li {display: inline-table;width: 40px;height: 40px;border-radius: 40px;background: #F13131;border: 3px #F13131 solid;box-shadow: 1px 1px 2px rgba(0,0,0,0.5);font-size: 26px;line-height: 40px;text-align: center;text-shadow: 1px 1px rgba(0, 0, 0, 0.50);color: #f6f6f6;font-weight: 800;margin-right: 12px;-webkit-transition: all .2s linear;-moz-transition: all .2s linear;-o-transition: all .2s linear;-ms-transition: all .2s linear;transition: all .2s linear}
 .show-keno {margin-top: 5px;margin-left: 20px}
 .lot-gd1 li.keno {width: 25px;height: 25px;line-height: 25px;border-radius: 25px;font-size: 16px;margin-right: 4px;margin-bottom: -3px;color: #fff;border: 2px #808cb0 solid;text-shadow: 1px 1px rgba(0, 0, 0, 0.2);background: #273041}
-#gd-box2 {padding: 5px 0 0 25px}
+#gd-box2 {padding: 5px 0 0 10px}
 #gd-box2 p {height: 23px}
 .gd-box-q {color: #12b35e;font-weight: bold}
 .gd-box-h {font-weight: bold;display: inline-block;width: 20px;height: 20px;line-height: 20px;border-radius: 20px;background: #fff;text-align: center;box-shadow: 1px 1px 2px rgba(0,0,0,0.5);margin-right: 4px}
