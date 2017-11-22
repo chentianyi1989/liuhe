@@ -29,12 +29,13 @@ function submitWindow (obj) {
 		onSubmit:function(){
 		},
 	 	success:function(data){
+		 	alert(data);
 			data = eval('(' + data + ')');  
 			if(data["code"]=='1') {
 				searchForm ();
 				form.form('clear');
 				form.parents('div').window('close');
-				alert(data["msg"]);
+				
 			}else if (data["code"]=='99') {
 				alert(data["msg"]);
 			}
