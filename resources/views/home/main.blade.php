@@ -39,7 +39,7 @@
      			@include('home.notes') 
      			<div style="clear:both;"></div>
      	</div>	
-     	<img alt="" src="{{asset('/mabao/130.png')}}" style="width: 400px;position:absolute;padding-left: 30px;">	
+     	
      	<div style=" padding-bottom: 82px;">		
      			@yield('content')
      			<div style="clear:both;"></div>

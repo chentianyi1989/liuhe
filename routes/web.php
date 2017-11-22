@@ -64,6 +64,7 @@ Route::group(['domain' => env("m_domain","liuhe"), 'namespace' => 'home'],functi
     
     Route::get('/uesr/game_result','RecordController@gameResultRecord')->name("user.game_result");
     
+    Route::get('/uesr/mb','IndexController@mb')->name("user.mb");
     
     
     

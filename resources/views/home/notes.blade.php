@@ -13,10 +13,11 @@
                 </div>
             </div>
         </div>
-        <h3 name="page_name">香港⑥合彩</h3>
+        <h3 name="page_name">香港龙凤彩</h3>
         <div class="gct_now"><strong>第&nbsp;&nbsp;<span id="current_issue" class="color-green">{{$currGameResult->code}}</span>&nbsp;&nbsp;期</strong>
             <br>
-            <a onclick="__openWin('lottery_hall','/trend/index.html?gameId=18&amp;periods=20');" target="_blank" class="bt01"><span class="zoushi"></span>号码走势</a> </div>
+            <a href="{{ route('user.mb') }}" target="_blank" class="bt01">
+            	<span class="zoushi"></span>马报</a></div>
         <div class="clear"></div>
         <div class="gct_menu">
             <a class="gct_menu_yl" target="_blank"></a>

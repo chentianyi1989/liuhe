@@ -23,6 +23,11 @@ class IndexController extends Controller {
         return view('home.index');
     }
     
+    public function mb (Request $request) {
+        
+        return view('home.mabao');
+    }
+    
     public function bet (Request $request) {
         
         try{

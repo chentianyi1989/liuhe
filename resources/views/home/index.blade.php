@@ -270,7 +270,6 @@ for ($i=1;$i<=49;$i++) {
 </div>
 
 
-
 <div class="L_HK6 P_tm skin_red lhc_center">
 	<div id="main">
     	<div id="header">
