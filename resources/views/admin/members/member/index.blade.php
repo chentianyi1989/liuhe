@@ -29,11 +29,11 @@ function submitWindow (obj) {
 		onSubmit:function(){
 		},
 	 	success:function(data){
-		 	alert(data);
 			data = eval('(' + data + ')');  
 			if(data["code"]=='1') {
 				searchForm ();
 				form.form('clear');
+				alert(data["msg"]);
 				form.parents('div').window('close');
 				
 			}else if (data["code"]=='99') {
