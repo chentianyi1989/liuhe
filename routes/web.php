@@ -55,7 +55,8 @@ Route::group(['domain' => env("m_domain","admin.liuhe"), 'namespace' => 'admin']
 
 Route::group(['domain' => env("m_domain","liuhe"), 'namespace' => 'home'],function ($router){
     
-    Route::get('/','IndexController@index')->name("home");
+    Route::get('/','IndexController@home')->name("home");
+    Route::get('/index','IndexController@index')->name("index");
     
     Route::get('/recharge','IndexController@rechargeRecord')->name("home.recharge");
     

@@ -16,12 +16,16 @@ class IndexController extends Controller {
     
     
     
-    public function index(Request $request){
+    public function home(Request $request){
         
         
 //         $sysConfig = SysConfig::first();
         return view('home.home');
 //         return view('home.index');
+    }
+    
+    public function index (Request $request) {
+        return view('home.index');
     }
     
     public function mb (Request $request) {

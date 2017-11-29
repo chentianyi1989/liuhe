@@ -4,7 +4,7 @@
         <div class="ut_r"></div>
     </div>
     <div class="gct_l">
-        <a href="/"><div class="game-icon1 game_sixlottery"></div></a>
+        <a href="{{ route('index') }}"><div class="game-icon1 game_sixlottery"></div></a>
         <p class="time-title">已开盘,欢迎投注。距离关盘还有</p>
         <div class="gct-time">
             <div class="gct-time-now">
