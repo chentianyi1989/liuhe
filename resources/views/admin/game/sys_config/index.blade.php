@@ -31,14 +31,14 @@
     	</tr>
     	<tr>
     		<td>公告</td>
-    		<td><input name="note" value="{{ $sys_config->note }}"/></td>
+    		<td><textarea rows="6" cols="14" name="note">{{ $sys_config->note }}</textarea></td>
     	</tr>
     	<tr>
     		<td>状态</td>
     		<td><input name="state" value="{{ $sys_config->state }}"/></td>
     	</tr>
     	<tr>
-    		<td>开盘时间：</td><td><input name="open_at" value="{{ $sys_config->open_at }}"/></td>
+    		<td>开盘时间：</td><td><input name="open_at" value="{{ $sys_config->start_at }}"/></td>
     	</tr>
     	<tr>
     		<td>关盘时间：</td><td><input name="end_at" value="{{ $sys_config->end_at }}"/></td>

@@ -23,9 +23,7 @@ $(function () {
     		<tr>
     			<td width="80px">用户名：</td>
     			<td width="200px"><input id="username" /></td>
-    			
     		</tr>
-    		
     	</table>
 	</form>
 

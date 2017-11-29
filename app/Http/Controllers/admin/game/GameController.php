@@ -32,7 +32,7 @@ class GameController extends Controller {
      */
     public function sysConfig (Request $request) {
         
-        $sys_config = SysConfig::frist();
+        $sys_config = SysConfig::first();
         
         return view('admin.game.sys_config.index',compact("sys_config"));
     }
