@@ -50,8 +50,6 @@ Route::group(['domain' => env("m_domain","admin.liuhe"), 'namespace' => 'admin']
     
     Route::get('/game/info','game\\GameInfoController@index')->name("game.info");
     
-  
-    
 });
 
 
@@ -59,9 +57,10 @@ Route::group(['domain' => env("m_domain","liuhe"), 'namespace' => 'home'],functi
     
     Route::get('/','IndexController@index')->name("home");
     
+    Route::get('/recharge','IndexController@rechargeRecord')->name("home.recharge");
+    
     Route::get('/index2','IndexController@index2');
     Route::post('/bet','IndexController@bet')->name("home.bet");
-    
     
     
     Route::get('/uesr/game_record','RecordController@gameRecord')->name("user.game_record");
@@ -71,7 +70,6 @@ Route::group(['domain' => env("m_domain","liuhe"), 'namespace' => 'home'],functi
     Route::get('/uesr/game_result','RecordController@gameResultRecord')->name("user.game_result");
     
     Route::get('/uesr/mb','IndexController@mb')->name("user.mb");
-    
     
     
     Route::post('/uesr/login','LoginController@login')->name("user.login");

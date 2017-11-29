@@ -101,7 +101,16 @@ class IndexController extends Controller {
         }
     }
     
-
+    public function rechargeRecord (Request $request) {
+        
+        $_user = auth('member')->user();
+        if ($_user){
+            $logMemberMoney = LogMemberMoney::orWhere("type","1")->orWhere("type","2")->paginate(20);
+            return view('home.user.recharge',compact("logMemberMoney"));
+        }else{
+            return $this-> responseErr("请先登录！");
+        }
+    }
     
     
     public function index2(Request $request){

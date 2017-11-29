@@ -130,29 +130,29 @@ function clearPingMa () {
                     <td data="shengxiao_zhu">猪</td>
                 </tr>
                 <tr>
-                    <td data="col-red-" class="red">红</td>
-                    <td data="col-blue-" class="blue">蓝</td>
-                    <td data="col-green-" class="green">绿</td>
+                    <td data="red" class="red">红</td>
+                    <td data="blue" class="blue">蓝</td>
+                    <td data="green" class="green">绿</td>
                 </tr>
                 <tr>
-                    <td data="col-red-dan" class="red">红单</td>
-                    <td data="col-blue-dan" class="blue">蓝单</td>
-                    <td data="col-green-dan" class="green">绿单</td>
+                    <td data="red_dan" class="red">红单</td>
+                    <td data="blue_dan" class="blue">蓝单</td>
+                    <td data="green_dan" class="green">绿单</td>
                 </tr>
                 <tr>
-                    <td data="col-red-shuang" class="red">红双</td>
-                    <td data="col-blue-shuang" class="blue">蓝双</td>
-                    <td data="col-green-shuang" class="green">绿双</td>
+                    <td data="red_shuang" class="red">红双</td>
+                    <td data="blue_shuang" class="blue">蓝双</td>
+                    <td data="green_shuang" class="green">绿双</td>
                 </tr>
                 <tr>
-                    <td data="col-red-da" class="red">红大</td>
-                    <td data="col-blue-da" class="blue">蓝大</td>
-                    <td data="col-green-da" class="green">绿大</td>
+                    <td data="red_da" class="red">红大</td>
+                    <td data="blue_da" class="blue">蓝大</td>
+                    <td data="green_da" class="green">绿大</td>
                 </tr>
                 <tr>
-                    <td data="col-red-xiao" class="red">红小</td>
-                    <td data="col-blue-xiao" class="blue">蓝小</td>
-                    <td data="col-green-xiao" class="green">绿小</td>
+                    <td data="red_xiao" class="red">红小</td>
+                    <td data="blue_xiao" class="blue">蓝小</td>
+                    <td data="green_xiao" class="green">绿小</td>
                 </tr>
                 <tr>
 <!--                     <td data="sple-all">全选</td> -->

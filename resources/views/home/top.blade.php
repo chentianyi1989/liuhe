@@ -33,7 +33,7 @@
             <div class="user-name">账号：<span>{{ $_user->username }}</span></div>
             <div class="user-money">余额：<span>￥{{ $_user->money }}</span></div>
             <div class="money-btn" style="float: left;">
-       			<a href="/">
+       			<a href="{{ route('home.recharge') }}">
        				<button class="recharge" style="width: 80px">充值/提现</button></a>
        			<a href="{{ route('user.logout') }}">
        				<button class="withdraw" style="">退出</button></a>
