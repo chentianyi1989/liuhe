@@ -21,10 +21,11 @@
 		var _menus = {"menus":[
 			{"menuid":"3","icon":"icon-sys","menuname":"游戏管理",
 				"menus":[
+					{"menuname":"游戏监控","icon":"icon-nav","url":"{{ route('game.info') }}"},
 					{"menuname":"游戏结果记录","icon":"icon-nav","url":"{{ route('game.gameResult') }}"},
 					{"menuname":"游戏设置","icon":"icon-nav","url":"{{ route('game.game') }}"},
 			        {"menuname":"号码设置","icon":"icon-nav","url":"{{ route('game.ball') }}"},
-			        {"menuname":"游戏监控","icon":"icon-nav","url":"{{ route('game.info') }}"},
+			        {"menuname":"系统设置","icon":"icon-nav","url":"{{ route('game.game.sysConfig') }}"},
 				]
 			},{"menuid":"1","icon":"icon-sys","menuname":"系统管理",
 				"menus":[
@@ -35,14 +36,16 @@
 				"menus":[
 			        {"menuname":"用户列表","icon":"icon-nav","url":"{{ route('members.member') }}"},
 			        {"menuname":"游戏记录","icon":"icon-nav","url":"{{ route('members.gameRecord') }}"},
+			        {"menuname":"账户记录","icon":"icon-nav","url":"{{ route('members.logMoney') }}"},
 			        {"menuname":"登陆日志","icon":"icon-nav","url":"{{ route('members.loginLog') }}"},
 				]
-			},{"menuid":"3","icon":"icon-sys","menuname":"财务管理",
-				"menus":[
-			        {"menuname":"赔率设置","icon":"icon-nav","url":"#{$ctx}/business/workflow!myTask.do"},
-			        {"menuname":"赔率设置","icon":"icon-nav","url":"#{$ctx}/business/workflow!myTask.do"},
-				]
 			}
+// 			,{"menuid":"3","icon":"icon-sys","menuname":"财务管理",
+// 				"menus":[
+// 			        {"menuname":"赔率设置","icon":"icon-nav","url":"#{$ctx}/business/workflow!myTask.do"},
+// 			        {"menuname":"赔率设置","icon":"icon-nav","url":"#{$ctx}/business/workflow!myTask.do"},
+// 				]
+// 			}
 		]};
         //设置登录窗口
         function openPwd() {

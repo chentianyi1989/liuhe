@@ -16,7 +16,7 @@ return [
     ],
     'pingma_odds'=>6,
     'tema_odds'=>40,
-    
+    'kill'=>0.2,
     
     'log_member_moneny'=>[
         'type'=>

@@ -47,13 +47,8 @@ class LoginController extends Controller {
 //             echo "_user:$_user,id:$id";
             
             return redirect()->intended('/');
-//             return responseSuccess('', '登录成功', route('home'));
         }
         return responseWrong('用户名或密码错误');
-       
-            echo "Wrong";
-//         return redirect()->intended('/');
-        
     }
     
     

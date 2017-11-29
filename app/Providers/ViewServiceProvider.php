@@ -100,9 +100,6 @@ class ViewServiceProvider extends ServiceProvider
 //             echo $_user;
             $view->with(compact('_sysConfig',"gameResult","currGameResult","_user"));
             
-            
-            
-            
         });
         
         

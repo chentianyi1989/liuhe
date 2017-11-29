@@ -13,6 +13,7 @@
 
 
 Route::group(['domain' => env("m_domain","admin.liuhe"), 'namespace' => 'admin'],function ($router){
+    
     Route::get('/','index\\IndexController@index');
     
     
@@ -28,6 +29,9 @@ Route::group(['domain' => env("m_domain","admin.liuhe"), 'namespace' => 'admin']
     Route::get('/members/gameRecord','members\\GameRecordController@index')->name("members.gameRecord");
     Route::post('/members/gameRecord/list','members\\GameRecordController@gameRecordList')->name("members.gameRecord.list");
     
+    Route::get('/members/logMoney','members\\LogMoneyController@index')->name("members.logMoney");
+    Route::get('/members/logMoney/list','members\\LogMoneyController@logMoneyList')->name("members.logMoney.list");
+    
     Route::get('/members/loginLog','members\\LoginLogController@index')->name("members.loginLog");
     Route::post('/members/loginLog/list','members\\LoginLogController@loginLogList')->name("members.loginLog.list");
     
@@ -38,6 +42,8 @@ Route::group(['domain' => env("m_domain","admin.liuhe"), 'namespace' => 'admin']
     
     Route::get('/game/game','game\\GameController@index')->name("game.game");
     Route::post('/game/game/list','game\\GameController@gameList')->name("game.game.list");
+    Route::get('/game/sys_config','game\\GameController@sysConfig')->name("game.game.sysConfig");
+    Route::post('/game/sys_config/update','game\\GameController@sysConfigUpdate')->name("game.game.sysConfig.update");
     
     Route::get('/game/ball','game\\BallController@index')->name("game.ball");
     Route::post('/game/ball/list','game\\BallController@ballList')->name("game.ball.list");
@@ -72,6 +78,8 @@ Route::group(['domain' => env("m_domain","liuhe"), 'namespace' => 'home'],functi
     Route::get('/uesr/logout','LoginController@logout')->name("user.logout");
     
     Route::post('/login','IndexController@ajaxLogin')->name("home.login");
+    
+    
 });
 
 

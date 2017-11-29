@@ -8,6 +8,16 @@ $(function () {
 
 		var button = $(this);
 		var key=button.attr("data");
+
+		if("sple-clear"==key) {
+			$("#quick_sec_table_tema td").each(function () {
+				if($(this).hasClass('active')){
+					$(this).toggleClass('active');
+				}
+			});
+			clearTeMa ();
+			return ;
+		}
 		var clazz = "sple-select";
 		
 		button.toggleClass('active');
@@ -30,17 +40,9 @@ $(function () {
 				var val_name = "tema_val_td"+haomas[i];
 				if (val_name==_name||label_name==_name) {
 
-// 					if (val_name==_name&&button.hasClass('active')) {
-						$(this).find("input").val(money);
-// 					}else {
-// 						$(this).find("input").val("");
-// 					}
-					
-// 					if (button.hasClass('active')) {
-						$(this).addClass(clazz);
-// 					}else {
-// 						$(this).removeClass(clazz);
-// 					}
+					$(this).find("input").val(money);
+				
+					$(this).addClass(clazz);
 					
 					break;
 				}
@@ -156,8 +158,8 @@ function clearTeMa () {
                     <td data="col-green-xiao" class="green">绿小</td>
                 </tr>
                 <tr>
-                    <td data="sple-all">全选</td>
-                    <td colspan="2" data="sple-clear">取消</td>
+<!--                     <td data="sple-all">全选</td> -->
+                    <td colspan="3" data="sple-clear">取消</td>
                 </tr>
             </tbody>
         </table>

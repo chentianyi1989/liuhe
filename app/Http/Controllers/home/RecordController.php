@@ -7,7 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Member;
 use App\Models\GameResult;
 use App\Models\GameRecord;
-
+use Illuminate\Support\Facades\DB;
+use App\Models\LogMemberMoney;
 class RecordController extends Controller {
     
     
@@ -16,7 +17,23 @@ class RecordController extends Controller {
             $id = $request->get("id");
             $_user = auth('member')->user();
             if ($_user){
-                $gameRecord = GameRecord::where("member_id","$_user->id")->where("id","$id")->delete();
+                $gameRecord = GameRecord::where("member_id","$_user->id")->where("id","$id")->first();
+                $member = Member::where("id","$_user->id")->first();
+                DB::transaction(function() use($gameRecord,$member){
+                    $member->update([
+                        "money"=>$member->money+$gameRecord->money
+                    ]);
+                    LogMemberMoney::create([
+                        "money"=>$gameRecord->money,
+                        "created_by"=>"$member->username",
+                        "info"=>"下注撤单",
+                        "type"=>'6',
+                        'game_record_id'=>$gameRecord->id,
+                        'member_id'=>$member->id
+                    ]);
+                    $gameRecord->delete();
+                });
+                
                 return redirect()->action('home\RecordController@gameRecord');
             }else {
                 return $this-> responseErr("请先登录！");

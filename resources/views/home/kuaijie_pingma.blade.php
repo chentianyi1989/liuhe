@@ -8,6 +8,17 @@ $(function () {
 
 		var button = $(this);
 		var key=button.attr("data");
+
+		if("sple-clear"==key) {
+			$("#quick_sec_table_pingma td").each(function () {
+				if($(this).hasClass('active')){
+					$(this).toggleClass('active');
+				}
+			});
+			clearPingMa ();
+			return ;
+		}
+		
 		var clazz = "sple-select";
 		
 		button.toggleClass('active');
@@ -144,8 +155,8 @@ function clearPingMa () {
                     <td data="col-green-xiao" class="green">绿小</td>
                 </tr>
                 <tr>
-                    <td data="sple-all">全选</td>
-                    <td colspan="2" data="sple-clear">取消</td>
+<!--                     <td data="sple-all">全选</td> -->
+                    <td colspan="3" data="sple-clear">取消</td>
                 </tr>
             </tbody>
         </table>
