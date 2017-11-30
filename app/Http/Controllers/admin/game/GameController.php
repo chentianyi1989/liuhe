@@ -18,7 +18,6 @@ class GameController extends Controller {
         return view('admin.game.game.index');
     }
     
-    
     public function gameList(Request $request){
         
         
@@ -37,7 +36,19 @@ class GameController extends Controller {
         return view('admin.game.sys_config.index',compact("sys_config"));
     }
     
-    
+    public function sysConfigUpdate (Request $request) {
+        
+        $sys["title"] = $request["title"];
+        $sys["note"] = $request["note"];
+        $sys["state"] = $request["state"];
+        $sys["start_at"] = $request["start_at"];
+        $sys["end_at"] = $request["end_at"];
+        $sys["step"] = $request["step"];
+        
+        $sys_config = SysConfig::first();
+        $sys_config->update($sys);
+        return $this->responseSuccess("修改成功！");
+    }
 }
 
 

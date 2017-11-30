@@ -44,29 +44,28 @@ class IndexController extends Controller {
                 $currGameResult = GameResult::where("finish","0")->where("code","$code")->first();
                 if ($currGameResult) {
                     $gameReord = [];
-                    
+                    $_total = 0;
                     $flag = false;
                     if(array_key_exists("tema",$haomas)) {
                         $tema_haomas = $haomas["tema"];
                         $gameReord["tema"] = json_encode($tema_haomas,JSON_UNESCAPED_UNICODE);//         $gameReord["tema"] = '[{"moeny":"2","sx":"猴","code":"1"}]';
+                        foreach ($tema_haomas as $key => $value){
+                            $_total+=$value["money"];
+                        }
                         $flag = true;
                     }
                     
                     if (array_key_exists("pingma",$haomas)) {
                         $pingma_haomas = $haomas["pingma"];
                         $gameReord["pingma"] = json_encode($pingma_haomas,JSON_UNESCAPED_UNICODE);
+                        foreach ($pingma_haomas as $key => $value){
+                            $_total+=$value["money"];
+                        }
                         $flag = true;
                     }
                     
                     if ($flag == false) {
                         return $this->responseErr("请选择号码！");
-                    }
-                    $_total = 0;
-                    foreach ($tema_haomas as $key => $value){
-                        $_total=+$value["money"];
-                    }
-                    foreach ($pingma_haomas as $key => $value){
-                        $_total=+$value["money"];
                     }
                     
                     $gameReord["money"] = $_total;
@@ -75,8 +74,8 @@ class IndexController extends Controller {
                     
                     $member = Member::where("id",$_user->id)->first();
                     if ($member) {
-                        DB::transaction(function() use($gameReord,$member){
-                            
+                        try{
+                            DB::beginTransaction();
                             $total_monty = $gameReord["money"];
                             $gr=GameRecord::create($gameReord);
                             $member->update([
@@ -90,8 +89,11 @@ class IndexController extends Controller {
                                 'game_record_id'=>$gr->id,
                                 'member_id'=>$gameReord["member_id"]
                             ]);
-                        });
-                        return $this->responseSuccess("下单成功！单号：$gr->id",route('user.game_record'));
+                            DB::commit();
+                            return $this->responseSuccess("下单成功！单号：$gr->id",route('user.game_record'));
+                        }catch (\Exception $e1) {
+                            DB::rollback();
+                        }
                     }
                 }
                 return $this->responseErr("下单失败！");
@@ -101,7 +103,7 @@ class IndexController extends Controller {
             
         }catch (\Exception $e){
 //             print_r($e);
-            return $this-> responseErr("下单失败！");
+            return $this-> responseErr("下单失败$e ！");
         }
     }
     

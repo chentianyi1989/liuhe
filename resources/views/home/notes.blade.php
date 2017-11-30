@@ -13,7 +13,7 @@
                 </div>
             </div>
         </div>
-        <h3 name="page_name">香港龙凤彩</h3>
+        <h3 name="page_name">{{$_sysConfig->title}}</h3>
         <div class="gct_now"><strong>第&nbsp;&nbsp;<span id="current_issue" class="color-green">{{$currGameResult->code}}</span>&nbsp;&nbsp;期</strong>
             <br>
             <a href="{{ route('user.mb') }}" target="_blank" class="bt01">

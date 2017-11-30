@@ -30,7 +30,6 @@ function initState (val,row) {
 	return state[val];
 }
 
-
 //-->
 
 </script>

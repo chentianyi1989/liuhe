@@ -77,7 +77,6 @@ class LiuHeService{
         }
     }
     
-    
     /**
      * 关闭当前盘，开下一个盘
      */

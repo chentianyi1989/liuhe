@@ -8,7 +8,7 @@ class SysConfig extends Model
 {
     protected $table = 'sys_config';
 
-    protected $fillable = [];
+    protected $guarded = [];
 
 
 }

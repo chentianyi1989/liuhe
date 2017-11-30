@@ -19,7 +19,10 @@ class RecordController extends Controller {
             if ($_user){
                 $gameRecord = GameRecord::where("member_id","$_user->id")->where("id","$id")->first();
                 $member = Member::where("id","$_user->id")->first();
-                DB::transaction(function() use($gameRecord,$member){
+                
+                try{
+                    DB::beginTransaction();
+                
                     $member->update([
                         "money"=>$member->money+$gameRecord->money
                     ]);
@@ -32,9 +35,13 @@ class RecordController extends Controller {
                         'member_id'=>$member->id
                     ]);
                     $gameRecord->delete();
-                });
+                    DB::commit();
+                    return redirect()->action('home\RecordController@gameRecord');
+                }catch (\Exception $e1) {
+                    DB::rollback();
+                }
                 
-                return redirect()->action('home\RecordController@gameRecord');
+                return $this-> responseErr("撤单失败！");
             }else {
                 return $this-> responseErr("请先登录！");
             }

@@ -108,6 +108,7 @@
 	
 </script>
 <div style="padding-left: 20px;display:inline-block;" >
+	<form>
 	<table>
 		<tr>
 			<td>特码：<input id='rs_tm'></td>
@@ -117,9 +118,10 @@
 					<input id='rs_pm4' name="4">
 					<input id='rs_pm5' name="5">
 					<input id='rs_pm6' name="6"></td>
+			<td><input type="button" onclick="" value="提交"/></td>
 		</tr>
 	</table>
-	
+	</form>
 	结果：<br/>
 	<table>
 		<tr>
