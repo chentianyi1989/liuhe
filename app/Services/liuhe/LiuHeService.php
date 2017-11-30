@@ -40,8 +40,9 @@ class LiuHeService{
                 
                 $gr = $this->startNext ();
                 $code = $gr->code;
+                echo "$code";
                 $gameRecords = $this->gameRecordByCode($code);
-                
+                echo "tema_result:$gr->tema_result ，pingma_result:$gr->pingma_result";
                 if($gr->tema_result && $gr->pingma_result) {
                     $tm = $gr->tema_result;
                     $pm = $gr->pingma_result;
@@ -62,6 +63,7 @@ class LiuHeService{
                     $gameResult = $this->calculationResult($balls);
                     $pm = implode(',',$gameResult['pingma']);
                     $tm = $gameResult['tema'];
+                    
                     $gr->update([
                         'pingma_result'=>$pm,
                         'tema_result'=>$tm
@@ -82,11 +84,11 @@ class LiuHeService{
      */
     public function startNext () {
         $currGameResult = GameResult::where("finish","0")->first();
+//         print_r($currGameResult);
         $code = date("Ymd").$currGameResult->id;
         $currGameResult->update([
             'finish'=>'1'
         ]);
-        
         GameResult::create([
             'finish'=>'0',
             'code'=>$code
@@ -147,7 +149,7 @@ class LiuHeService{
      * @param unknown $balls = {pingma:[{},{}],tema:[{},{}]}
      * @return unknown
      */
-    public function calculationResult ($balls,$tema) {
+    public function calculationResult ($balls,$tema="") {
         
         $balls_pingma = $balls['pingma'];
         $balls_tema = $balls['tema'];
@@ -193,25 +195,19 @@ class LiuHeService{
     public function calculationTeMaResult ($balls) {
         
         $result = [];
-        $kill = 0.005;
         $total_money = 0;
         foreach ($balls as $key => $value) {
             $total_money+=$value["money"];
         }
         if ($total_money>0) {
-            
             foreach ($balls as $key => $value) {
-//                 $rate = $value["money"]/$total_money;
                 $rate = ($value["money"] * $this->tema_odds)/$total_money;
-                
                 if ($rate < $this->kill) { 
-//                     $result[$value["code"]]=$value["code"];
                     $result[]=$value["code"];
                 }
             }
             if (count($result)<1) {
                 $ball = $this->ballSort($balls)[0];
-//                 $result[$ball["code"]]=$ball["code"];
                 $result[]=$ball["code"];
             }
         }else {
@@ -219,10 +215,9 @@ class LiuHeService{
                 $result[]=$value["code"];
             }
         }
-        
         $t_i = mt_rand(0,count($result)-1);
         $tm = $result[$t_i];
-        return $tm["code"];
+        return $tm;
     }
     
     /**
@@ -243,60 +238,75 @@ class LiuHeService{
             
             //先排序
             $balls = $this->ballSort($balls,SORT_DESC);
-            $_balls = clone $balls;
+            $_balls = $balls;
             
             while (5<count($_balls)) {
-                
-                $ball_tmp = clone $_balls;
+//                 echo "<br/>".count($_balls)."<br/>";
+                $ball_tmp = $_balls;
                 $rs = [];
                 for ($i=0;$i<6;) {
-                    
                     $p_i = mt_rand(0,count($ball_tmp)-1);
                     $pm = $ball_tmp[$p_i];
-                    echo "<br/>pingma 下标 ：$p_i, code：$pm<br/>";
-                    if ($pm != $tema) {
-                        $rs[] = $ball_tmp[$p_i]["code"];
+//                     print_r($pm);
+//                     echo "<br/>pingma 下标 ：$p_i, code：".$pm["code"]."<br/>";
+                    if ($pm["code"] != $tema) {
+                        $rs[] = $pm;
                         $i++;
                     }
                     array_splice($ball_tmp, $p_i, 1);   
-                    echo "<br/>删除后：<br/>";
-                    print_r($ball_tmp);
-                    echo "<br/>";
+//                     echo "<br/>删除后：<br/>";
+//                     print_r($ball_tmp);
+//                     echo "<br/>";
                 }
-                
+//                 echo  "<br/>".count($rs)."<br/>";
+//                 print_r($rs);
+//                 echo  "<br/>";
                 if (6 == count($rs)) {
                     
                     $sumMoney = 0;
                     foreach ($rs as $k => $v) {
-                        $sumMoney+=$v->money;
+                        $sumMoney+=$v["money"];
                     }
                     $rate = $sumMoney * $this->pingma_odds / $total_money ;
-                    if ($rate<$this->kill) {
-                        return $rs;
+//                     echo "<br/>rate:$rate,$this->kill,".($rate<$this->kill)."<br/>";
+                    if ($rate < $this->kill) {
+                        //return $rs;
+//                         echo "ok";
+                        break;
                     }else {
-                        $_balls = array_splice($_balls, 0, 1);    //删除最大的金额
+//                         echo "no";
+//                         print_r($_balls);
+//                         echo "<br/>";
+                        array_splice($_balls, 0, 1);    //删除最大的金额
+//                         print_r($_balls);
+//                         echo "<br/>";
                     }
                 } else {
+                    
                     // 出现错误，停止操作
-                         
                 }
             }
         } else {
             $rs = [];
             for ($i=0;$i<6;) {
-                
                 $p_i = mt_rand(0,count($balls)-1);
-                $pm = $ball_tmp[$p_i];
-                echo "<br/>pingma 下标 ：$p_i, code：$pm<br/>";
-                if ($pm != $tema) {
-                    $rs[] = $ball_tmp[$p_i]["code"];
+                $pm = $balls[$p_i];
+                if ($pm["code"] != $tema) {
+                    $rs[] = $pm;
                     $i++;
                 }
                 array_splice($balls, $p_i, 1);
             }
         }
-        
-        return $rs;        
+//         echo "<br/>rs:";
+//         print_r($rs);
+        $r = [];
+        foreach ($rs as $k => $v) {
+            $r[] = $v["code"];
+        }
+//         echo "<br/>asd";
+//         print_r($r);
+        return $r;        
         
         //////////////////////////////////////////////////////////////////////////////////////////////////
         
