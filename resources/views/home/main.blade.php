@@ -27,7 +27,8 @@
     
 </head>
 <body>
-
+	
+	
 
 	<div style="position: relative;height: auto; min-height: 100%;">
 		<div >
@@ -39,7 +40,6 @@
      			@include('home.notes') 
      			<div style="clear:both;"></div>
      	</div>	
-     	
      	<div style=" padding-bottom: 82px;">		
      			@yield('content')
      			<div style="clear:both;"></div>
