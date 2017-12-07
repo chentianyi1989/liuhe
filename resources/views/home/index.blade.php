@@ -288,7 +288,73 @@ var sheng_xiao = ["羊","猴","鸡","狗","猪","鼠","牛","虎","兔","龙","�
 $(function () {
 	createPingMa ();
 	createTeMa ();
+
+	$("#pingma_table td").click(function(){
+		var clazz = "sple-select";
+// 		alert($(this).find("input").attr("name")+"=="+$(this).hasClass(clazz));
+		
+		var index = $(this).attr("data");
+		var input = $("#pingma_table input[data='"+index+"']");
+		if (input.attr("select")=="selected") {
+			
+		}else {
+			
+        	var money = $("#pingma_input_money").val();
+        	
+        	var label_name = "pingma_label_td"+index;
+        	var val_name = "pingma_val_td"+index;
+        	var label_td = $("#pingma_table td[name='"+label_name+"']");
+        	var val_td = $("#pingma_table td[name='"+val_name+"']");
+        	
+        	if($(this).hasClass(clazz)){
+        		
+        		label_td.removeClass(clazz);
+        		val_td.removeClass(clazz);
+        		input.val("");
+        		input.attr("select","");
+        	}else {
+        		label_td.addClass(clazz);
+        		val_td.addClass(clazz);
+        		input.val(money);
+        	}
+		}
+		if ($(this).find("input").attr("name")&&$(this).hasClass(clazz)){
+			$(this).find("input").attr("select","a");
+		}
+	});
+	$("#tema_table td").click(function(){
+		var money = $("#tema_input_money").val();
+		var index = $(this).attr("data");
+		var label_name = "tema_label_td"+index;
+		var val_name = "tema_val_td"+index;
+		var label_td = $("#tema_table td[name='"+label_name+"']");
+		var val_td = $("#tema_table td[name='"+val_name+"']");
+		var input = $("#tema_table input[data='"+index+"']");
+		
+		var clazz = "sple-select";
+		
+		if($(this).hasClass(clazz)){
+			
+			label_td.removeClass(clazz);
+			val_td.removeClass(clazz);
+			input.val("");
+		}else {
+			label_td.addClass(clazz);
+			val_td.addClass(clazz);
+			input.val(money);
+		}
+	});
 });
+
+function clickMoneyInput (obj) {
+
+	var td = $(obj).parent();
+	var name = "pingma_val_td"+$(obj).attr("data");
+	if (td.hasClass("sple-select")&&td.attr("name")==name) {
+		$(obj).attr("select","selected");
+	}
+	
+}
 
 function createPingMa () {
 	var trs = []
@@ -324,15 +390,15 @@ function createTeMa () {
 }
 function createItem (index,type) {
 
-	var rs = ['<td class="GTM GTM0 name" name="'+type+'_label_td'+index+'">'];
+	var rs = ['<td class="GTM GTM0 name" name="'+type+'_label_td'+index+'" data="'+index+'">'];
 	if (index>=10) {
 		rs.push('<span class="b'+index+'"></span></td>');
 	}else {
 		rs.push('<span class="b0'+index+'"></span></td>');
 	}
 	var sx = sheng_xiao[index%12];
-	rs.push('<td name="'+type+'_label_td'+index+'">'+sx+'</td>');
-	rs.push('<td class="GTM GTM0 amount ha" name="'+type+'_val_td'+index+'">');
+	rs.push('<td name="'+type+'_label_td'+index+'" data="'+index+'">'+sx+'</td>');
+	rs.push('<td class="GTM GTM0 amount ha" name="'+type+'_val_td'+index+'" data="'+index+'">');
 	rs.push(createMontyInput(index,sx,type));
 	rs.push('</td>');
 
@@ -348,48 +414,15 @@ function createMontyInput (code,sx,type) {
     	"onkeydown=\"this.value=this.value.replace(/\D/g,'')&amp;&amp;this.value^0|[1-9][0-9]*$\"",
     	"onkeypress=\"if ((event.keyCode<48 || event.keyCode>57)) event.returnValue=false\"",
     	"onafterpaste=\"this.value=this.value.replace(/\D/g,'').replace(/^0+/g,'')\"",
+    	"onclick=\"clickMoneyInput(this)\"",
+    	
     	'class="tmthis ba" maxlength="6" code="'+code+'" name="'+type+'_money[]"',
     	'sx="'+sx+'"',
+    	'data="'+code+'"',
     	'type="'+type+'">'
 	].join("");
 }
 
-
-
-// function sureBetForm() {
-// 	var tema_haomas = [];
-// 	$("#tema_table input").each(function(){
-// 		var inp = $(this);
-// 		var money = inp.val();
-// 		var code = inp.attr("code");
-// 		var sx = inp.attr("sx")
-		
-// 		if (money.length > 0) {
-// 			var haoma = {};
-// 			haoma["money"] = money;
-// 			haoma["sx"] = sx;
-// 			haoma["code"] = code;
-// 			tema_haomas.push(haoma);
-// 		}
-// 	});
-
-// 	var tema_table = $("<table>");
-// 	for (var i in tema_haomas) {
-// 		var hm = tema_haomas[i];
-// 		var tr = $("<tr>");
-// 		var td_code = "<td>"+hm["code"]+"</td>";
-// 		tr.append(td_code);
-// 		var td_sx = "<td>"+hm["sx"]+"</td>";
-// 		tr.append(td_sx);
-// 		var td_money = "<td>"+hm["money"]+"</td>";
-// 		tr.append(td_money);
-// 		tema_table.append(tr);
-// 	}
-
-// 	$("#tema_show_haoma").text("");
-// 	$("#tema_show_haoma").append(tema_table);
-	
-// }
 
 function submitBetForm () {
 

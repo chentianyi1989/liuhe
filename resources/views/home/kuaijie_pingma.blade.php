@@ -3,7 +3,7 @@
 
 $(function () {
 
-
+	
 	$("#quick_sec_table_pingma td").click(function(i){
 
 		var button = $(this);

@@ -18,7 +18,7 @@ class Controller extends BaseController
         return ["total"=>$page->total(),"rows"=>$page->items()];
     }
     
-    public function responseSuccess ($msg="",$url="",$code="1"){
+    public function responseSuccess ($msg="成功",$url="",$code="1"){
         
         return ["msg"=>$msg,"code"=>$code,"url"=>$url];
     }

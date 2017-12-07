@@ -341,10 +341,10 @@ class LiuHeService{
     
     
     
-    public function currGameInfo () {
-        $currGameResult = GameResult::where("finish","0")->first();
-        return $this->gameInfo($currGameResult->code);
-    }
+//     public function currGameInfo () {
+//         $currGameResult = GameResult::where("finish","0")->first();
+//         return $this->gameInfo($currGameResult->code);
+//     }
     
     public function gameInfo ($code) {
         $gameRecords = $this->gameRecordByCode($code);

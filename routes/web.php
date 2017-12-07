@@ -49,6 +49,9 @@ Route::group(['domain' => env("m_domain","admin.liuhe"), 'namespace' => 'admin']
     Route::post('/game/ball/list','game\\BallController@ballList')->name("game.ball.list");
     
     Route::get('/game/info','game\\GameInfoController@index')->name("game.info");
+    Route::post('/game/info/updateGameResult','game\\GameInfoController@updateGameResult')->name("game.info.updateGameResult");
+    
+    Route::get('/game/betInfo','game\\GameInfoController@betInfo')->name("game.betInfo");
     
 });
 

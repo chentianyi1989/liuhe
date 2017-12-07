@@ -22,6 +22,7 @@
 			{"menuid":"3","icon":"icon-sys","menuname":"游戏管理",
 				"menus":[
 					{"menuname":"游戏监控","icon":"icon-nav","url":"{{ route('game.info') }}"},
+					{"menuname":"下注监控","icon":"icon-nav","url":"{{ route('game.betInfo') }}"},
 					{"menuname":"游戏结果记录","icon":"icon-nav","url":"{{ route('game.gameResult') }}"},
 					{"menuname":"游戏设置","icon":"icon-nav","url":"{{ route('game.game') }}"},
 			        {"menuname":"号码设置","icon":"icon-nav","url":"{{ route('game.ball') }}"},
