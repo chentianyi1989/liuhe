@@ -247,7 +247,8 @@ for ($i=1;$i<=49;$i++) {
 
 @section('content')
 <img style="position: fixed;width: 450px" src="{{asset('/mabao/12.jpg')}}" >
-<div class="L_HK6 P_tm skin_red lhc_center" style="margin-left: 600px">
+<!-- style="margin-left: 600px" -->
+<div class="L_HK6 P_tm skin_red lhc_center" >
     <div id="main">
         <div id="bet_panel" class="bet_panel input_panel bet_closed">
              @include('home.pingma')
