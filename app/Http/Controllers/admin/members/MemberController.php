@@ -43,11 +43,11 @@ class MemberController extends Controller
         
         try{
             
-            $member = Member::where("username",$username)->get();
+            $member = Member::where("username",$username)->first();
             if (!$member) {
                 $data = $request->all();
                 $data["money"] = 0;
-                $data["password"] = "123456";
+                $data["password"] = password_hash("123456", PASSWORD_DEFAULT);;
                 Member::create($data);
                 return $this->responseSuccess("添加用户$username 成功！");
             }
@@ -71,7 +71,7 @@ class MemberController extends Controller
             $member->update($data);
             $result["code"] = "0";
         }catch (\Exception $e){
-            return $this-> responseErr("修改用户$username 失败！");
+            return $this-> responseErr("修改用户$username 失败！$e");
         }
         
         return $this->responseSuccess("修改用户$username 成功！");
