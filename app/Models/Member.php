@@ -24,7 +24,7 @@ class Member extends Authenticatable
     ];
 
 
-    public function getGameResults() {
+    public function gameRecords() {
         return $this->hasMany('App\Models\GameRecord');
     }
 

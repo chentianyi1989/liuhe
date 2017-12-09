@@ -212,6 +212,6 @@ a,a:hover {text-decoration: none;}
 
 .leaveh-1, .leaveh-2, .leavem-1, .leavem-2, .leaves-1, .leaves-2 {width: 42px;height: 54px;color: #fff;margin-right: 2px;text-align: center;font-size: 46px;font-weight: 500;line-height: 40px;display: inline-block;text-shadow: 1px 1px #000;background: url(../images/all_ico.png) -262px -130px no-repeat;padding: 5px 0 0 0;}
 
-.box-ul a {cursor: pointer;float: right;display: inline-block;height: 120px;padding: 5px 0 5px 8px;text-decoration: none;color: #f6f6f6;background:#2f333d;-webkit-transition: all .2s linear;-moz-transition: all .2s linear;-o-transition: all .2s linear;-ms-transition: all .2s linear;transition: all .2s linear; line-height: 17px;}
+.box-ul a {cursor: pointer;float: right;display: inline-block;height: 70px;padding: 5px 0 5px 8px;text-decoration: none;color: #f6f6f6;background:#2f333d;-webkit-transition: all .2s linear;-moz-transition: all .2s linear;-o-transition: all .2s linear;-ms-transition: all .2s linear;transition: all .2s linear; line-height: 17px;}
 
 

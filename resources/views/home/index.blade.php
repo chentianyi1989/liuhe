@@ -246,9 +246,9 @@ for ($i=1;$i<=49;$i++) {
 @extends('home.main')
 
 @section('content')
-<img style="position: fixed;width: 450px" src="{{asset('/mabao/12.jpg')}}" >
+<img style="position: fixed;width: 560px" src="{{asset('/mabao/12.jpg')}}" >
 <!-- style="margin-left: 600px" -->
-<div class="L_HK6 P_tm skin_red lhc_center" >
+<div class="L_HK6 P_tm skin_red lhc_center" style="margin-left: 700px">
     <div id="main">
         <div id="bet_panel" class="bet_panel input_panel bet_closed">
              @include('home.pingma')
@@ -259,7 +259,7 @@ for ($i=1;$i<=49;$i++) {
 </div>
 		
 	
-<div class="L_HK6 P_tm skin_red lhc_center">
+<div class="L_HK6 P_tm skin_red lhc_center" style="margin-left: 700px">
 	<div id="main">
 		<div id="bet_panel" class="bet_panel input_panel bet_closed">
 			@include('home.tema')
@@ -478,7 +478,6 @@ function submitBetForm () {
             }else {
             	alert(data.msg);
             }
-            
         }
     });
 }

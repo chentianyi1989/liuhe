@@ -9,6 +9,7 @@ use App\Services\liuhe\LiuHeService;
 use Illuminate\Support\Facades\DB;
 use App\Models\LogSys;
 use App\Models\GameRecord;
+use App\Models\Member;
 class GameInfoController extends Controller {
     
     //use ValidationTrait;
@@ -86,14 +87,101 @@ class GameInfoController extends Controller {
     
     public function betInfo (Request $request) {
         
-        $currGameResult = GameResult::where("finish","0")->first();
-        $gameRecord = GameRecord::where("code","$currGameResult->code")->with('member')->groupBy("member_id")->get([
-            DB::raw('member_id'),
-            DB::raw('sum(money) as money')
-        ]);
+        $_member = new Member();
         
-        $a = $gameRecord->toJson();
-        return view('admin.game.bet_info.index',compact("gameRecord","a"));
+        $username = $request["username"];
+        if ($username) {
+            $_member = $_member->where("username",$username);
+        }
+        $name = $request["name"];
+        if ($name) {
+            $_member = $_member->where("name","like","%$name%");
+        }
+        
+        
+        $currGameResult = GameResult::where("finish","0")->first();
+//         $gameRecords = GameRecord::where("code","$currGameResult->code")->with('member')->groupBy("member_id")->get([
+//             DB::raw('member_id'),
+//             DB::raw('pingma'),
+//             DB::raw('tema')
+            
+//         ]);
+//         foreach ($gameRecords as $key => $value) {
+            
+//         }
+//         print_r ($gameRecords);
+//         echo $gameRecords->toJson();
+
+        $_members = $_member->with(["gameRecords"=>function($query)use($currGameResult){
+            $query->where('code', $currGameResult->code);
+        }])->get();
+        
+        $members = [];
+        foreach ($_members as $key =>$value) {
+            
+            $gameRecord = $value->gameRecords;
+            if ($gameRecord && count($gameRecord)>0) {
+                
+                $member = [];
+                $member["id"] = $value->id;
+                $member["name"] = $value->name;
+                $member["money"] = $value->money;
+                $member["username"] = $value->username;
+                $pingma_balls = [];
+                $tema_balls = [];
+                foreach ($gameRecord as $k => $v) {
+                    $pingmas = $v->pingma;
+                    if ($pingmas) {
+                        $pingmas = json_decode($pingmas);
+                        foreach($pingmas as $_k => $_v) {
+                            $_code = $_v->code;
+                            $_ball = [];
+                            if(array_key_exists($_code, $pingma_balls)){
+                                $_ball = $pingma_balls[$_code];
+                            }else {
+                                $pingma_balls[$_code] = 0;
+                            }
+                            $pingma_balls[$_code] = $pingma_balls[$_code]+floatval($_v->money);
+                        }
+                    }
+                    $temas = $v->tema;
+                    if ($temas) {
+                        $temas = json_decode($temas);
+                        foreach($temas as $_k => $_v) {
+                            $_code = $_v->code;
+                            $_ball = [];
+                            if(array_key_exists($_code, $tema_balls)){
+                                $_ball = $tema_balls[$_code];
+                            }else {
+                                $tema_balls[$_code] = 0;
+                            }
+                            $tema_balls[$_code] = $tema_balls[$_code]+floatval($_v->money);
+                        }
+                    }
+                }
+                
+                ksort($pingma_balls);
+                ksort($tema_balls);
+                $member["pingma_balls"] = $pingma_balls;
+                $member["tema_balls"] = $tema_balls;
+                
+                $members[] = $member;
+            }
+        }
+        
+//         print_r($members);
+//         echo $members->toJson();
+        
+        
+//         $liuService = new LiuHeService();
+//         $balls = $liuService->gameRecordEveryBall($gameRecord);
+
+//         $gameRecord = GameRecord::where("code","$currGameResult->code")->with('member')->groupBy("member_id")->get([
+//             DB::raw('member_id'),
+//             DB::raw('sum(money) as money')
+//         ]);
+        
+        return view('admin.game.bet_info.index',compact("members","username","name"));
     }
 }
 
