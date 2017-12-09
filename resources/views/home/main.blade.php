@@ -21,8 +21,8 @@
     <link href="{{asset('/css/game_main.css')}}" rel="stylesheet">
     <link href="{{asset('/css/bet.css')}}" rel="stylesheet">
     <link href="{{asset('/css/g_HK6.css')}}" rel="stylesheet">
-    
-    
+    <link href="{{asset('/css/page.css')}}" rel="stylesheet">
+   
     <link href="{{asset('/css/style.css')}}" rel="stylesheet">
     
 </head>

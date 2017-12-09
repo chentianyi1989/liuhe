@@ -64,9 +64,7 @@
 					</tr>
 				@endforeach
 			</tbody>
-			
 		</table>
-    	{{$gameRecord->links()}}
     </div>
 </div>
 

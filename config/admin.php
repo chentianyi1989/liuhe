@@ -14,8 +14,8 @@ return [
         "1"=>'启用',
         "0"=>"停用"
     ],
-    'pingma_odds'=>6,
-    'tema_odds'=>44,
+    'pingma_odds'=>6.8,
+    'tema_odds'=>46,
     'kill'=>0.2,
     
     'log_member_moneny'=>[

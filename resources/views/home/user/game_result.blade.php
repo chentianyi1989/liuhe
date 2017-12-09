@@ -31,9 +31,8 @@
 					</tr>
 				@endforeach
 			</tbody>
-			
 		</table>
-    	{{$gameResult->links()}}
+    	{{ $gameResult->links() }}
     </div>
 </div>
 
