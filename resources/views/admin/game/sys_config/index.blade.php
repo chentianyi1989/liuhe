@@ -39,10 +39,14 @@
     		<td><input name="state" value="{{ $sys_config->state }}"/></td>
     	</tr>
     	<tr>
-    		<td>开盘时间：</td><td><input name="start_at" value="{{ $sys_config->start_at }}"/></td>
+    		<td>开盘时间：</td><td>
+    			<input name="start_at" class="Wdate" onfocus="WdatePicker({dateFmt:'HH:00:00',readOnly:true})" value="{{ $sys_config->start_at }}">
+    		</td>
     	</tr>
     	<tr>
-    		<td>关盘时间：</td><td><input name="end_at" value="{{ $sys_config->end_at }}"/></td>
+    		<td>关盘时间：</td><td>
+    			<input name="end_at" class="Wdate" onfocus="WdatePicker({dateFmt:'HH:59:59',readOnly:true})" value="{{ $sys_config->end_at }}">
+    		</td>
     	</tr>
     	<tr>
     		<td>开盘间隔：</td><td><input name="step" value="{{ $sys_config->step }}"/></td>

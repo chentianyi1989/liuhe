@@ -52,9 +52,11 @@ class RecordController extends Controller {
         
         $_user = auth('member')->user();
         if ($_user){
-            
+            $gameRecord = [];
             $gameResult = GameResult::where("finish","0")->first();
-            $gameRecord = GameRecord::where("member_id","$_user->id")->where("code","$gameResult->code")->orderBy('created_at', 'desc')->paginate(9999);
+            if($gameResult) {
+                $gameRecord = GameRecord::where("member_id","$_user->id")->where("code","$gameResult->code")->orderBy('created_at', 'desc')->paginate(9999);
+            }
             return view('home.user.game_record',compact("gameRecord"));
         }else {
             return $this-> responseErr("请先登录！");

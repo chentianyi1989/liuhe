@@ -76,6 +76,16 @@ class ViewServiceProvider extends ServiceProvider
             $_sysConfig= SysConfig::first();
             //             $_api_list = Api::where('on_line', 0)->orderBy('created_at', 'desc')->pluck('api_name', 'id')->toArray();
             
+            $step = $_sysConfig->step * 60;
+            
+            
+            $currTime = date('H:i:s');
+            $count = ceil((strtotime($currTime)-strtotime($_sysConfig->start_at)) / $step);
+            $nextOpenTime = strtotime($_sysConfig->start_at)+ ($count * $step) - strtotime($currTime);
+            
+//             echo "currTime=$currTime<br/>";
+//             echo "next=$next<br/>";
+            
             $gameResult = GameResult::where("finish","1")->orderBy('code', 'desc')->paginate(5);
             foreach ($gameResult as $key => $val) {
                 $result = $val["pingma_result"];
@@ -98,7 +108,7 @@ class ViewServiceProvider extends ServiceProvider
             
             $_user = auth('member')->user();
 //             echo $_user;
-            $view->with(compact('_sysConfig',"gameResult","currGameResult","_user"));
+            $view->with(compact('_sysConfig',"gameResult","currGameResult","_user","nextOpenTime"));
             
         });
         

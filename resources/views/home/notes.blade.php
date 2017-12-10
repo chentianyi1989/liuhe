@@ -21,9 +21,72 @@ function toggleQiShu (obj) {
 		tab1.css("display","none");
 		tab2.css("display","block");
 	}
-	
 }
 
+
+$(function () {
+
+	var time = 60*60*2;
+// 	time = 5;
+	countdownTime({{$nextOpenTime or "null"}});
+	
+});
+
+//倒计时
+function countdownTime(time) {
+	if (time == "null") {
+		return;
+	}
+    var $h1 = $('#count_down').find('span.leaveh-1'),
+            $h2 = $('#count_down').find('span.leaveh-2'),
+            $m1 = $('#count_down').find('span.leavem-1'),
+            $m2 = $('#count_down').find('span.leavem-2'),
+            $s1 = $('#count_down').find('span.leaves-1'),
+            $s2 = $('#count_down').find('span.leaves-2');
+    var t = time * 1000;
+    var d, h, m, s;
+    var end = new Date().getTime() + t;
+    if (t > 0) {
+        CDTime = setInterval(function () {
+            t = end - new Date().getTime();
+            d = Math.floor(t / (24 * 3600 * 1000));
+            if (t > 0) {
+                h = Math.floor(t /1000 / 60 / 60 % 24) + d * 24;
+                // h = Math.floor(t / 1000 / 60 / 60 % 24);
+                if (h < 10) {
+                    // h = "0" + h;
+                    $h1.text('0');
+                    $h2.text(h);
+                } else {
+                    h = h + '';
+                    $h1.text(h.substr(0, 1));
+                    $h2.text(h.substr(1, 2));
+                }
+                m = Math.floor(t / 1000 / 60 % 60);
+                if (m < 10) {
+                    $m1.text('0');
+                    $m2.text(m);
+                } else {
+                    m = m + '';
+                    $m1.text(m.substr(0, 1));
+                    $m2.text(m.substr(1, 2));
+                }
+                s = Math.floor(t / 1000 % 60);
+                if (s < 10) {
+                    $s1.text('0');
+                    $s2.text(s);
+                } else {
+                    s = s + '';
+                    $s1.text(s.substr(0, 1));
+                    $s2.text(s.substr(1, 2));
+                }
+            } else {
+                clearInterval(CDTime);
+                window.location.reload();
+            }
+        }, 1000);
+    }
+}
 </script>
 
 <div class="gm_con_to" style="max-width:1040px;margin-left:auto;margin-right:auto;">
@@ -33,20 +96,37 @@ function toggleQiShu (obj) {
     </div>
     <div class="gct_l">
         <a href="{{ route('index') }}"><div class="game-icon1 game_sixlottery"></div></a>
-        <p class="time-title">已开盘,欢迎投注。距离关盘还有</p>
-        <div class="gct-time">
-            <div class="gct-time-now">
-                <input id="lottory_open" value="true" type="hidden">
-                <div class="gct-time-now-l" id="count_down"> <span class="leaveh-1">4</span><span class="leaveh-2">0</span><span class="interval">:</span><span class="leavem-1">2</span><span class="leavem-2">2</span><span class="interval">:</span><span class="leaves-1">5</span><span class="leaves-2">0</span>
+        
+        @if ($currGameResult) 
+        	<p class="time-title">已开盘,欢迎投注。距离关盘还有</p>
+            <div class="gct-time">
+                <div class="gct-time-now">
+                    <input id="lottory_open" value="true" type="hidden">
+                    <div class="gct-time-now-l" id="count_down"> 
+                    <span class="leaveh-1">0</span><span class="leaveh-2">0</span><span class="interval">:</span>
+                    <span class="leavem-1">0</span><span class="leavem-2">0</span><span class="interval">:</span>
+                    <span class="leaves-1">0</span><span class="leaves-2">0</span>
+                    </div>
                 </div>
             </div>
-        </div>
-        <h3 name="page_name">{{$_sysConfig->title}}</h3>
-        <div class="gct_now"><strong>第&nbsp;&nbsp;<span id="current_issue" class="color-green">{{$currGameResult->code}}</span>&nbsp;&nbsp;期</strong>
-            <br>
-<!--             <a href="{{ route('user.mb') }}" target="_blank" class="bt01"> -->
-<!--             	<span class="zoushi"></span>马报</a> -->
-            	</div>
+            <h3 name="page_name">{{$_sysConfig->title}}</h3>
+        	<div class="gct_now"><strong>第&nbsp;&nbsp;<span id="current_issue" class="color-green">{{$currGameResult->code }}</span>&nbsp;&nbsp;期</strong></div>
+        @else
+        	<p class="time-title">未开盘,距离开盘还有</p>
+            <div class="gct-time">
+                <div class="gct-time-now">
+                    <input id="lottory_open" value="true" type="hidden">
+                    <div class="gct-time-now-l" id="count_down"> 
+                    <span class="leaveh-1">0</span><span class="leaveh-2">0</span><span class="interval">:</span>
+                    <span class="leavem-1">0</span><span class="leavem-2">0</span><span class="interval">:</span>
+                    <span class="leaves-1">0</span><span class="leaves-2">0</span>
+                    </div>
+                </div>
+            </div>
+            <h3 name="page_name">{{$_sysConfig->title}}</h3>
+        	<div class="gct_now"><strong><span id="current_issue" class="color-green">暂未未开盘</span></strong></div>	
+        @endif
+        
         <div class="clear"></div>
         <div class="gct_menu">
             <a class="gct_menu_yl" target="_blank"></a>
@@ -64,7 +144,7 @@ function toggleQiShu (obj) {
             		<?php  $gr = $gameResult[$i]; ?>
                     
                     <div id="gd-box1" class="showleft" style="position: absolute; top: 40px;">
-                        <p>香港⑥合彩 第&nbsp;&nbsp;
+                        <p>{{$_sysConfig->title}} 第&nbsp;&nbsp;
                             <b><span class="color-green">{{ $gr->code }}</span></b>&nbsp;&nbsp;期
                             <span id="lt_opentimebox2" style="color:#F9CE46;"><strong></strong></span>
                         </p>

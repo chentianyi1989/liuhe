@@ -5,4 +5,4 @@
 	
 <script type="text/javascript" src="{{ asset('/plugin/jquery.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('/plugin/easyui/ui/jquery.easyui.min.js') }}"></script>
-
+<script type="text/javascript" src="{{ asset('/plugin/My97DatePicker/WdatePicker.js') }}"></script> 

@@ -427,7 +427,7 @@ function createMontyInput (code,sx,type) {
 
 function submitBetForm () {
 
-	var haomas = {"code":"{{$currGameResult->code}}"};
+	var haomas = {"code":"{{$currGameResult->code or '' }}"};
 	var tema_haomas = [];
 	$("#tema_table input").each(function(){
 		var inp = $(this);
