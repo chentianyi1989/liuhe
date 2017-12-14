@@ -7,7 +7,7 @@
             <label class="checkdefault">
                 <span class="color_lv bold">玩法说明：</span>
             </label>
-            <label class="quickAmount"><span class="color_lv bold">每期开奖6个号码，每个号码赔率为6</span>
+            <label class="quickAmount"><span class="color_lv bold">每期开奖6个号码，每个号码赔率为{{config('admin.pingma_odds')}}</span>
             </label>
         </div>
         <div class="buttons">

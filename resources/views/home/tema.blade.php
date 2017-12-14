@@ -6,7 +6,7 @@
         <div class="buttons">
             <label class="checkdefault">
                 <span class="color_lv bold">玩法说明：</span></label>
-            <label class="quickAmount"><span class="color_lv bold">每期开奖1个号码，每个号码赔率为40</span></label>
+            <label class="quickAmount"><span class="color_lv bold">每期开奖1个号码，每个号码赔率为{{ config('admin.tema_odds') }}</span></label>
         </div>
         <div class="buttons">
             <label class="checkdefault">
