@@ -246,7 +246,7 @@ for ($i=1;$i<=49;$i++) {
 @extends('home.main')
 
 @section('content')
-<img style="position: fixed;width: 500px;height: 680px" src="{{asset('/mabao/{{$currGameResult->code }}.jpg')}}" >
+<img style="position: fixed;width: 500px;height: 680px" src="/mabao/{{asset('$currGameResult->code) }}.jpg" >
 <!-- style="margin-left: 600px" -->
 <div class="L_HK6 P_tm skin_red lhc_center" style="margin-left: 600px">
     <div id="main">
