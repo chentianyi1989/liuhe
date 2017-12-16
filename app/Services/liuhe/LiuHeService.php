@@ -85,7 +85,7 @@ class LiuHeService{
     public function startNext () {
         $currGameResult = GameResult::where("finish","0")->first();
 //         print_r($currGameResult);
-        $code = date("YmdHi");
+        $code = date("YmdH");
         $currGameResult->update([
             'finish'=>'1'
         ]);
