@@ -22,7 +22,7 @@
 					{"menuname":"游戏监控","icon":"icon-nav","url":"{{ route('game.info') }}"},
 					{"menuname":"下注监控","icon":"icon-nav","url":"{{ route('game.betInfo') }}"},
 					{"menuname":"游戏结果记录","icon":"icon-nav","url":"{{ route('game.gameResult') }}"},
-					{"menuname":"游戏设置","icon":"icon-nav","url":"{{ route('game.game') }}"},
+// 					{"menuname":"游戏设置","icon":"icon-nav","url":"{{ route('game.game') }}"},
 // 			        {"menuname":"号码设置","icon":"icon-nav","url":"{{ route('game.ball') }}"},
 			        {"menuname":"系统设置","icon":"icon-nav","url":"{{ route('game.game.sysConfig') }}"},
 				]
@@ -131,7 +131,7 @@
 	<div class="head">
 		
 		<span style="padding-left:10px; font-size: 16px;float: left; ">
-<!--     		香港龙凤彩后台 -->
+    		香港龙凤彩后台
     	</span>
     	
 		<span style="padding-right:20px;float: right;" >
@@ -159,7 +159,6 @@
 <div id="mainPanle" region="center" style="background: #eee; overflow-y:hidden">
     <div id="tabs" class="easyui-tabs"  fit="true" border="false"  data-options="tools:'#tab-tools'">
 		<div title="欢迎使用" style="padding:20px;overflow:hidden;" id="home">
-			<h1>Welcome to jQuery UI!</h1>
 		</div>
 	</div>
 </div>
