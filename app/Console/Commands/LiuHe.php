@@ -12,15 +12,15 @@ class LiuHe extends Command
      *
      * @var string
      */
-    protected $signature = 'ag:game_record';
-
+    protected $signature = 'liuhe:start_result';
+    
     /**
      * The console command description.
      *
      * @var string
      */
     protected $description = 'Command description';
-
+    
     /**
      * Create a new command instance.
      *
@@ -30,7 +30,7 @@ class LiuHe extends Command
     {
         parent::__construct();
     }
-
+    
     /**
      * Execute the console command.
      *

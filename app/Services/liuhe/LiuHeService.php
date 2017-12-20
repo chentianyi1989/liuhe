@@ -8,6 +8,7 @@ use App\Models\Member;
 use App\Models\LogMemberMoney;
 use Illuminate\Support\Facades\DB;
 use App\Models\LogSys;
+use App\Models\SysConfig;
 
 class LiuHeService{
     
@@ -35,41 +36,45 @@ class LiuHeService{
      * 计算结果
      */
     public function getResult () {
+        
         try{
             DB::transaction(function() {
                 
                 $gr = $this->startNext ();
-                $code = $gr->code;
-                echo "$code";
-                $gameRecords = $this->gameRecordByCode($code);
-                echo "tema_result:$gr->tema_result ，pingma_result:$gr->pingma_result";
-                if($gr->tema_result && $gr->pingma_result) {
-                    $tm = $gr->tema_result;
-                    $pm = $gr->pingma_result;
-                    
-                    $gameResult = ["tema"=>$tm,"pingma"=>explode($pm, ",")];
-                    
-                }else if ($gr->tema_result) {
-                    
-                    $balls = $this->gameRecordEveryBall($gameRecords);
-                    $gameResult = $this->calculationResult($balls,$gr->tema_result);
-                    $pm = implode(',',$gameResult['pingma']);
-                    $gr->update([
-                        'pingma_result'=>$pm
-                    ]);
-                }else {
-                    
-                    $balls = $this->gameRecordEveryBall($gameRecords);
-                    $gameResult = $this->calculationResult($balls);
-                    $pm = implode(',',$gameResult['pingma']);
-                    $tm = $gameResult['tema'];
-                    
-                    $gr->update([
-                        'pingma_result'=>$pm,
-                        'tema_result'=>$tm
-                    ]);
+                
+                if ($gr) {
+                    $code = $gr->code;
+                    echo "$code";
+                    $gameRecords = $this->gameRecordByCode($code);
+                    echo "tema_result:$gr->tema_result ，pingma_result:$gr->pingma_result";
+                    if($gr->tema_result && $gr->pingma_result) {
+                        $tm = $gr->tema_result;
+                        $pm = $gr->pingma_result;
+                        
+                        $gameResult = ["tema"=>$tm,"pingma"=>explode($pm, ",")];
+                        
+                    }else if ($gr->tema_result) {
+                        
+                        $balls = $this->gameRecordEveryBall($gameRecords);
+                        $gameResult = $this->calculationResult($balls,$gr->tema_result);
+                        $pm = implode(',',$gameResult['pingma']);
+                        $gr->update([
+                            'pingma_result'=>$pm
+                        ]);
+                    }else {
+                        
+                        $balls = $this->gameRecordEveryBall($gameRecords);
+                        $gameResult = $this->calculationResult($balls);
+                        $pm = implode(',',$gameResult['pingma']);
+                        $tm = $gameResult['tema'];
+                        
+                        $gr->update([
+                            'pingma_result'=>$pm,
+                            'tema_result'=>$tm
+                        ]);
+                    }
+                    $this->payout($gameResult,$gameRecords);
                 }
-                $this->payout($gameResult,$gameRecords);
             });
         }catch (\Exception $e){
             LogSys::create([
@@ -83,16 +88,42 @@ class LiuHeService{
      * 关闭当前盘，开下一个盘
      */
     public function startNext () {
+        
+        $sysConfig = SysConfig::first();
         $currGameResult = GameResult::where("finish","0")->first();
-//         print_r($currGameResult);
-        $code = date("YmdH");
-        $currGameResult->update([
-            'finish'=>'1'
-        ]);
-        GameResult::create([
-            'finish'=>'0',
-            'code'=>$code
-        ]);
+        $currTime = date("H:i:s");
+        echo "currGameResult:$currGameResult";
+        echo "(strtotime($currTime)-strtotime($sysConfig->start_at))>=0 &&(strtotime($currTime)-strtotime($sysConfig->end_at))<0";
+        if((strtotime($currTime)-strtotime($sysConfig->start_at))>=0
+         &&(strtotime($currTime)-strtotime($sysConfig->end_at))<0){
+             $code = date("YmdH");
+             if ($currGameResult) {
+                 
+                 $currGameResult->update([
+                     'finish'=>'1'
+                 ]);
+                 GameResult::create([
+                     'finish'=>'0',
+                     'code'=>$code
+                 ]);
+                 
+             } else {
+                 GameResult::create([
+                     'finish'=>'0',
+                     'code'=>$code
+                 ]);
+             }
+            
+        }else if ((strtotime($currTime)-strtotime($sysConfig->start_at)<0)) {
+            
+        }else if ((strtotime($currTime)-strtotime($sysConfig->end_at)>=0)) {
+            
+            if ($currGameResult) {
+                $currGameResult->update([
+                    'finish'=>'1'
+                ]);
+            }
+        }
         return $currGameResult;
     }
     

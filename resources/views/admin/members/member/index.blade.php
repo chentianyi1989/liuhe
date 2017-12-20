@@ -123,7 +123,7 @@ function clearSearchUserForm(){
 	</form>
 
 	<div style="text-align:left;padding:5px">
-    	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="searchForm()">查询</a>
+    	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="searchForm(this)">查询</a>
     	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="clearSearchUserForm()">清空</a>
     	
     	<a href="#" onclick="openRecharge()" class="easyui-linkbutton" data-options="iconCls:'icon-add'">充值</a>

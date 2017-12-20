@@ -15,8 +15,6 @@
 	<script type="text/javascript" src="{{ asset('/plugin/easyui/inti.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('/plugin/easyui/ui/jquery.easyui.min.js') }}"></script>
 	
-	
-	
 	<script type="text/javascript">
 		var _menus = {"menus":[
 			{"menuid":"3","icon":"icon-sys","menuname":"游戏管理",
@@ -25,15 +23,17 @@
 					{"menuname":"下注监控","icon":"icon-nav","url":"{{ route('game.betInfo') }}"},
 					{"menuname":"游戏结果记录","icon":"icon-nav","url":"{{ route('game.gameResult') }}"},
 					{"menuname":"游戏设置","icon":"icon-nav","url":"{{ route('game.game') }}"},
-			        {"menuname":"号码设置","icon":"icon-nav","url":"{{ route('game.ball') }}"},
+// 			        {"menuname":"号码设置","icon":"icon-nav","url":"{{ route('game.ball') }}"},
 			        {"menuname":"系统设置","icon":"icon-nav","url":"{{ route('game.game.sysConfig') }}"},
 				]
-			},{"menuid":"1","icon":"icon-sys","menuname":"系统管理",
-				"menus":[
-			        {"menuname":"管理员设置","icon":"icon-nav","url":"#{$ctx}/admin/user/user.php"},
+			},
+// 			{"menuid":"1","icon":"icon-sys","menuname":"系统管理",
+// 				"menus":[
+// 			        {"menuname":"管理员设置","icon":"icon-nav","url":"#{$ctx}/admin/user/user.php"},
 			        
-				]
-			},{"menuid":"2","icon":"icon-sys","menuname":"用户管理",
+// 				]
+// 			},
+			{"menuid":"2","icon":"icon-sys","menuname":"用户管理",
 				"menus":[
 			        {"menuname":"用户列表","icon":"icon-nav","url":"{{ route('members.member') }}"},
 			        {"menuname":"游戏记录","icon":"icon-nav","url":"{{ route('members.gameRecord') }}"},
@@ -110,7 +110,7 @@
                 $.messager.confirm('系统提示', '您确定要退出本次登录吗?', function(r) {
 
                     if (r) {
-                        location.href = '/ajax/loginout.ashx';
+                        location.href = '{{ route("login.logout") }}';
                     }
                 });
 
@@ -131,12 +131,12 @@
 	<div class="head">
 		
 		<span style="padding-left:10px; font-size: 16px;float: left; ">
-    		${project.name }
+<!--     		香港龙凤彩后台 -->
     	</span>
     	
 		<span style="padding-right:20px;float: right;" >
-        	欢迎  #{$name } 
-    	    <a href="#" id="editpass">修改密码</a> 
+        	欢迎 {{$user->username }}
+<!--     	    <a href="#" id="editpass">修改密码</a>  -->
     	    <a href="#" id="loginOut">安全退出</a>
     	</span>
         
@@ -145,7 +145,7 @@
 </div>
 <!-- 底部区域 -->
 <div region="south" split="true" style="height: 30px; background: #D2E0F2; ">
-    <div class="footer">${project.foot }</div>
+    <div class="footer">8888889999.com</div>
 </div>
 
 <!-- 左边 菜单区域 -->

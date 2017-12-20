@@ -17,28 +17,41 @@ class Authorize
      */
     public function handle($request, Closure $next,$guard = null)
     {
-        if (Auth::guard($guard)->guest()) {
-            if ($request->ajax() || $request->wantsJson()) {
-                return response('Unauthorized.', 401);
-            } else {
-                return redirect()->guest('admin/login');
+//         echo "guard:$guard";
+
+        $user = auth('user')->user();
+        
+        if(!$user) {
+            if (Auth::guard($guard)->guest()) {
+                if ($request->ajax() || $request->wantsJson()) {
+                    return response('Unauthorized.', 401);
+                } else {
+                    //                 echo route("login");
+                    return redirect()->guest("login");
+                }
             }
         }
+        
+        
         /* 判断当前用户是否登录或缓存是否过期 */
-        $user = Auth::user();
+        
+        
+        
+        
+//        $user = Auth::user();
 //        if ( ! $user) {
 //            return redirect()->to('/auth/logout');
 //        }
 
         /* 判断当前用户是否为超级管理员 */
-        if ($user->is_super_admin) {
-            return $next($request);
-        }
+//         if ($user->is_super_admin) {
+//             return $next($request);
+//         }
 
         //获取当前路由
-        $active_router = Route::currentRouteName();
+//         $active_router = Route::currentRouteName();
         //获取当前用户所有的权限
-        $own_routers = $user->role->routers()->pluck('router')->toArray();
+//         $own_routers = $user->role->routers()->pluck('router')->toArray();
 
         //dd($own_routers);exit;
 
@@ -47,54 +60,19 @@ class Authorize
 //        $action = Route::current()->getActionName();
 //        $previousUrl = URL::previous();
 
-        if ( ! $request->ajax()) {
-            if ($request->getMethod() == 'GET') {
-                return $next($request);
-            } else {
-                if (!in_array($active_router, $own_routers) && !in_array($active_router, ['admin.index']))
-                    return respF('您无权操作，请联系超级管理员');
-            }
+//         if ( ! $request->ajax()) {
+//             if ($request->getMethod() == 'GET') {
+//                 return $next($request);
+//             } else {
+//                 if (!in_array($active_router, $own_routers) && !in_array($active_router, ['admin.index']))
+//                     return respF('您无权操作，请联系超级管理员');
+//             }
 
-//            if ($request->getMethod() == 'GET') {
-//
-//                $menus = UserRepository::getUserMenusPermissionsByUserModel($user);
-//
-//                if ( ! $menus) {
-//                    return view('admin.error.403', compact('previousUrl'));
-//                }
-//
-//                if ( ! in_array($route, $menus)) {
-//
-//                    return view('admin.error.403', compact('previousUrl'));
-//                }
-//            } else {
-//                $actions = UserRepository::getUserActionPermissionsByUserModel($user);
-//
-//                if ( ! $actions) {
-//                    return view('admin.error.403', compact('previousUrl'));
-//                }
-//
-//                if ( ! in_array($action, $actions)) {
-//
-//                    return view('admin.error.403', compact('previousUrl'));
-//                }
-//            }
-        } else {
+//         } else {
 
-            if (!in_array($active_router, $own_routers) && !in_array($active_router, ['admin.index']))
-                return responseWrong('您无权操作，请联系超级管理员');
-
-//            $actions = UserRepository::getUserActionPermissionsByUserModel($user);
-//
-//            if ( ! $actions) {
-//                return response()->json(['status' => 0, 'message' => '没有权限执行此操作']);
-//            }
-//
-//            if ( ! in_array($action, $actions)) {
-//
-//                return response()->json(['status' => 0, 'message' => '没有权限执行此操作']);
-//            }
-        }
+//             if (!in_array($active_router, $own_routers) && !in_array($active_router, ['admin.index']))
+//                 return responseWrong('您无权操作，请联系超级管理员');
+//         }
 
         return $next($request);
     }

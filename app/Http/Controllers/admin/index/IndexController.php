@@ -13,42 +13,12 @@ class IndexController extends Controller {
     
     public function index(Request $request){
         
-        return view('admin.layouts.index');
+        $user = auth('user')->user();
+        
+        
+        return view('admin.layouts.index',compact("user"));
     }
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ?>

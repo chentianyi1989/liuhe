@@ -16,8 +16,21 @@ $(function () {
 
 
 function formatMemberUsername (val,row){
-	return val.username;
+	return row.member.username;
 }
+function formatMemberName (val,row){
+	return row.member.name;
+}
+
+//查询
+function searchForm (){
+	
+	$("#dataList").datagrid('load',{
+		"username":$("#username").val(),
+		"name":$("#name").val(),
+	});
+}
+
 
 </script>
 
@@ -28,6 +41,8 @@ function formatMemberUsername (val,row){
     		<tr>
     			<td width="80px">用户名：</td>
     			<td width="200px"><input id="username" /></td>
+    			<td width="80px">姓名：</td>
+    			<td width="200px"><input id="name" /></td>
     		</tr>
     	</table>
 	</form>
@@ -41,7 +56,8 @@ function formatMemberUsername (val,row){
 	<thead>
 		<tr>
 			<th data-options="field:'id'" width="5%">ID</th>
-			<th data-options="field:'member'" formatter="formatMemberUsername" width="15%">用户名</th>
+			<th data-options="field:'member.username'" formatter="formatMemberUsername" width="15%">用户名</th>
+			<th data-options="field:'member.name'" formatter="formatMemberName" width="15%">姓名</th>
 			<th data-options="field:'code'" width="15%">期数</th>
 			<th data-options="field:'tema'" width="15%">特码</th>
 			<th data-options="field:'pingma'" width="15%">平码</th>

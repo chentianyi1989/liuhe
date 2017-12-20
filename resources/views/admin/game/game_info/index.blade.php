@@ -146,16 +146,16 @@
 </script>
 <div style="padding-left: 20px;display:inline-block;" >
 	<form action="{{ route('game.info.updateGameResult')}}" method="post">
-		<input name="code" value="{{ $currGameResult->code}}"/>
+		期数：<input name="code" value="{{ $currGameResult->code}}" readonly="readonly"/>
 	<table>
 		<tr>
 			<td>特码：<input id='rs_tm' name="tema" value="{{ $currGameResult->tema_result}}"></td>
-			<td>平码：<input id="rs_pm1" name="pingma[]" data="1" value="{{ $pingma_result[0]}}">
-					<input id='rs_pm2' name="pingma[]" data="2" value="{{ $pingma_result[1]}}">
-					<input id='rs_pm3' name="pingma[]" data="3" value="{{ $pingma_result[2]}}">
-					<input id='rs_pm4' name="pingma[]" data="4" value="{{ $pingma_result[3]}}">
-					<input id='rs_pm5' name="pingma[]" data="5" value="{{ $pingma_result[4]}}">
-					<input id='rs_pm6' name="pingma[]" data="6" value="{{ $pingma_result[5]}}"></td>
+			<td>平码：<input id="rs_pm1" name="pingma[]" data="1" value="{{ $pingma_result[0] or ''}}">
+					<input id='rs_pm2' name="pingma[]" data="2" value="{{ $pingma_result[1] or ''}}">
+					<input id='rs_pm3' name="pingma[]" data="3" value="{{ $pingma_result[2] or ''}}">
+					<input id='rs_pm4' name="pingma[]" data="4" value="{{ $pingma_result[3] or ''}}">
+					<input id='rs_pm5' name="pingma[]" data="5" value="{{ $pingma_result[4] or ''}}">
+					<input id='rs_pm6' name="pingma[]" data="6" value="{{ $pingma_result[5] or ''}}"></td>
 			<td><input type="button" onclick="submitForm(this)" value="提交"/></td>
 		</tr>
 	</table>

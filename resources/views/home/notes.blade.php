@@ -26,7 +26,7 @@ function toggleQiShu (obj) {
 
 $(function () {
 
-	var time = 60*60*2;
+// 	var time = 60*60*2;
 // 	time = 5;
 	countdownTime({{$nextOpenTime or "null"}});
 	
@@ -157,9 +157,6 @@ function countdownTime(time) {
                             	<span><b class="b{{$gr->tema_result}}"></b></span></a>
                         </div>
                     </div>
-                    
-                    
-                    
             	@endfor
             </div>
             

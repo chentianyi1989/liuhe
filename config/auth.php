@@ -46,8 +46,8 @@ return [
             'provider' => 'members',
         ],
 
-        'api' => [
-            'driver' => 'token',
+        'user' => [
+            'driver' => 'session',
             'provider' => 'users',
         ],
     ],

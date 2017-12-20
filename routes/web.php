@@ -14,7 +14,6 @@
 
 Route::group(['domain' => env("m_domain","admin.liuhe"), 'namespace' => 'admin'],function ($router){
     
-    Route::get('/','index\\IndexController@index');
     
     
     //用户管理
@@ -30,7 +29,7 @@ Route::group(['domain' => env("m_domain","admin.liuhe"), 'namespace' => 'admin']
     Route::post('/members/gameRecord/list','members\\GameRecordController@gameRecordList')->name("members.gameRecord.list");
     
     Route::get('/members/logMoney','members\\LogMoneyController@index')->name("members.logMoney");
-    Route::get('/members/logMoney/list','members\\LogMoneyController@logMoneyList')->name("members.logMoney.list");
+    Route::post('/members/logMoney/list','members\\LogMoneyController@logMoneyList')->name("members.logMoney.list");
     
     Route::get('/members/loginLog','members\\LoginLogController@index')->name("members.loginLog");
     Route::post('/members/loginLog/list','members\\LoginLogController@loginLogList')->name("members.loginLog.list");
@@ -53,7 +52,18 @@ Route::group(['domain' => env("m_domain","admin.liuhe"), 'namespace' => 'admin']
     
     Route::get('/game/betInfo','game\\GameInfoController@betInfo')->name("game.betInfo");
     
+    
+    Route::get('/login','LoginController@index')->name("login");
+    Route::post('/login/login','LoginController@login')->name("login.login");
+    Route::post('/login/logout','LoginController@logout')->name("login.logout");
+    
+    Route::group(['middleware' => ['authorize']], function($router){
+        Route::get('/','index\\IndexController@index');
+    });
 });
+
+
+
 
 
 Route::group(['domain' => env("m_domain","liuhe"), 'namespace' => 'home'],function ($router){

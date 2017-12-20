@@ -19,6 +19,7 @@ class LoginController extends Controller {
     
     public function index(Request $request){
         
+        return view('admin.login');
     }
     
     public function login(Request $request){
@@ -28,20 +29,21 @@ class LoginController extends Controller {
         
         $url = $request->get('url');
         
+        echo "$username:$password";
+        
         if (Auth::guard('user')->attempt(['username' => $username,'password'=>$password],true))
         {
-            $member = auth('user')->user();
-            
+            $user = auth('user')->user();
+            echo "aaaaa";
             LogMemberLogin::create([
-                'member_id' => $member->id,
+                'member_id' => $user->id,
                 'ip' => $request->getClientIp(),
-                'username' => $member->username,
+                'username' => $user->username,
             ]);
             return redirect()->intended('/');
         }
         return responseWrong('用户名或密码错误');
     }
-    
     
     public function logout(Request $request) {
         auth('user')->logout();
@@ -99,53 +101,7 @@ class LoginController extends Controller {
         return "code1";
     }
     
-    
-    
-    public function gameRecord (Request $request) {
-        
-        $gameRecord = GameRecord::orderBy('created_at', 'desc')->paginate(5);
-        
-        
-        return view('home.user.game_record',compact("gameRecord"));
-    }
-    
-    public function index2(Request $request){
-        
-        return view('home.index2');
-    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ?>
