@@ -52,6 +52,10 @@ Route::group(['domain' => env("m_domain","admin.liuhe"), 'namespace' => 'admin']
     
     Route::get('/game/betInfo','game\\GameInfoController@betInfo')->name("game.betInfo");
     
+    Route::get('/game/recharge','game\\GameResultController@recharge')->name("game.game.recharge");  // 充值记录
+    Route::get('/game/outcome','game\\GameResultController@outcome')->name("game.game.outcome");  // 输赢记录
+    
+    
     
     Route::get('/login','LoginController@index')->name("login");
     Route::post('/login/login','LoginController@login')->name("login.login");

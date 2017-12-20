@@ -194,6 +194,8 @@ class GameInfoController extends Controller {
             echo "当前没有开盘";
         }
     }
+    
+    
 }
 
 

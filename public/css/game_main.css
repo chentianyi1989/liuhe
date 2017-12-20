@@ -177,13 +177,13 @@ a,a:hover {text-decoration: none;}
 .gct-time-now-l {float: right;position: relative;top: 7px;left: -25px;font-family: "DISPLAYFREETFB", 'Microsoft Yahei'}
 
 .interval {font-family:'Microsoft Yahei';display: inline-block;height: 54px;line-height:64px;color: #30343E;font-size: 28px;text-align: center;margin-right: 3px;position: relative;top:-10px;left: -2px;}
-#showgd-box {float: right;color:#666;width:380px;margin-top:10px;margin-left:-15px;margin-right:5px;position:relative;border-left: 1px #CECECE dashed;}
+#showgd-box {float: right;color:#666;width:400px;margin-top:10px;margin-left:-15px;margin-right:5px;position:relative;border-left: 1px #CECECE dashed;}
 .box-ul {float:right;width: 30px;margin-left:-10px;}
 #_nearby_periods{float:right; width:350px; border-left:1px #CECECE dashed; padding-left: 15px; margin-top: 5px; }
 
 
 .near_periods_tab{float:left;margin-left:-15px;}
-#gd-box1, #gd-box2 {float: left;width: 350px;height: 120px;top: 0 !important}
+#gd-box1, #gd-box2 {float: left;width: 380px;height: 120px;top: 0 !important}
 #gd-box1 p {margin: 15px 0 0 28px}
 #showgd-box li a:hover {background: #DD0303;}
 .make_transist {-webkit-transition: all .3s ease-in-out;-moz-transition: all .3s ease-in-out;-o-transition: all .3s ease-in-out;-ms-transition: all .3s ease-in-out;transition: all .3s ease-in-out}

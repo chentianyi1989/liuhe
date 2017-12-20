@@ -28,7 +28,6 @@ $(function () {
 
 	<div style="text-align:left;padding:5px">
     	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="searchForm()">查询</a>
-    	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="clearSearchUserForm()">清空</a>
     </div>
 </div>
 <table id="dataList" >

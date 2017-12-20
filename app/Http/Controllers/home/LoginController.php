@@ -46,9 +46,10 @@ class LoginController extends Controller {
 //             $_user = auth('member')->user();
 //             echo "_user:$_user,id:$id";
             
-            return redirect()->intended('/');
+//             return redirect()->intended('/');
+            return $this->responseSuccess();
         }
-        return responseWrong('用户名或密码错误');
+        return $this->responseErr('用户名或密码错误');
     }
     
     

@@ -25,6 +25,11 @@
 // 					{"menuname":"游戏设置","icon":"icon-nav","url":"{{ route('game.game') }}"},
 // 			        {"menuname":"号码设置","icon":"icon-nav","url":"{{ route('game.ball') }}"},
 			        {"menuname":"系统设置","icon":"icon-nav","url":"{{ route('game.game.sysConfig') }}"},
+			        
+			        {"menuname":"充值记录","icon":"icon-nav","url":"{{ route('game.game.recharge') }}"},
+			        {"menuname":"输赢记录","icon":"icon-nav","url":"{{ route('game.game.outcome') }}"},
+			        
+			        
 				]
 			},
 // 			{"menuid":"1","icon":"icon-sys","menuname":"系统管理",
