@@ -52,7 +52,7 @@ class LiuHeService{
                         $tm = $gr->tema_result;
                         $pm = $gr->pingma_result;
                         
-                        $gameResult = ["tema"=>$tm,"pingma"=>explode($pm, ",")];
+                        $gameResult = ["tema"=>$tm,"pingma"=>explode($pm, ","),"lottery_at"=>date('Y-m-d H:i:s')];
                         
                     }else if ($gr->tema_result) {
                         
