@@ -10,6 +10,7 @@ use Session;
 use App\Models\SysConfig;
 use App\Models\GameResult;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 class ViewServiceProvider extends ServiceProvider
 {
     protected $auth_user,$admin_aside,$admin,$auth_member,$web,$web_header,$auth_daili,$daili_aside,$wap,$system_notice;
@@ -82,11 +83,14 @@ class ViewServiceProvider extends ServiceProvider
             $currTime = date('H:i:s');
             $count = ceil((strtotime($currTime)-strtotime($_sysConfig->start_at)) / $step);
             $nextOpenTime = strtotime($_sysConfig->start_at)+ ($count * $step) - strtotime($currTime);
-            
-//             echo "currTime=$currTime<br/>";
-//             echo "next=$next<br/>";
-            
-            $gameResult = GameResult::where("finish","1")->orderBy('code', 'desc')->paginate(5);
+//                     DB::listen(function($sql) {
+//                         dump($sql);
+//                         echo "$sql->sql<br/>";
+//             dump($sql->bindings);
+//                     });
+            $gameResult = GameResult::where("finish","1")->where(function($query){
+                $query->WhereNotNull("pingma_result")->WhereNotNull("tema_result")->where("pingma_result","!=","")->where("tema_result","!=","");
+            })->orderBy('id', 'desc')->paginate(5);
             foreach ($gameResult as $key => $val) {
                 $result = $val["pingma_result"];
                 $result = explode(",",$result);

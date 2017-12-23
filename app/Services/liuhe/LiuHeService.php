@@ -9,6 +9,7 @@ use App\Models\LogMemberMoney;
 use Illuminate\Support\Facades\DB;
 use App\Models\LogSys;
 use App\Models\SysConfig;
+use Illuminate\Support\Facades\Log;
 
 class LiuHeService{
     
@@ -73,6 +74,8 @@ class LiuHeService{
                             'tema_result'=>$tm
                         ]);
                     }
+                    
+                    Log::info("gameResult:$gameResult");
                     $this->payout($gameResult,$gameRecords);
                 }
             });

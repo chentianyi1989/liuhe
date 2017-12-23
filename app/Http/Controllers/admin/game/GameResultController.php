@@ -9,8 +9,6 @@ use App\Models\Game;
 use App\Models\GameResult;
 use App\Models\LogMemberMoney;
 use App\Models\Member;
-use Illuminate\Console\Scheduling\Event;
-use Illuminate\Support\Facades\DB;
 
 class GameResultController extends Controller {
     
