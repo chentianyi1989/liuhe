@@ -39,14 +39,16 @@ class LiuHeService{
     public function getResult () {
         
         try{
+            
             DB::transaction(function() {
                 
                 $sysConfig = SysConfig::first();
                 $currGameResult = GameResult::where("finish","0")->first();
+                
                 $code = date("mdHi");
                 if ($currGameResult) {
                     $updateGameResult = ['finish'=>'1',"lottery_at"=>date('Y-m-d H:i:s'),];
-                    $gameRecords = $this->gameRecordByCode($code);
+                    $gameRecords = $this->gameRecordByCode($currGameResult->code);
                     if($currGameResult->tema_result && $currGameResult->pingma_result) {
                         $tm = $currGameResult->tema_result;
                         $pm = $currGameResult->pingma_result;
@@ -71,13 +73,14 @@ class LiuHeService{
                         $updateGameResult['tema_result'] = $tm;
                     }
                     
-                    Log::info("gameResult:$gameResult");
+                    Log::info("gameResult:",$gameResult);
                     $this->payout($gameResult,$gameRecords);
                     
                     $currGameResult->update($updateGameResult);
                 }
                 
                 $currTime = date("H:i:s");
+                echo "currTime:$currTime";
                 if((strtotime($currTime)-strtotime($sysConfig->start_at))>=0
                     &&(strtotime($currTime)-strtotime($sysConfig->end_at))<0){
                         
@@ -101,24 +104,6 @@ class LiuHeService{
                 'created_by'=>"sys"
             ]);
         }
-    }
-    
-    public function luoji () {
-        
-    }
-    
-    /**
-     * 关闭当前盘，开下一个盘
-     */
-    public function startNext () {
-        
-        
-        
-        
-//         echo "currGameResult:$currGameResult";
-//         echo "(strtotime($currTime)-strtotime($sysConfig->start_at))>=0 &&(strtotime($currTime)-strtotime($sysConfig->end_at))<0";
-        
-//         return $currGameResult;
     }
     
     /**
@@ -179,12 +164,12 @@ class LiuHeService{
         $balls_pingma = $balls['pingma'];
         $balls_tema = $balls['tema'];
         
-        echo "平码：<br/>";
-        print_r($balls_pingma);
-        echo "<br/>";
-        echo "特码：<br/>";
-        print_r($balls_tema);
-        echo "<br/>";
+//         echo "平码：<br/>";
+//         print_r($balls_pingma);
+//         echo "<br/>";
+//         echo "特码：<br/>";
+//         print_r($balls_tema);
+//         echo "<br/>";
         
         if (!$tema) {
             $tema_result =  $this->calculationTeMaResult($balls_tema);
@@ -196,9 +181,9 @@ class LiuHeService{
        
         
         $pingma_result =  $this->calculationPingMaResult($balls_pingma,$tema_result);
-        echo "平码结果：<br/>";
-        print_r($pingma_result);
-        echo "<br/>";
+//         echo "平码结果：<br/>";
+//         print_r($pingma_result);
+//         echo "<br/>";
         
         return ["tema"=>$tema_result,"pingma"=>$pingma_result];
         

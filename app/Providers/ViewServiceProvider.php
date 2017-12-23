@@ -83,11 +83,11 @@ class ViewServiceProvider extends ServiceProvider
             $currTime = date('H:i:s');
             $count = ceil((strtotime($currTime)-strtotime($_sysConfig->start_at)) / $step);
             $nextOpenTime = strtotime($_sysConfig->start_at)+ ($count * $step) - strtotime($currTime);
-//                     DB::listen(function($sql) {
+                    DB::listen(function($sql) {
 //                         dump($sql);
-//                         echo "$sql->sql<br/>";
+                        echo "$sql->sql<br/>";
 //             dump($sql->bindings);
-//                     });
+                    });
             $gameResult = GameResult::where("finish","1")->where(function($query){
                 $query->WhereNotNull("pingma_result")->WhereNotNull("tema_result")->where("pingma_result","!=","")->where("tema_result","!=","");
             })->orderBy('id', 'desc')->paginate(5);
