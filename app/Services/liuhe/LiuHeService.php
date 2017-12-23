@@ -43,7 +43,7 @@ class LiuHeService{
                 
                 $sysConfig = SysConfig::first();
                 $currGameResult = GameResult::where("finish","0")->first();
-                $code = date("YmdH");
+                $code = date("mdHi");
                 if ($currGameResult) {
                     $updateGameResult = ['finish'=>'1',"lottery_at"=>date('Y-m-d H:i:s'),];
                     $gameRecords = $this->gameRecordByCode($code);
