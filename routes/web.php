@@ -77,7 +77,7 @@ Route::group(['domain' => env("m_domain","liuhe"), 'namespace' => 'home'],functi
     
     Route::get('/recharge','IndexController@rechargeRecord')->name("home.recharge");
     
-    Route::get('/index2','IndexController@index2');
+//     Route::get('/index2','IndexController@index2');
     Route::post('/bet','IndexController@bet')->name("home.bet");
     
     
