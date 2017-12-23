@@ -247,8 +247,8 @@ for ($i=1;$i<=49;$i++) {
 
 @section('content')
 
-
-<img style="position: fixed;width: 500px;height: 680px" src="{{asset('/mabao/')}}/{{$currGameResult->code or '12' }}.jpg" >
+<!-- {{$currGameResult->code or '12' }} -->
+<img style="width: 500px;height: 680px;position:absolute;" src="{{asset('/mabao/')}}/<?php echo rand(1,100);?>.jpg" >
 <!-- style="margin-left: 600px" -->
 <div class="L_HK6 P_tm skin_red lhc_center" style="margin-left: 600px">
     <div id="main">
