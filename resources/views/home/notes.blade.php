@@ -140,7 +140,10 @@ function countdownTime(time) {
         <div id="tabs_container" style="height:120px;">
             <div id="gd-box1" class="hideleft" style="position: absolute; top: 40px;">
             	
+            	
+            	
             	@for($i=0;$i<1;$i++)
+            	    @if ($gameResult&&count($gameResult)>0) 
             		<?php  $gr = $gameResult[$i]; ?>
                     
                     <div id="gd-box1" class="showleft" style="position: absolute; top: 40px;">
@@ -157,6 +160,7 @@ function countdownTime(time) {
                             	<span><b class="b{{$gr->tema_result}}"></b></span></a>
                         </div>
                     </div>
+                    @endif
             	@endfor
             </div>
             
