@@ -178,13 +178,14 @@ class LiuHeService{
             $tema_result = $tema;
         }
         
-//         echo "特码结果：$tema_result <br/>";
+        
        
         
         $pingma_result =  $this->calculationPingMaResult($balls_pingma,$tema_result);
-//         echo "平码结果：<br/>";
-//         print_r($pingma_result);
-//         echo "<br/>";
+        echo "特码结果：$tema_result <br/>";
+        echo "平码结果：<br/>";
+        print_r($pingma_result);
+        echo "<br/>";
         
         return ["tema"=>$tema_result,"pingma"=>$pingma_result];
         
@@ -265,7 +266,7 @@ class LiuHeService{
                         $i++;
                     }
                     
-                    array_splice($ball_tmp, $p_i-1, 1);
+                    array_splice($ball_tmp, $p_i, 1);
 //                     Log::info("平码删除后$p_i ：",$ball_tmp);
 //                     echo "<br/>删除后：<br/>";
 //                     print_r($ball_tmp);
@@ -309,10 +310,10 @@ class LiuHeService{
                     $i++;
                 }
                 
-//                 echo "<br/>平码删除前 $p_i ：".json_encode($balls)."<br/>";
-                array_splice($balls, $p_i-1, 1);
+//                 echo "<br/>平码删除前i:$i,index: $p_i ：".json_encode($balls)."<br/>";
+                array_splice($balls, $p_i, 1);
 //                 Log::info("平码删除后,$p_i ：",$balls);
-//                 echo "<br/>平码删除后 $p_i ：".json_encode($balls)."<br/>";
+//                 echo "<br/>平码删除后i:$i,index: $p_i ：".json_encode($balls)."<br/>";
             }
         }
 //         echo "<br/>rs:";
