@@ -308,6 +308,7 @@ class LiuHeService{
                     $i++;
                 }
                 array_splice($balls, $p_i, 1);
+                Log::info("平码删除后：",$balls);
             }
         }
 //         echo "<br/>rs:";
