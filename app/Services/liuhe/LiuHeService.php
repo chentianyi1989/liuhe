@@ -263,7 +263,9 @@ class LiuHeService{
                         $rs[] = $pm;
                         $i++;
                     }
-                    array_splice($ball_tmp, $p_i, 1);   
+                    
+                    array_splice($ball_tmp, $p_i, 1);
+                    Log::info("平码删除后：","$ball_tmp");
 //                     echo "<br/>删除后：<br/>";
 //                     print_r($ball_tmp);
 //                     echo "<br/>";
