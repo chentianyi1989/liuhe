@@ -310,6 +310,11 @@ class LiuHeService{
             $rs = [];
             for ($i=0;$i<6;) {
                 $p_i = mt_rand(0,count($balls)-1);
+//                 $p_i = $i;
+//                 $p_i = $i + 1;
+//                 $p_i = 5;
+//                 $p_i = 5 - $i;
+//                 $p_i = 5 + $i;
                 $pm = $balls[$p_i];
                 if ($pm["code"] != $tema) {
                     $rs[] = $pm;
