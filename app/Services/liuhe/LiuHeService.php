@@ -28,8 +28,8 @@ class LiuHeService{
         
         $balls = [];
         for ($x=1; $x<=49; $x++) {
-            $balls[] = ["code"=>$x,"money"=>0];
 //             $balls[] = ["code"=>$x,"money"=>0];
+            $balls[$x] = ["code"=>$x,"money"=>0];
         }
         return $balls;
     }
@@ -152,7 +152,13 @@ class LiuHeService{
                 $tema_money += $v->money;
             }
         }
-        return ['pingma'=>$balls_pingma,'tema'=>$balls_tema];
+        
+        $_pingmas = [];
+        foreach ($balls_pingma as $k =>$v){
+            $_pingmas[] = $v;
+        }
+        
+        return ['pingma'=>$_pingmas,'tema'=>$balls_tema];
     }
     
     /**
@@ -404,7 +410,7 @@ class LiuHeService{
                 $pms = json_decode($pingma);
                 is_array($pms)?null:$pms = array();
                 foreach ($pms as $k => $v) {
-                    foreach ($pingma_balls as $pm){
+                    foreach ($pingma_balls as $pm => $_v){
                         if($v->code == $pm) {
                             $p_m = $v->money * $this->pingma_odds;
                             echo "平码派彩：$v->code,"."money:$v->money ,payout:$p_m";
