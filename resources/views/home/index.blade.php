@@ -279,8 +279,8 @@ for ($i=1;$i<=49;$i++) {
     	<div id="header">
             <div class="control n_anniu">
             	<div class="buttons">
-            		<input id="lastTime" type="hidden" />
-            		<input value="下单" class="resetbtn button" type="button" onclick="submitBetForm(this)"></div>
+<!--             		<input id="lastTime" type="hidden" /> -->
+            		<input id="bet_button" value="下单" class="resetbtn button" type="button" onclick="submitBetForm(this)"></div>
        		</div></div></div>
 </div>		
 
@@ -433,9 +433,6 @@ function submitBetForm (obj) {
 
 	$(obj).atrr("disabled","disabled");
 
-	
-	
-	
 	var haomas = {"code":"{{$currGameResult->code or '' }}"};
 	var tema_haomas = [];
 	$("#tema_table input").each(function(){
