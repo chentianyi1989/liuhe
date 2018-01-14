@@ -50,7 +50,6 @@ function countdownTime(time) {
         CDTime = setInterval(function () {
             t = end - new Date().getTime();
             d = Math.floor(t / (24 * 3600 * 1000));
-//             $("#lastTime").val(t);
 
             if (t<5*60*1000) {
 				$("#bet_button").attr("disabled","disabled");
