@@ -279,7 +279,8 @@ for ($i=1;$i<=49;$i++) {
     	<div id="header">
             <div class="control n_anniu">
             	<div class="buttons">
-            		<input value="下单" class="resetbtn button" type="button" onclick="submitBetForm()"></div>
+            		<input id="lastTime" type="hidden" />
+            		<input value="下单" class="resetbtn button" type="button" onclick="submitBetForm(this)"></div>
        		</div></div></div>
 </div>		
 
@@ -428,8 +429,13 @@ function createMontyInput (code,sx,type) {
 }
 
 
-function submitBetForm () {
+function submitBetForm (obj) {
 
+	$(obj).atrr("disabled","disabled");
+
+	
+	
+	
 	var haomas = {"code":"{{$currGameResult->code or '' }}"};
 	var tema_haomas = [];
 	$("#tema_table input").each(function(){

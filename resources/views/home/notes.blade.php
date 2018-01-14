@@ -50,6 +50,7 @@ function countdownTime(time) {
         CDTime = setInterval(function () {
             t = end - new Date().getTime();
             d = Math.floor(t / (24 * 3600 * 1000));
+            $("#lastTime").val(t);
             if (t > 0) {
                 h = Math.floor(t /1000 / 60 / 60 % 24) + d * 24;
                 // h = Math.floor(t / 1000 / 60 / 60 % 24);
