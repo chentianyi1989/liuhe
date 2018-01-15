@@ -85,6 +85,8 @@ function openUpdateUser() {
 		$("#div_updateUser input[name='phone']").val(row.phone);
 		$("#div_updateUser input[name='id']").val(row.id);
 		$("#div_updateUser input[name='username']").val(row.username);
+		$("#div_updateUser_state").combobox('setValue',row.state);
+		
 		var title = "修改用户："+row.username;
 		$("#div_updateUser").window({"title":title}).window('open');
 		
@@ -103,6 +105,15 @@ function searchForm (){
 }
 function clearSearchUserForm(){
 	$('#form_searchUser').form('clear');
+}
+
+function formatMemberState (val,row){
+
+	if(val == "1") {
+		return "启用";
+	}else {
+		return "停用";
+	}
 }
 
 </script>
@@ -184,6 +195,13 @@ function clearSearchUserForm(){
 				<td><input type="text" name="password"
 					/></td>
 			</tr>
+			<tr>
+				<td>状态：</td>
+				<td><select id="div_updateUser_state" class="easyui-combobox" name="state" panelHeight="50px" width="50">
+					<option value="0">停用</option>
+                    <option value="1">启用</option>
+                </select></td>
+			</tr>
 		</table>
 		<div style="text-align:center;padding:5px">
     	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitWindow(this)">提交</a>
@@ -243,7 +261,7 @@ function clearSearchUserForm(){
 			<th data-options="field:'name'" width="15%">姓名</th>
 			<th data-options="field:'money'" width="15%">余额</th>
 			<th data-options="field:'phone'" width="15%">电话</th>
-			<th data-options="field:'state'" width="15%">状态</th>
+			<th data-options="field:'state'" width="15%" formatter="formatMemberState">状态</th>
 			<th data-options="field:'created_at'" width="15%">注册时间</th>
 		</tr>
 	</thead>

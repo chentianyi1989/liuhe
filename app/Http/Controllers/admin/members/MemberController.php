@@ -64,10 +64,12 @@ class MemberController extends Controller
             $phone = $request->get('phone');
             $name = $request->get('name');
             $id = $request->get("id");
+            $state = $request->get("state");
             $member = Member::findOrFail($id);
             
             $data["name"] = $name;
             $data["phone"] = $phone;
+            $data["state"] = $state;
             $member->update($data);
             $result["code"] = "0";
         }catch (\Exception $e){

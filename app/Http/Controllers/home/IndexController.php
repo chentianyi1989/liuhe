@@ -38,6 +38,9 @@ class IndexController extends Controller {
         try{
             $_user = auth('member')->user();
             if ($_user){
+                
+                 
+               
                 $haomas= $request["haomas"];
                 $code = $haomas["code"];
                 
@@ -67,6 +70,11 @@ class IndexController extends Controller {
                     if ($flag == false) {
                         return $this->responseErr("请选择号码！");
                     }
+                    if ($_user->money<$_total) {
+                        
+                        return $this-> responseErr("下单失败，余额不足");
+                    }
+                    
                     
                     $gameReord["money"] = $_total;
                     $gameReord["member_id"] = $_user->id;

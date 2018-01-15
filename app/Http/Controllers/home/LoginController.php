@@ -32,8 +32,14 @@ class LoginController extends Controller {
         
         if (Auth::guard('member')->attempt(['username' => $username,'password'=>$password],true))
         {
-            //return respS('登录成功',  route('member.index'));
+            
+                        
             $member = auth('member')->user();
+            
+            if ($member->state != "1") {
+                auth('member')->logout();
+                return $this->responseErr('用户名或密码错误');
+            }
 //             $member->update([
 //                 'is_login' => 1
 //             ]);

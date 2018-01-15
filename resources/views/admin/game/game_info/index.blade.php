@@ -130,6 +130,40 @@
 		
 		$(obj).parents("form").form('submit',{
 			onSubmit:function(){
+
+				var v0 = $("#rs_tm").val();
+				if (v0 == "") {
+					alert("特码不能为空！");
+					return false;
+				}
+
+				var v1 = $("#rs_pm1").val();
+				var v2 = $("#rs_pm2").val();
+				var v3 = $("#rs_pm3").val();
+				var v4 = $("#rs_pm4").val();
+				var v5 = $("#rs_pm5").val();
+				var v6 = $("#rs_pm6").val();
+
+
+				var arr = [v0,v1,v2,v3,v4,v5,v6];
+
+				for (var i in arr) {
+
+					if (arr[i] == "") {
+						alert("平码"+i+"没有填写号码");
+						return false;
+					}
+					
+					for (var j in arr) {
+						if (arr[i] == arr[j] && j!=i) {
+							alert("有重复号码！");
+							return false;
+						}	
+					}
+				}
+				
+				return true;
+				
 			},
 		 	success:function(data){
 				data = eval('(' + data + ')');  

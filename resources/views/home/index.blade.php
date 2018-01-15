@@ -432,7 +432,7 @@ function createMontyInput (code,sx,type) {
 
 function submitBetForm (obj) {
 
-	$(obj).atrr("disabled","disabled");
+	//$(obj).atrr("disabled","disabled");
 
 	var haomas = {"code":"{{$currGameResult->code or '' }}"};
 	var tema_haomas = [];
