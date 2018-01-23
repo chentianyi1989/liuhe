@@ -87,6 +87,8 @@ class LiuHeService{
                     $this->payout($gameResult,$gameRecords);
                     
                     $currGameResult->update($updateGameResult);
+                }else{
+                    $code = $code."1";
                 }
                 
                 $currTime = date("H:i:s");
