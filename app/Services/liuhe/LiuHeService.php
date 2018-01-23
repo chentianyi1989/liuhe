@@ -46,8 +46,17 @@ class LiuHeService{
                 $sysConfig = SysConfig::first();
                 $currGameResult = GameResult::where("finish","0")->first();
                 
-                $code = date("YmdH");
+                $code = date("Ymd");
                 if ($currGameResult) {
+                    
+                    $c2 = substr($currGameResult->code,0,8);
+                    if ($code == $c2) {
+                        
+                        $code = $code.(intval(substr($currGameResult->code,8,strlen($currGameResult->code)-8))+1);
+                    }else {
+                        $code = $code."1";
+                    }
+                    
                     $updateGameResult = ['finish'=>'1',"lottery_at"=>date('Y-m-d H:i:s'),];
                     $gameRecords = $this->gameRecordByCode($currGameResult->code);
                     if($currGameResult->tema_result && $currGameResult->pingma_result) {
