@@ -52,7 +52,13 @@ class LiuHeService{
                     $c2 = substr($currGameResult->code,0,8);
                     if ($code == $c2) {
                         
-                        $code = $code.(intval(substr($currGameResult->code,8,strlen($currGameResult->code)-8))+1);
+                        $a = intval(substr($currGameResult->code,8,strlen($currGameResult->code)-8))+1;
+                        if ($a < 10) {
+                            $code = $code."0".$a;
+                        }else {
+                            $code = $code.$a;
+                        }
+                        
                     }else {
                         $code = $code."1";
                     }
