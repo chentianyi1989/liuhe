@@ -133,31 +133,33 @@ for ($i=1;$i<=49;$i++) {
     }
     
     $sx=$i%12;
+    
     if($sx == 1) {
-        $rs["shengxiao_hou"][] = $i;
-    }else if ($sx == 2){
         $rs["shengxiao_ji"][] = $i;
+    }else if ($sx == 2){
+        $rs["shengxiao_hou"][] = $i;
     }else if ($sx == 3){
-        $rs["shengxiao_gou"][] = $i;
-    }else if ($sx == 4){
-        $rs["shengxiao_zhu"][] = $i;
-    }else if ($sx == 5){
-        $rs["shengxiao_shu"][] = $i;
-    }else if ($sx == 6){
-        $rs["shengxiao_niu"][] = $i;
-    }else if ($sx == 7){
-        $rs["shengxiao_hu"][] = $i;
-    }else if ($sx == 8){
-        $rs["shengxiao_tu"][] = $i;
-    }else if ($sx == 9){
-        $rs["shengxiao_long"][] = $i;
-    }else if ($sx == 10){
-        $rs["shengxiao_she"][] = $i;
-    }else if ($sx == 11){
-        $rs["shengxiao_ma"][] = $i;
-    }else if ($sx == 0){
         $rs["shengxiao_yang"][] = $i;
+    }else if ($sx == 4){
+        $rs["shengxiao_ma"][] = $i;
+    }else if ($sx == 5){
+        $rs["shengxiao_she"][] = $i;
+    }else if ($sx == 6){
+        $rs["shengxiao_long"][] = $i;
+    }else if ($sx == 7){
+        $rs["shengxiao_tu"][] = $i;
+    }else if ($sx == 8){
+        $rs["shengxiao_hu"][] = $i;
+    }else if ($sx == 9){
+        $rs["shengxiao_niu"][] = $i;
+    }else if ($sx == 10){
+        $rs["shengxiao_shu"][] = $i;
+    }else if ($sx == 11){
+        $rs["shengxiao_zhu"][] = $i;
+    }else if ($sx == 0){
+        $rs["shengxiao_gou"][] = $i;
     }
+    
 }
 
 
@@ -290,7 +292,10 @@ for ($i=1;$i<=49;$i++) {
 
 <?php echo "var kuaujie = ".json_encode($rs).";"; ?>
 
-var sheng_xiao = ["羊","猴","鸡","狗","猪","鼠","牛","虎","兔","龙","蛇","马"];
+
+var sheng_xiao = ["狗","鸡","猴","羊","马","蛇","龙","兔","虎","牛","鼠","猪"];
+
+
 $(function () {
 	createPingMa ();
 	createTeMa ();
