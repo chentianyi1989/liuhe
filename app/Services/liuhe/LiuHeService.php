@@ -60,7 +60,7 @@ class LiuHeService{
                         }
                         
                     }else {
-                        $code = $code."1";
+                        $code = $code."01";
                     }
                     
                     $updateGameResult = ['finish'=>'1',"lottery_at"=>date('Y-m-d H:i:s'),];
@@ -94,7 +94,7 @@ class LiuHeService{
                     
                     $currGameResult->update($updateGameResult);
                 }else{
-                    $code = $code."1";
+                    $code = $code."01";
                 }
                 
                 $currTime = date("H:i:s");
