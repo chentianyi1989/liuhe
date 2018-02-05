@@ -87,7 +87,7 @@ class IndexController extends Controller {
 //                             $total_monty = $gameReord["money"];
                             $gr=GameRecord::create($gameReord);
                             $member->update([
-                                "money"=>$member->money-$total_monty,
+                                "money"=>$member->money-$_total,
                             ]);
                             LogMemberMoney::create([
                                 "money"=>$_total,
