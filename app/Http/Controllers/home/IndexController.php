@@ -76,7 +76,7 @@ class IndexController extends Controller {
                     }
                     
                     
-                    $gameReord["money"] = $_total;
+                    //$gameReord["money"] = $_total;
                     $gameReord["member_id"] = $_user->id;
                     $gameReord["code"] = $code;
                     

@@ -404,6 +404,8 @@ class LiuHeService{
         $pingma_balls = $gameResult["pingma"];
         $tema_ball = $gameResult["tema"];
         
+        
+        
         foreach ($gameRecords as $key => $value) {
             
             $tema_money = 0;
@@ -414,7 +416,7 @@ class LiuHeService{
             $member_id = $value->member_id;
             
             
-            echo "游戏记录id：$value->id<br/>";
+            Log::info("游戏记录：",$value);
             
             if ($tema!=null&&$tema!='') {
                 $tms = json_decode($tema);
@@ -422,12 +424,11 @@ class LiuHeService{
                 foreach ($tms as $k => $v) {
                     if($v->code == $tema_ball) {
                         $p_m = $v->money * $this->tema_odds;
-                        echo "特码派彩：$v->code,"."money:$v->money ,payout:$p_m" ;
+                        Log::info("特码派彩：",["code"=>$v->code,"money"=>$v->money,"payout"=>$p_m]);
                         $tema_money += $p_m;
                     }
                 }
             }
-            echo "<br/>";
             if ($pingma!=null&&$pingma!='') {
                 $pms = json_decode($pingma);
                 is_array($pms)?null:$pms = array();
@@ -435,8 +436,8 @@ class LiuHeService{
                     foreach ($pingma_balls as $pm => $_v){
                         if($v->code == $pm) {
                             $p_m = $v->money * $this->pingma_odds;
-                            echo "平码派彩：$v->code,"."money:$v->money ,payout:$p_m";
-                            $pingma_money += $v->money * $this->pingma_odds;
+                            Log::info("平码派彩：",["code"=>$v->code,"money"=>$v->money,"payout"=>$p_m]);
+                            $pingma_money += $p_m;
                         }
                     }
                 }
