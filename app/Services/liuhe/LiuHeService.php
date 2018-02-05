@@ -434,7 +434,7 @@ class LiuHeService{
                 is_array($pms)?null:$pms = array();
                 foreach ($pms as $k => $v) {
                     foreach ($pingma_balls as $pm => $_v){
-                        if($v->code == $pm) {
+                        if($v->code == $_v) {
                             $p_m = $v->money * $this->pingma_odds;
                             Log::info("平码派彩：",["code"=>$v->code,"money"=>$v->money,"payout"=>$p_m]);
                             $pingma_money += $p_m;
