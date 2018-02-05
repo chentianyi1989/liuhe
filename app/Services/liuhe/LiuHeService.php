@@ -416,7 +416,7 @@ class LiuHeService{
             $member_id = $value->member_id;
             
             
-            Log::info("游戏记录：",$value);
+            Log::info("游戏记录：",["gameRecord"=>$value]);
             
             if ($tema!=null&&$tema!='') {
                 $tms = json_decode($tema);
