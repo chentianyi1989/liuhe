@@ -72,7 +72,11 @@ class LiuHeService{
                         $tm = $currGameResult->tema_result;
                         $pm = $currGameResult->pingma_result;
                         
+                        
                         $gameResult = ["tema"=>$tm,"pingma"=>explode($pm, ",")];
+                        
+                        Log::info("if1:",["tema"=>$tm,"pingma"=>$pm]);
+                        Log::info("if1:",$gameResult);
                         
                     }else if ($currGameResult->tema_result) {
                         
