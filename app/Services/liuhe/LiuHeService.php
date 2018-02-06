@@ -405,7 +405,7 @@ class LiuHeService{
         $tema_ball = $gameResult["tema"];
         
         
-        
+        Log::info("游戏结果：",["平码"=>$pingma_balls,"特码"=>$tema_ball]);
         foreach ($gameRecords as $key => $value) {
             
             $tema_money = 0;
