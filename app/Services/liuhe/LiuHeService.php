@@ -71,12 +71,7 @@ class LiuHeService{
                     if($currGameResult->tema_result && $currGameResult->pingma_result) {
                         $tm = $currGameResult->tema_result;
                         $pm = $currGameResult->pingma_result;
-                        
-                        
-                        $gameResult = ["tema"=>$tm,"pingma"=>explode($pm, ",")];
-                        
-                        Log::info("if1:",["tema"=>$tm,"pingma"=>$pm]);
-                        Log::info("if1:",$gameResult);
+                        $gameResult = ["tema"=>$tm,"pingma"=>explode(",",$pm)];
                         
                     }else if ($currGameResult->tema_result) {
                         
