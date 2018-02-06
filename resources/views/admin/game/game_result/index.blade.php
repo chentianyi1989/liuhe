@@ -44,7 +44,7 @@ function initState (val,row) {
 			<th data-options="field:'tema_result'" width="15%">特码结果</th>
 			<th data-options="field:'created_at'" width="15%">开盘时间</th>
 			<th data-options="field:'lottery_at'" width="15%">开奖时间</th>
-			
+			<th data-options="field:'info'" width="15%">手动开奖</th>
 		</tr>
 	</thead>
 </table>
