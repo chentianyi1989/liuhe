@@ -66,7 +66,7 @@ class LiuHeService{
                     $updateGameResult = ['finish'=>'1',"lottery_at"=>date('Y-m-d H:i:s'),];
                     $gameRecords = $this->gameRecordByCode($currGameResult->code);
                     
-                    Log::info("currGameResult:",$currGameResult);
+                    Log::info("currGameResult:",["currGameResult"=>$currGameResult]);
                     
                     if($currGameResult->tema_result && $currGameResult->pingma_result) {
                         $tm = $currGameResult->tema_result;
