@@ -65,6 +65,9 @@ class LiuHeService{
                     
                     $updateGameResult = ['finish'=>'1',"lottery_at"=>date('Y-m-d H:i:s'),];
                     $gameRecords = $this->gameRecordByCode($currGameResult->code);
+                    
+                    Log::info("currGameResult:",$currGameResult);
+                    
                     if($currGameResult->tema_result && $currGameResult->pingma_result) {
                         $tm = $currGameResult->tema_result;
                         $pm = $currGameResult->pingma_result;
@@ -405,7 +408,6 @@ class LiuHeService{
         $tema_ball = $gameResult["tema"];
         
         
-        Log::info("游戏结果：",["平码"=>$pingma_balls,"特码"=>$tema_ball]);
         foreach ($gameRecords as $key => $value) {
             
             $tema_money = 0;
