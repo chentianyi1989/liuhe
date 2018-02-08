@@ -385,7 +385,7 @@ class LiuHeService{
                     "money"=>$member->money+$total_monty,
                 ]);
                 LogMemberMoney::create([
-                    "payout"=>$total_monty,
+                    "money"=>$total_monty,
                     "created_by"=>'sys',
                     "info"=>"派彩",
                     "type"=>'3',
@@ -393,7 +393,7 @@ class LiuHeService{
                     'member_id'=>$value->member_id
                 ]);
                 $value->update([
-                    'money'=>$total_monty
+                    'payout'=>$total_monty
                 ]);
                     
             }
