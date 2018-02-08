@@ -96,6 +96,9 @@ var compare = function (obj1, obj2) {
 			<th data-options="field:'code'" width="15%">期数</th>
 			<th data-options="field:'tema',formatter:gameRecord" width="15%">特码</th>
 			<th data-options="field:'pingma',formatter:gameRecord" width="15%">平码</th>
+			<th data-options="field:'money'" width="15%">下注金额</th>
+			<th data-options="field:'payout'" width="15%">派彩金额</th>
+			
 			<th data-options="field:'created_at'" width="15%">时间</th>
 		</tr>
 	</thead>

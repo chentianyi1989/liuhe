@@ -76,7 +76,7 @@ class IndexController extends Controller {
                     }
                     
                     
-                    //$gameReord["money"] = $_total;
+                    $gameReord["money"] = $_total;
                     $gameReord["member_id"] = $_user->id;
                     $gameReord["code"] = $code;
                     
@@ -84,7 +84,7 @@ class IndexController extends Controller {
                     if ($member) {
                         try{
                             DB::beginTransaction();
-//                             $total_monty = $gameReord["money"];
+                            $total_monty = $gameReord["money"];
                             $gr=GameRecord::create($gameReord);
                             $member->update([
                                 "money"=>$member->money-$_total,

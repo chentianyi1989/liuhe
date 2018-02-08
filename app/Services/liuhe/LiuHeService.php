@@ -278,28 +278,18 @@ class LiuHeService{
             $_balls = $balls;
             
             while (5<count($_balls)) {
-//                 echo "<br/>".count($_balls)."<br/>";
                 $ball_tmp = $_balls;
                 $rs = [];
                 for ($i=0;$i<6;) {
                     $p_i = mt_rand(0,count($ball_tmp)-1);
                     $pm = $ball_tmp[$p_i];
-//                     print_r($pm);
-//                     echo "<br/>pingma 下标 ：$p_i, code：".$pm["code"]."<br/>";
                     if ($pm["code"] != $tema) {
                         $rs[] = $pm;
                         $i++;
                     }
                     
                     array_splice($ball_tmp, $p_i, 1);
-//                     Log::info("平码删除后$p_i ：",$ball_tmp);
-//                     echo "<br/>删除后：<br/>";
-//                     print_r($ball_tmp);
-//                     echo "<br/>";
                 }
-//                 echo  "<br/>".count($rs)."<br/>";
-//                 print_r($rs);
-//                 echo  "<br/>";
                 if (6 == count($rs)) {
                     
                     $sumMoney = 0;
@@ -307,18 +297,10 @@ class LiuHeService{
                         $sumMoney+=$v["money"];
                     }
                     $rate = $sumMoney * $this->pingma_odds / $total_money ;
-//                     echo "<br/>rate:$rate,$this->kill,".($rate<$this->kill)."<br/>";
                     if ($rate < $this->kill) {
-                        //return $rs;
-//                         echo "ok";
                         break;
                     }else {
-//                         echo "no";
-//                         print_r($_balls);
-//                         echo "<br/>";
                         array_splice($_balls, 0, 1);    //删除最大的金额
-//                         print_r($_balls);
-//                         echo "<br/>";
                     }
                 } else {
                     
@@ -329,70 +311,22 @@ class LiuHeService{
             $rs = [];
             for ($i=0;$i<6;) {
                 $p_i = mt_rand(0,count($balls)-1);
-//                 $p_i = $i;
-//                 $p_i = $i + 1;
-//                 $p_i = 5;
-//                 $p_i = 5 - $i;
-//                 $p_i = 5 + $i;
+
                 $pm = $balls[$p_i];
                 if ($pm["code"] != $tema) {
                     $rs[] = $pm;
                     $i++;
                 }
-                
-//                 echo "<br/>平码删除前i:$i,index: $p_i ：".json_encode($balls)."<br/>";
                 array_splice($balls, $p_i, 1);
-//                 Log::info("平码删除后,$p_i ：",$balls);
-//                 echo "<br/>平码删除后i:$i,index: $p_i ：".json_encode($balls)."<br/>";
             }
         }
-//         echo "<br/>rs:";
-//         print_r($rs);
         $r = [];
         foreach ($rs as $k => $v) {
             $r[] = $v["code"];
         }
-//         echo "<br/>asd";
-//         print_r($r);
         return $r;        
         
-        //////////////////////////////////////////////////////////////////////////////////////////////////
-        
-//         $result = [];
-//         $kill = 0.005;
-//         if ($total_money>0) {
-//             foreach ($balls as $key => $value) {
-//                 $rate = $value["money"]/$total_money;
-//                 if ($rate < $kill) {
-//                     $result[$value["code"]]=$value["code"];
-//                 }
-//             }
-//             if (count($result)<6) {
-//                 $ball = $this->ballSort($balls);
-//                 $result = [];
-//                 $result[$ball[0]["code"]] = $ball[0]["code"];
-//                 $result[$ball[1]["code"]] = $ball[1]["code"];
-//                 $result[$ball[2]["code"]] = $ball[2]["code"];
-//                 $result[$ball[3]["code"]] = $ball[3]["code"];
-//                 $result[$ball[4]["code"]] = $ball[4]["code"];
-//                 $result[$ball[5]["code"]] = $ball[5]["code"];
-//             }
-//         }else {
-//             foreach ($balls as $key => $value) {
-//                 $result[$value["code"]]=$value["code"];
-//             }
-//         }
-//         return $result;
     }
-    
-    
-    
-    
-    
-//     public function currGameInfo () {
-//         $currGameResult = GameResult::where("finish","0")->first();
-//         return $this->gameInfo($currGameResult->code);
-//     }
     
     public function gameInfo ($code) {
         $gameRecords = $this->gameRecordByCode($code);
@@ -451,7 +385,7 @@ class LiuHeService{
                     "money"=>$member->money+$total_monty,
                 ]);
                 LogMemberMoney::create([
-                    "money"=>$total_monty,
+                    "payout"=>$total_monty,
                     "created_by"=>'sys',
                     "info"=>"派彩",
                     "type"=>'3',
