@@ -12,7 +12,7 @@
 */
 
 
-Route::group(['domain' => env("m_domain","admin.liuhe"), 'namespace' => 'admin'],function ($router){
+Route::group(['domain' => env("admin_domain","admin.liuhe"), 'namespace' => 'admin'],function ($router){
     
     Route::get('/','IndexController@index')->name("admin.index");
     
@@ -28,7 +28,7 @@ Route::group(['domain' => env("m_domain","admin.liuhe"), 'namespace' => 'admin']
 
 
 
-Route::group(['domain' => env("m_domain","liuhe"), 'namespace' => 'home'],function ($router){
+Route::group(['domain' => env("domain","liuhe"), 'namespace' => 'home'],function ($router){
     
     Route::get('/','IndexController@index')->name("home.index");
     
