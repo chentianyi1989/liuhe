@@ -118,7 +118,7 @@ class GameInfoController extends Controller {
                 
     //         }
     //         print_r ($gameRecords);
-    //         echo $gameRecords->toJson();
+//             echo $gameRecords->toJson();
     
             $_members = $_member->with(["gameRecords"=>function($query)use($currGameResult){
                 $query->where('code', $currGameResult->code);

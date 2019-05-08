@@ -20,8 +20,8 @@ class IndexController extends Controller {
         
         
 //         $sysConfig = SysConfig::first();
-        return view('home.home');
-//         return view('home.index');
+//         return view('home.home');
+        return view('home.index');
     }
     
     public function index (Request $request) {
