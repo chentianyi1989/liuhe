@@ -73,48 +73,48 @@ class ViewServiceProvider extends ServiceProvider
     public function boot()
     {
 
-        view()->composer('*', function ($view) {
-            $_sysConfig= SysConfig::first();
-            //             $_api_list = Api::where('on_line', 0)->orderBy('created_at', 'desc')->pluck('api_name', 'id')->toArray();
+//         view()->composer('*', function ($view) {
+//             $_sysConfig= SysConfig::first();
+//             //             $_api_list = Api::where('on_line', 0)->orderBy('created_at', 'desc')->pluck('api_name', 'id')->toArray();
             
-            $step = $_sysConfig->step * 60;
+//             $step = $_sysConfig->step * 60;
             
             
-            $currTime = date('H:i:s');
-            $count = ceil((strtotime($currTime)-strtotime($_sysConfig->start_at)) / $step);
-            $nextOpenTime = strtotime($_sysConfig->start_at)+ ($count * $step) - strtotime($currTime);
-//                     DB::listen(function($sql) {
-//                         dump($sql);
-//                         echo "$sql->sql<br/>";
-//             dump($sql->bindings);
-//                     });
-            $gameResult = GameResult::where("finish","1")->where(function($query){
-                $query->WhereNotNull("pingma_result")->WhereNotNull("tema_result")->where("pingma_result","!=","")->where("tema_result","!=","");
-            })->orderBy('id', 'desc')->paginate(5);
-            foreach ($gameResult as $key => $val) {
-                $result = $val["pingma_result"];
-                $result = explode(",",$result);
-                foreach ($result as $k => $v) {
-                    if (strlen($v)<2) {
-                        $v = "0".$v;
-                        $result[$k] = $v;
-                    }
-                }
-                $val["pingma_result"] = $result;
+//             $currTime = date('H:i:s');
+//             $count = ceil((strtotime($currTime)-strtotime($_sysConfig->start_at)) / $step);
+//             $nextOpenTime = strtotime($_sysConfig->start_at)+ ($count * $step) - strtotime($currTime);
+// //                     DB::listen(function($sql) {
+// //                         dump($sql);
+// //                         echo "$sql->sql<br/>";
+// //             dump($sql->bindings);
+// //                     });
+//             $gameResult = GameResult::where("finish","1")->where(function($query){
+//                 $query->WhereNotNull("pingma_result")->WhereNotNull("tema_result")->where("pingma_result","!=","")->where("tema_result","!=","");
+//             })->orderBy('id', 'desc')->paginate(5);
+//             foreach ($gameResult as $key => $val) {
+//                 $result = $val["pingma_result"];
+//                 $result = explode(",",$result);
+//                 foreach ($result as $k => $v) {
+//                     if (strlen($v)<2) {
+//                         $v = "0".$v;
+//                         $result[$k] = $v;
+//                     }
+//                 }
+//                 $val["pingma_result"] = $result;
                 
-                if (strlen($val["tema_result"])<2) {
-                    $val["tema_result"] = "0".$val["tema_result"];
-                }
-            }
+//                 if (strlen($val["tema_result"])<2) {
+//                     $val["tema_result"] = "0".$val["tema_result"];
+//                 }
+//             }
             
-            $currGameResult = GameResult::where("finish","0")->first();
+//             $currGameResult = GameResult::where("finish","0")->first();
             
             
-            $_user = auth('member')->user();
-//             echo $_user;
-            $view->with(compact('_sysConfig',"gameResult","currGameResult","_user","nextOpenTime"));
+//             $_user = auth('member')->user();
+// //             echo $_user;
+//             $view->with(compact('_sysConfig',"gameResult","currGameResult","_user","nextOpenTime"));
             
-        });
+//         });
         
         
         
