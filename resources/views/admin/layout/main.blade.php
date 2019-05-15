@@ -30,10 +30,10 @@
         		<a id="js-tabNav-next" class="btn radius btn-default size-S" href="javascript:;"><i class="Hui-iconfont">&#xe6d7;</i></a></div>
     	</div>
     	<div id="iframe_box" class="Hui-article">
-<!--     		<div class="show_iframe"> -->
+    		<div class="show_iframe">
     			<div style="display:none" class="loading"></div>
-<!--     			<iframe scrolling="yes" frameborder="0" src="welcome.html"></iframe> -->
-<!--         	</div> -->
+    			<iframe scrolling="yes" frameborder="0" src="/admin/welcome.html"></iframe>
+        	</div>
         </div>
     </section>
 

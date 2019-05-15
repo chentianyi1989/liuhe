@@ -17,149 +17,29 @@
 <link rel="stylesheet" href="//t.dyrs.cc/static/m/styles/yuanchuang/main.css?20181030">
 <!-- <script type="text/javascript" src="http://pv.dyrs.com.cn/js/staticdata.js"></script> -->
 <link rel="canonical" href="//ycgj.dyrs.com.cn" />
+<link rel="stylesheet" href="//t.dyrs.cc/static/m/styles/yuanchuang/style1.css?20181030">
 
+<script type="text/javascript" src="{{asset('/plugin/jquery.min.js')}}"></script> 
 
-    <link rel="stylesheet" href="//t.dyrs.cc/static/m/styles/yuanchuang/style1.css?20181030">
+    
 </head>
 <body>
 
-<div class="head">
-    <div class="tit ellipsis">
-                    <h1>东易日盛装饰</h1>
-            </div>
 
-            <div class="cur-city ellipsis">
-            <i class="iconfont icon-dingwei"></i>
-            <span>北京别墅</span>
-        </div>
-            <div class="public-meun" id="navBtn">
-        <i></i>
-        <i></i>
-        <i></i>
-    </div>
-</div>
-<div class="nav-layer" id="navLayer">
-    <ul class="clearfix">
-        <li>
-            <a href="/">
-                <i class="iconfont icon-shouye1 icon0"></i>
-                <span class="text">首页</span>
-            </a>
-        </li>
-        <li>
-            <a href="/service">
-                <i class="iconfont icon-zhuangxiu2"></i>
-                <span class="text">装修服务</span>
-            </a>
-        </li>
-        <li>
-            <a href="/case">
-                <i class="iconfont icon-icon-test icon1"></i>
-                <span class="text">装修案例</span>
-            </a>
-        </li>
-        <li>
-            <a href="/designer">
-                <i class="iconfont icon-shejishisheji icon2"></i>
-                <span class="text">设计大师</span>
-            </a>
-        </li>
-        <li>
-            <a href="/activity">
-                <i class="iconfont icon-libao icon3"></i>
-                <span class="text">装修礼包</span>
-            </a>
-        </li>
-        <li>
-            <a href="/store">
-                <i class="iconfont icon-zhihuichangguan icon4"></i>
-                <span class="text">线下体验馆</span>
-            </a>
-        </li>
-        <li>
-            <a href="/construction">
-                <i class="iconfont icon-gongdi icon5"></i>
-                <span class="text">在施工地</span>
-            </a>
-        </li>
-        <li>
-            <a href="/quality">
-                <i class="iconfont icon-pinzhi icon6"></i>
-                <span class="text">品质护航</span>
-            </a>
-        </li>
-        <li>
-            <a href="/column/guide">
-                <i class="iconfont icon-xinwen icon7"></i>
-                <span class="text">装修头条</span>
-            </a>
-        </li>
-        <li>
-            <a href="/photo">
-                <i class="iconfont icon-picture icon8"></i>
-                <span class="text">案例图册</span>
-            </a>
-        </li>
-        <li>
-            <a href="/foreman">
-                <i class="iconfont icon-haogongchang icon9"></i>
-                <span class="text">金牌工队</span>
-            </a>
-        </li>
-        <li>
-            <a href="/case/panorama">
-                <i class="iconfont icon-yangbanjian icon10"></i>
-                <span class="text">VR样板间</span>
-            </a>
-        </li>
-                <li>
-            <a href="/building">
-                <i class="iconfont icon-loupan icon12"></i>
-                <span class="text">热装楼盘</span>
-            </a>
-        </li>
-    </ul>
-    <div class="user-info">
-        <div class="fl over flcons"></div>
-        <div class="fr frcons"></div>
-    </div>
-</div>
+
+
+
 
 <div class="index-page" id="wrapper">
-    <div class="swiper-container" id="swiper1">
-                    <div class="swiper-wrapper" style="height:3.4rem">
-                                    <a class="swiper-slide lazy" href="/special/20190427/109424?banner" >
-                        <img src="http://img.dyrs.cc/store/655/878/000/2205cd0fae773e9c.jpg!l" alt="春日米兰释放美力，北京装饰设计公司，北京室内装修设计公司，北京装修公司排名" title="环球设计之旅" class="lazy_img cover hide">
-                    </a>
-                                    <a class="swiper-slide lazy" href="/special/20181105/107469" >
-                        <img src="http://img.dyrs.cc/store/465/781/000/5485c2c5fd454550.jpg!l" alt="软装设计，21年潜心精装大宅全案设计" title="软装设计" class="lazy_img cover hide">
-                    </a>
-                                    <a class="swiper-slide lazy" href="/special/20170830/103597" >
-                        <img src="http://img.dyrs.cc/store/979/806/000/3995c610416b6001.jpg!l" alt="北京别墅设计，21年别墅装修专家" title="21年别墅装修专家" class="lazy_img cover hide">
-                    </a>
-                                    <a class="swiper-slide lazy" href="/special/20180907/106878" >
-                        <img src="http://img.dyrs.cc/store/682/728/000/9495bd82b41371a3.jpg!l" alt="北京原创别墅设计，二手房装修其实很简单" title="二手房装修其实很简单" class="lazy_img cover hide">
-                    </a>
-                                    <a class="swiper-slide lazy" href="/special/20181019/107304" >
-                        <img src="http://img.dyrs.cc/store/683/728/000/5485bd82b763796e.jpg!l" alt="北京别墅设计，家装行业上市品牌" title="解密" class="lazy_img cover hide">
-                    </a>
-                                    <a class="swiper-slide lazy" href="/special/20161208/101933" >
-                        <img src="http://img.dyrs.cc/store/686/728/000/8025bd82b9ec3cc4.jpg!l" alt="北京别墅设计，户型设计/报价量身定制专属美家" title="户型设计/报价量身定制专属美家" class="lazy_img cover hide">
-                    </a>
-                                    <a class="swiper-slide lazy" href="/special/20170818/103519" >
-                        <img src="http://img.dyrs.cc/store/722/728/000/7375bd82d268f00d.jpg!l" alt="北京别墅设计，大宅装修" title="大宅装修" class="lazy_img cover hide">
-                    </a>
-                            </div>
-                <div class="swiper-pagination"></div>
-    </div>
-    <div class="pdl15 pdr15">
-            <div class="notice-info pr mt10 mb10">
-          <marquee style="white-space: nowrap" scrollamount="5">
-            <i class="iconfont icon"></i>
-            <a href="/special/20190427/109424?top">北京品质住宅优惠专场活动，低优惠，限量抢优惠，折扣券，优惠特权等您来拿！</a>
-          </marquee>
-        </div>
-        </div>
+    
+    @include('mobile.header')
+    
+    @include('mobile.home.ad') 
+    
+	@include('mobile.home.note') 
+	
+	
+	
     <div class="box1 bg-white">
         <div class="container">
             <div class="menu flex-box">
@@ -182,29 +62,12 @@
             </div>
         </div>
     </div>
-    <div class="box2 bg-white mt10">
-        <div class="form-common-title">
-            <div class="title">我家装修需要多少钱？</div>
-        </div>
-        <div class="form-common-body">
-            <form id="price" method="post" id="yuyue" data-formvalidate>
-                <input type="hidden"  name="action" value="price">
-                <input type="hidden"  name="desc" value="H5平台分站首页免费获取家装报价">
-                <div class="form-input">
-                    <input class="text-sub bg-form" type="text" name="acreage"  placeholder="您的房屋面积" validate="required|number" autocomplete="off">
-                </div>
-                <div class="form-input">
-                    <input class="text-sub bg-form" type="text" name="phone" placeholder="您的手机号码" validate="required|phone" autocomplete="off" maxlength="11">
-                </div>
-                <button type="submit" class="button button-primary full-w">立即获取</button>
-            </form>
+    
+    
+    @include('mobile.home.baojia') 
+    
 
-            <div class="tel sub">
-                <p>您的信息将被严格保密！稍后会有专业人员致电为您服务</p>
-            </div>
-        </div>
-    </div>
-        <div class="box4 bg-white mt10">
+	<div class="box4 bg-white mt10">
         <ul class="flex-box flex-around">
             <li class="tc">
                 <a href="/service/quotation"><i class="iconfont icon-jisuanqi"></i></a>
@@ -241,167 +104,14 @@
             <p class="sub">适合的装修风格</p>
         </div>
     </a>
-            <div class="box6 mt10 bg-white">
-            <div class="mainPage-title">
-                <div class="left">家装案例品鉴</div>
-                <a class="right block" href="/case">查看全部 <i class="iconfont icon-icon1"></i></a>
-            </div>
-            <div class="case-box clearfix">
-                <div class="swiper-container mt10" id="swiper2">
-                    <div class="swiper-wrapper">
-
-                                                                                    <div class="swiper-slide flex-box middle-j">
-                                    <div class="anli lazy load-over fl" style="width:6.8rem">
-                                        <a href="/case/129090" rel="nofollow">
-                                            <img class="lazy_img auto bgimg" data-original="http://artwork.dyrs.cc/photo/191/211/000/665ae2c8a43dd8d.jpg!hm" src="//s.dyrs.cc/static/pc/images/blank.gif" alt="">
-                                            <div class="bgimg"></div>
-                                        </a>
-                                                                                    <a class="designer" href="/designer/101355" rel="nofollow">
-                                                <div class="photo lazy load-over">
-                                                    <img class="lazy_img auto" data-original="http://img.dyrs.cc/store/827/739/000/7135bea4e4c3ecb3.jpg!zs" src="//s.dyrs.cc/static/pc/images/blank.gif" alt="李亚楠">
-                                                </div>
-                                                <div class="name">李亚楠</div>
-                                            </a>
-                                                                                <div class="text">
-                                            <div class="title ellipsis"></div>
-                                            <div class="sub ellipsis">
-                                                                                                    <a href="/case/ht1">别墅</a>
-                                                                                                            <a href="/case/s7">新中式</a>
-                                                                                                                                                                <a href="/case/ha4">321-500平米</a>
-                                                                                                                                                </div>
-                                        </div>
-                                                                                    <div class="collect">
-                                                                                                    <div>
-                                                        <i class="iconfont icon-tupian"></i> 6
-                                                    </div>
-                                                                                                                                            </div>
-                                                                            </div>
-                                </div>
-                                                                                                                <div class="swiper-slide flex-box middle-j">
-                                    <div class="anli lazy load-over fl" style="width:6.8rem">
-                                        <a href="/case/132186" rel="nofollow">
-                                            <img class="lazy_img auto bgimg" data-original="http://artwork.dyrs.cc/photo/393/233/000/2785b5acfe6b8a09.jpg!hm" src="//s.dyrs.cc/static/pc/images/blank.gif" alt="">
-                                            <div class="bgimg"></div>
-                                        </a>
-                                                                                    <a class="designer" href="/designer/1139" rel="nofollow">
-                                                <div class="photo lazy load-over">
-                                                    <img class="lazy_img auto" data-original="http://img.dyrs.cc/store/960/746/000/6065bf649971c5fe.jpg!zs" src="//s.dyrs.cc/static/pc/images/blank.gif" alt="陈鹏">
-                                                </div>
-                                                <div class="name">陈鹏</div>
-                                            </a>
-                                                                                <div class="text">
-                                            <div class="title ellipsis"></div>
-                                            <div class="sub ellipsis">
-                                                                                                    <a href="/case/ht1">别墅</a>
-                                                                                                            <a href="/case/s2">现代简约</a>
-                                                                                                                                                                <a href="/case/ha5">501-1000平米</a>
-                                                                                                                                                </div>
-                                        </div>
-                                                                                    <div class="collect">
-                                                                                                    <div>
-                                                        <i class="iconfont icon-tupian"></i> 8
-                                                    </div>
-                                                                                                                                            </div>
-                                                                            </div>
-                                </div>
-                                                                                                                <div class="swiper-slide flex-box middle-j">
-                                    <div class="anli lazy load-over fl" style="width:6.8rem">
-                                        <a href="/case/110699" rel="nofollow">
-                                            <img class="lazy_img auto bgimg" data-original="http://artwork.dyrs.cc/photo/016/078/000/44257b2da3c3953e.jpg!hm" src="//s.dyrs.cc/static/pc/images/blank.gif" alt="">
-                                            <div class="bgimg"></div>
-                                        </a>
-                                                                                <div class="text">
-                                            <div class="title ellipsis"></div>
-                                            <div class="sub ellipsis">
-                                                                                                    <a href="/case/ht1">别墅</a>
-                                                                                                            <a href="/case/s5">美式乡村</a>
-                                                                                                                                                                <a href="/case/ha3">181-320平米</a>
-                                                                                                                                                </div>
-                                        </div>
-                                                                                    <div class="collect">
-                                                                                                    <div>
-                                                        <i class="iconfont icon-tupian"></i> 6
-                                                    </div>
-                                                                                                                                                    <div>
-                                                        <i collect-status="no" class="iconfont icon-xin" collect-id="110699" onclick="page.setCollect('110699','case',this)"></i> 34
-                                                    </div>
-                                                                                            </div>
-                                                                            </div>
-                                </div>
-                                                                        </div>
-                    <div>
-                    </div>
-                </div>
-                <div class="tab">
-                    <a href="/case/s2">现代简约</a>
-                    <a href="/case/s1">欧式古典</a>
-                    <a href="/case/s7">新中式</a>
-                    <a href="/case/s34">法式</a>
-                    <a href="/case">更多</a>
-                </div>
-            </div>
-        </div>
-                <div class="box7 bg-white pdt20">
-            <div class="mainPage-title mb10 ml15 mr15">
-                <div class="left">家装设计大师</div>
-                <a class="right block" href="/designer">查看全部 <i class="iconfont icon-icon1"></i></a>
-            </div>
-            <div class="detail_team clearfix pdl15 pdr15" id="designer_list">
-                                                            <a class="a shadow" href="/designer/1140" rel="nofollow">
-                            <div class="cover-body img inline">
-                                <img data-original="http://img.dyrs.cc/store/812/739/000/4045bea4d74b163b.jpg!zmm" alt="装修设计师" title=""  src="//s.dyrs.cc/static/m/images/blank.gif"  class="lazy_img cover">
-                            </div>
-                            <p class="f15 text-black pdl8 pdt8 ellipsis">周光勇</p>
-                            <p class="f12 pdl8 pdb8 ellipsis">原创国际·墅装首席专家设计师</p>
-                        </a>
-                                                                                <a class="a shadow" href="/designer/1531" rel="nofollow">
-                            <div class="cover-body img inline">
-                                <img data-original="http://img.dyrs.cc/store/810/739/000/3685bea4d59b2b11.jpg!zmm" alt="装修设计师" title=""  src="//s.dyrs.cc/static/m/images/blank.gif"  class="lazy_img cover">
-                            </div>
-                            <p class="f15 text-black pdl8 pdt8 ellipsis">龚艳慧</p>
-                            <p class="f12 pdl8 pdb8 ellipsis">原创国际·墅装高级专家设计师</p>
-                        </a>
-                                                                                <a class="a shadow" href="/designer/1145" rel="nofollow">
-                            <div class="cover-body img inline">
-                                <img data-original="http://img.dyrs.cc/store/813/739/000/8095bea4d834b8e8.jpg!zmm" alt="装修设计师" title=""  src="//s.dyrs.cc/static/m/images/blank.gif"  class="lazy_img cover">
-                            </div>
-                            <p class="f15 text-black pdl8 pdt8 ellipsis">赵庭辉</p>
-                            <p class="f12 pdl8 pdb8 ellipsis">原创国际·墅装首席专家设计师</p>
-                        </a>
-                                                                                <a class="a shadow" href="/designer/1139" rel="nofollow">
-                            <div class="cover-body img inline">
-                                <img data-original="http://img.dyrs.cc/store/960/746/000/6065bf649971c5fe.jpg!zmm" alt="装修设计师" title=""  src="//s.dyrs.cc/static/m/images/blank.gif"  class="lazy_img cover">
-                            </div>
-                            <p class="f15 text-black pdl8 pdt8 ellipsis">陈鹏</p>
-                            <p class="f12 pdl8 pdb8 ellipsis">原创国际·墅装首席专家设计师</p>
-                        </a>
-                                                                                <a class="a shadow" href="/designer/1146" rel="nofollow">
-                            <div class="cover-body img inline">
-                                <img data-original="http://img.dyrs.cc/store/815/739/000/6815bea4da3159f6.jpg!zmm" alt="装修设计师" title=""  src="//s.dyrs.cc/static/m/images/blank.gif"  class="lazy_img cover">
-                            </div>
-                            <p class="f15 text-black pdl8 pdt8 ellipsis">孟庆彬</p>
-                            <p class="f12 pdl8 pdb8 ellipsis">原创国际·墅装高级专家设计师</p>
-                        </a>
-                                                                                <a class="a shadow" href="/designer/100567" rel="nofollow">
-                            <div class="cover-body img inline">
-                                <img data-original="http://img.dyrs.cc/store/818/739/000/3625bea4dc049c6a.jpg!zmm" alt="装修设计师" title=""  src="//s.dyrs.cc/static/m/images/blank.gif"  class="lazy_img cover">
-                            </div>
-                            <p class="f15 text-black pdl8 pdt8 ellipsis">黄麒人</p>
-                            <p class="f12 pdl8 pdb8 ellipsis">原创国际·墅装专家设计师</p>
-                        </a>
-                                                </div>
-            <div class="pdl15 pdr15">
-                <form id="design" class="tabnav flex-box pr mt10" style="top:0;left:0" data-formvalidate="layer">
-                    <input type="hidden" name="kid" value="2dlksj389skj9832huifh82y2h0ioi238iutri23">
-                    <input type="hidden" name="desc" value="H5平台分站首页报名专属全屋设计">
-                    <input type="hidden" name="action" value="design">
-                    <input type="text" class="yy_phone flex1 pdl10" placeholder="您的电话号码" validate="required|phone" maxlength="11" name="phone">
-                    <button type="submit" class="button button-primary yy_btn tc">
-                        <span>专属全屋设计</span>
-                    </button>
-                </form>
-            </div>
-        </div>
+            
+            
+    @include('mobile.home.case')         
+            
+            
+    @include('mobile.home.design')    
+            
+                
                 <div class="box8 bg-white pdl15 pdr15 pdt20">
             <div class="mainPage-title mb10">
                 <div class="left">热装楼盘</div>
@@ -787,9 +497,9 @@
 
 <div style=" display:none;">
     
-    <script src="https://s11.cnzz.com/z_stat.php?id=1260426547&web_id=1260426547" language="JavaScript"></script>
+<!--     <script src="https://s11.cnzz.com/z_stat.php?id=1260426547&web_id=1260426547" language="JavaScript"></script> -->
     
-    <script src="https://s19.cnzz.com/z_stat.php?id=1272427119&web_id=1272427119" language="JavaScript"></script>
+<!--     <script src="https://s19.cnzz.com/z_stat.php?id=1272427119&web_id=1272427119" language="JavaScript"></script> -->
 </div>
 
     <div style="display:none;">
@@ -800,34 +510,6 @@
 <script>
     host = document.domain;
 </script>
-<!--美洽-->
-    <script>
-        
-        var meiqia_js_code = '25103';
-        (function(m, ei, q, i, a, j, s)
-        {
-            m[i] = m[i] || function()
-                {
-                    (m[i].a = m[i].a || []).push(arguments)
-                };
-            j = ei.createElement(q),
-                s = ei.getElementsByTagName(q)[0];
-            j.async = true;
-            j.charset = 'UTF-8';
-            j.src = 'https://static.meiqia.com/dist/meiqia.js?_=t';
-            s.parentNode.insertBefore(j, s);
-        })(window, document, 'script', '_MEIQIA');
-        _MEIQIA('entId', meiqia_js_code);//这个变量是后台填写的乐语编码
-
-        if(!regref.exec(refs)){
-            _MEIQIA('clientId', DYRSUUID.replace(/\-/g, ''));
-            _MEIQIA('metadata', {
-                客户标识: DYRSUUID, // 美洽默认字段
-                APPKEY: code
-            });
-        }
-        
-    </script>
 <!--营销QQ-->
 <script>
     
@@ -836,99 +518,10 @@
             $(this).attr('href', $.trim($(this).attr('href'))+"&metadata="+encodeURI('{"客户标识": "'+DYRSUUID+'","APPKEY": "'+code+'"}'))
         });
 
-        if(!regref.exec(refs)){
-            window.reseveKey = '#params:客户标识, ' + getCookie("dyrs_uuid") + ',APPKEY,' + code;
-        }
     })
     
 </script>
-
-    <div style="display:none;">
-        <!--百度统计-->
-        <script>
-            
-            var _hmt = _hmt || [];
-            (function() {
-                var hm = document.createElement("script");
-                hm.src = "//hm.baidu.com/hm.js?9aff0a100cda18a6c653cfdfde89efe0";
-                var s = document.getElementsByTagName("script")[0];
-                s.parentNode.insertBefore(hm, s);
-            })();
-            $("body").on("click", "#launchBtn", function(){
-                _hmt.push(['_trackEvent', "QQ", "button[launchBtn]", "中间QQ交谈"]);
-            })
-
-            $("body").on("click", "#laterBtn", function(){
-                _hmt.push(['_trackEvent', "QQ", "button[laterBtn]", "中间下次再说"]);
-            })
-
-            $("body").on("click", "#closeBtn", function(){
-                _hmt.push(['_trackEvent', "QQ", "button[closeBtn]", "中间关闭QQ"]);
-            })
-
-            $("body").on("click", "#MEIQIA-BTN", function(){
-                _hmt.push(['_trackEvent', "美恰", "button[MEIQIA-BTN]", "左侧竖条按钮"]);
-            })
-
-            $("body").on("click", "#MEIQIA-INVITE-CLOSE", function(){
-                _hmt.push(['_trackEvent', "美恰", "button[MEIQIA-INVITE-CLOSE]", "左侧提示关闭按钮"]);
-            })
-
-            $("body").on("click", "#btnHideTicket", function(){
-                _hmt.push(['_trackEvent', "美恰", "button[btnHideTicket]", "右下关闭美恰"]);
-            })
-
-            $("body").on("click", "#ticketSubmit", function(){
-                _hmt.push(['_trackEvent', "美恰", "button[ticketSubmit]", "右下提交"]);
-            })
-
-            $("body").on("click", "#doyoo_f_close", function(){
-                _hmt.push(['_trackEvent', "乐语", "button[doyoo_f_close]", "右下关闭"]);
-            })
-
-            $("body").on("click", "#doyoo_f_min", function(){
-                _hmt.push(['_trackEvent', "乐语", "button[doyoo_f_min]", "右下最小化"]);
-            })
-
-            $("body").on("click", ".btn-chat-send", function(){
-                _hmt.push(['_trackEvent', "乐语", "button[btn-chat-send]", "右下发送"]);
-            })
-
-            $("body").on("click", "#ncls", function(){
-                _hmt.push(['_trackEvent', "乐语", "button[ncls]", "正右客服列表关闭"]);
-            })
-
-            $("body").on("click", "#allcontent", function(){
-                _hmt.push(['_trackEvent', "乐语", "button[allcontent]", "正右客服列表咨询"]);
-            })
-
-            $("body").on("click", "#fixed-bottom-bar .close", function(){
-                _hmt.push(['_trackEvent', "系统", "button[fixed-bottom-bar close]", "关闭最下报价"]);
-            })
-
-            $("body").on("click", "#fixed-bottom-submit", function(){
-                _hmt.push(['_trackEvent', "系统", "button[fixed-bottom-submit]", "最下报价获取"]);
-            })
-
-
-
-            $("body").on("click", "#doyoo_mon_refuse", function(){
-                _hmt.push(['_trackEvent', "乐语", "button[doyoo_mon_refuse]", "左下图片关闭按钮"]);
-            })
-
-            $("body").on("click", "#doyoo_mon_accept", function(){
-                _hmt.push(['_trackEvent', "乐语", "button[doyoo_mon_accept]", "左下图片在线咨询"]);
-            })
-
-
-
-            $("body").on("click", "#LXB_CONTAINER .lxb-cb-input-btn", function(){
-                _hmt.push(['_trackEvent', "离线宝", "button[LXB_CONTAINER lxb-cb-input-btn]", "右上电话报价"]);
-            })
-
-            
-        </script>
-    </div>
+https://s11.cnzz.com/z_stat.php?id=1260426547&web_id=1260426547
 
 
 <script src="http://www.dyrs.com.cn/js/gtag-UA-113658501-1.js"></script>
@@ -941,47 +534,8 @@
     gtag('config', 'UA-113658501-1');
 </script>
 <script src="//pv.dyrs.com.cn/js/dyrs.js"></script>
-<!-- 百度代码 -->
-<script>
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https'){
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else{
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var ss = document.getElementsByTagName("script")[0];
-    ss.parentNode.insertBefore(bp, ss);
-</script>
-
-<!-- 统计相关 -->
-
-<!--百度统计-->
 
 
-
-
-
-  
-  
-  
-  
-
-
-
-
-
-<!--51统计-->
-<div style="display:none">
-<script>
-
-document.write('<scr'+'ipt type="text/javascript" src="//js.users.51.la/19383701.js"></scr'+'ipt>');
-
-</script>
-</div>
-
-<!--cnzz统计-->
 
 <!--Google统计-->
 
@@ -1083,26 +637,7 @@ $(document).ready(function () {
     }
 
 </style>
-<div class="foot-warp-bottom clearfix">
-    <div class="foot-c1 clearfix">
-	        <a class="ding-one " href="/">
-							 <img src="http://img.dyrs.cc/store/437/840/000/6985c9347145eba4.png!c" class="show1">
-			 <span class="num-text act1">官网首页</span>
-				        </a>
-        <a class="ding-one" href="/service/quotation">
-					<img src="http://img.dyrs.cc/special/910/100/108910/bj.png!c" class="show"  style="width:0.38rem">
-			<span class="num-text">免费报价</span>
-		            
-        </a>
-        <!-- <a href="tel:" rel="nofollow" > <div class="ding-one"> -->
-        <a href="tel:400-9999-162" rel="nofollow" > <div class="ding-one">
-		            <img src="http://img.dyrs.cc/special/910/100/108910/dh.png!c" class="show" style="width: .32rem;">
-		            <span class="num-text1" style="margin-top: 3px;">电话咨询</span>
-        </div>
-        </a>
-	    </div>
-</div>
-<script src="//api.map.baidu.com/api?v=2.0&ak=XcGzRq3pYaqgGP6nzgfGeeV1"></script>
+
 <script>
     var csrfToken = '2A2EB917-23DE-DE5C-18C8-C4F1FCD6E78E';
 	var collect_type = 'case';
@@ -1113,92 +648,96 @@ $(document).ready(function () {
   <script type="text/html" id="store_temp">
   </script>
 <script>
-    var page = Page({
-        onReady: function () {
-            this.swiper1()
-            var mySwiper = new Swiper('#swiper2', {
-                // autoplay: true,//可选选项，自动滑动
-                freeMode : true,
-                 on:{
-                    touchMove: function(event){
-                        //你的事件
-                        $(window).scroll()
-                    },
-                },
-                slideChangeTransitionEnd : function (){
-                    $(window).scroll()
-                }
-            })
-            var mySwiper = new Swiper('#swiper3', {
-                autoplay: {
-                     delay: 3000,
-                     disableOnInteraction: false,
-                },
-            })
-        },
-        designer:function(){
-            $.ajax({
-                url : "/api/index/index_designer_store.php",
-                data : {
-                    type : 'designer'
-                },
-                type:'get',
-                success : function(res){
-                    var html = template('designer_temp',{datas:res})
-                    $('#designer_list').html(html)
-                    $('.lazy_img').lazyload(var_lazy);
-                }
-            })
-        },
-        store:function(){
-            $.ajax({
-                url : "/api/index/index_designer_store.php",
-                data : {
-                    type : 'store'
-                },
-                type:'get',
-                success : function(res){
-                    var html = template('store_temp',{datas:res})
-                    $('#store_list').html(html)
-                    $('.lazy_img').lazyload(var_lazy);
-                }
-            })
-        },
-        swiper1: function () {
-            var cla = '#swiper1';
-            new Swiper(cla, {
-                slidesPerView: 1,
-                spaceBetween: 30,
-                loop: true,
-                autoplay: {
-                     delay: 2500,
-                     disableOnInteraction: false,
-                },
-                pagination: {
-                    el: cla + ' .swiper-pagination',
-                    clickable: true,
-                },
-                on: {
-                    init: function () {
-                        $(cla).find('.swiper-wrapper .swiper-slide').eq(0).find('img').show();
-                        $(cla).find('.swiper-wrapper .swiper-slide').eq(0).next().find('img').show();
-                        $(cla).find('.swiper-wrapper .swiper-slide').eq(0).prev().find('img').show();
-                        $(window).scroll();
-                    },
-                    slideChangeTransitionEnd: function () {
-                        $(cla).find('.swiper-wrapper .swiper-slide').eq(this.activeIndex).find('img').show();
-                        $(cla).find('.swiper-wrapper .swiper-slide').eq(this.activeIndex).next().find('img').show();
-                        $(cla).find('.swiper-wrapper .swiper-slide').eq(this.activeIndex).prev().find('img').show();
-                        $(window).scroll();
-                    }
-                }
-            });
-        },
-        closeFn:function(dom){
-            $(dom).parents('.notice-info').fadeOut(5e2)
-        }
-    })
-page.collectionList('case');
+
+
+
+
+//     var page = Page({
+//         onReady: function () {
+//             this.swiper1()
+//             var mySwiper = new Swiper('#swiper2', {
+//                 // autoplay: true,//可选选项，自动滑动
+//                 freeMode : true,
+//                  on:{
+//                     touchMove: function(event){
+//                         //你的事件
+//                         $(window).scroll()
+//                     },
+//                 },
+//                 slideChangeTransitionEnd : function (){
+//                     $(window).scroll()
+//                 }
+//             })
+//             var mySwiper = new Swiper('#swiper3', {
+//                 autoplay: {
+//                      delay: 3000,
+//                      disableOnInteraction: false,
+//                 },
+//             })
+//         },
+//         designer:function(){
+//             $.ajax({
+//                 url : "/api/index/index_designer_store.php",
+//                 data : {
+//                     type : 'designer'
+//                 },
+//                 type:'get',
+//                 success : function(res){
+//                     var html = template('designer_temp',{datas:res})
+//                     $('#designer_list').html(html)
+//                     $('.lazy_img').lazyload(var_lazy);
+//                 }
+//             })
+//         },
+//         store:function(){
+//             $.ajax({
+//                 url : "/api/index/index_designer_store.php",
+//                 data : {
+//                     type : 'store'
+//                 },
+//                 type:'get',
+//                 success : function(res){
+//                     var html = template('store_temp',{datas:res})
+//                     $('#store_list').html(html)
+//                     $('.lazy_img').lazyload(var_lazy);
+//                 }
+//             })
+//         },
+//         swiper1: function () {
+//             var cla = '#swiper1';
+//             new Swiper(cla, {
+//                 slidesPerView: 1,
+//                 spaceBetween: 30,
+//                 loop: true,
+//                 autoplay: {
+//                      delay: 2500,
+//                      disableOnInteraction: false,
+//                 },
+//                 pagination: {
+//                     el: cla + ' .swiper-pagination',
+//                     clickable: true,
+//                 },
+//                 on: {
+//                     init: function () {
+//                         $(cla).find('.swiper-wrapper .swiper-slide').eq(0).find('img').show();
+//                         $(cla).find('.swiper-wrapper .swiper-slide').eq(0).next().find('img').show();
+//                         $(cla).find('.swiper-wrapper .swiper-slide').eq(0).prev().find('img').show();
+//                         $(window).scroll();
+//                     },
+//                     slideChangeTransitionEnd: function () {
+//                         $(cla).find('.swiper-wrapper .swiper-slide').eq(this.activeIndex).find('img').show();
+//                         $(cla).find('.swiper-wrapper .swiper-slide').eq(this.activeIndex).next().find('img').show();
+//                         $(cla).find('.swiper-wrapper .swiper-slide').eq(this.activeIndex).prev().find('img').show();
+//                         $(window).scroll();
+//                     }
+//                 }
+//             });
+//         },
+//         closeFn:function(dom){
+//             $(dom).parents('.notice-info').fadeOut(5e2)
+//         }
+//     })
+// page.collectionList('case');
 </script>
 
 </body>
