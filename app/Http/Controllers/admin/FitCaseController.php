@@ -72,8 +72,6 @@ class FitCaseController extends Controller {
     
     public function edit (Request $request) {
         
-        
-        
         $id = $request["id"];
         $data = $request->all();
         $case = [];
@@ -94,4 +92,14 @@ class FitCaseController extends Controller {
         
         return view('admin.case.index',compact("cases"));
     }
+    
+    public function delete (Request $request) {
+        
+        @$ids = $request["id"];
+        if ($ids){
+            FitCase::destroy($ids);
+        } 
+        return $this->responseSuccess();
+    }
+    
 }

@@ -87,8 +87,28 @@ function member_edit(){
 	layer_show("修改装修案例"+url,url,500);
 }
 
+
 function datadel () {
-	
+	var checkbox = $("#tableList").find("input[type='checkbox']:checked");
+	if (checkbox.length < 1) {
+		alert("选择一条记录");
+		return ""
+	}else if (checkbox.length > 1){
+		alert("只能选择一条记录");
+		return ""
+	}
+	var id = checkbox.val();
+	var url = "{{ route('case.delete') }}?id="+id;
+
+	$.ajax({
+		type:"GET",
+        url:url,
+        dataType:"json",
+        success:function(req){
+            alert("删除成功");
+            location.replace(location.href);
+        }
+	});
 }
 </script>
 

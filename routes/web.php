@@ -19,7 +19,7 @@ Route::group(['domain' => env("admin_domain","admin.liuhe"), 'namespace' => 'adm
     
     Route::get('/case/index','FitCaseController@index')->name("case.index");
     Route::get('/case/edit','FitCaseController@edit')->name("case.edit");
-//     Route::get('/case/add','FitCaseController@add')->name("case.add");
+    Route::get('/case/delete','FitCaseController@delete')->name("case.delete");
     Route::post('/case/save','FitCaseController@save')->name("case.save");
     
     
@@ -53,6 +53,8 @@ Route::group(['domain' => env("m_domain","m.liuhe"), 'namespace' => 'mobile'],fu
     Route::get('/case/list','FitCaseController@list')->name("mobile.case.list");
     Route::get('/case/{id}','FitCaseController@index')->name("mobile.case.index");
     
+    Route::get('/other/xianxiamendian','OtherController@xianxiamendian')->name("mobile.other.xianxiamendian");
+    
     
     
     //api
@@ -63,6 +65,8 @@ Route::group(['domain' => env("m_domain","m.liuhe"), 'namespace' => 'mobile'],fu
         Route::post('/baojia/save','BaoJiaController@save')->name("mobile.api.baojia.save");
         
     });
+    
+
     
 });
 

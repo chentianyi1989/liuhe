@@ -74,36 +74,36 @@
                 <p>快速报价</p>
             </li>
             <li class="tc">
-                <a href="/service/finance"><i class="iconfont icon-daikuan"></i></a>
-                <p>家装贷款</p>
-            </li>
-            <li class="tc">
-                <a href="/store"><i class="iconfont icon-mendian"></i></a>
-                <p>查询门店</p>
-            </li>
-        </ul>
-        <ul class="flex-box flex-around mt25">
-            <li class="tc">
-                <a href="/activity"><i class="iconfont icon-huodong"></i></a>
-                <p>优惠活动</p>
-            </li>
-            <li class="tc">
                 <a href="/service/inspection"><i class="iconfont icon-moniyanfang"></i></a>
                 <p>免费验房</p>
             </li>
             <li class="tc">
-                <a href="/service/freecar"><i class="iconfont icon-zhuanche-copy"></i></a>
-                <p>免费专车</p>
+                <a href="{{route('mobile.other.xianxiamendian')}}"><i class="iconfont icon-mendian"></i></a>
+                <p>查询门店</p>
             </li>
         </ul>
+<!--         <ul class="flex-box flex-around mt25"> -->
+<!--             <li class="tc"> -->
+<!--                 <a href="/activity"><i class="iconfont icon-huodong"></i></a> -->
+<!--                 <p>优惠活动</p> -->
+<!--             </li> -->
+<!--             <li class="tc"> -->
+<!--                 <a href="/service/finance"><i class="iconfont icon-daikuan"></i></a> -->
+<!--                 <p>家装贷款</p> -->
+<!--             </li> -->
+<!--             <li class="tc"> -->
+<!--                 <a href="/service/freecar"><i class="iconfont icon-zhuanche-copy"></i></a> -->
+<!--                 <p>免费专车</p> -->
+<!--             </li> -->
+<!--         </ul> -->
     </div>
-    <a class="box5 mt10 lazy block" href="/service/homedecoration">
-        <img data-original="//s.dyrs.cc/static/m/images/20181031_05.jpg" src="//s.dyrs.cc/static/m/images/blank.gif" class="lazy_img auto">
-        <div class="text">
-            <p class="title">测测<span class="text-primary">您家</span></p>
-            <p class="sub">适合的装修风格</p>
-        </div>
-    </a>
+<!--     <a class="box5 mt10 lazy block" href="/service/homedecoration"> -->
+<!--         <img data-original="//s.dyrs.cc/static/m/images/20181031_05.jpg" src="//s.dyrs.cc/static/m/images/blank.gif" class="lazy_img auto"> -->
+<!--         <div class="text"> -->
+<!--             <p class="title">测测<span class="text-primary">您家</span></p> -->
+<!--             <p class="sub">适合的装修风格</p> -->
+<!--         </div> -->
+<!--     </a> -->
             
             
     @include('mobile.home.case')         
@@ -111,111 +111,10 @@
             
     @include('mobile.home.design')    
             
+	@include('mobile.home.loupan')          
                 
-                <div class="box8 bg-white pdl15 pdr15 pdt20">
-            <div class="mainPage-title mb10">
-                <div class="left">热装楼盘</div>
-                <a class="right block" href="/building">查看全部 <i class="iconfont icon-icon1"></i></a>
-            </div>
-
-            <div class="detail_team clearfix">
-                                                            <a href="/building/101172" class="loupan">
-                            <div class="img lazy">
-                                <img data-original="http://img.dyrs.cc/store/969/094/000/26457341f6603b7b.jpg!zmm" src="//s.dyrs.cc/static/m/images/blank.gif"
-                                    alt="西山壹号院楼盘装修" class="lazy_img auto">
-                            </div>
-                            <p class="ellipsis">西山壹号院</p>
-                        </a>
-                                                                                <a href="/building/105047" class="loupan">
-                            <div class="img lazy">
-                                <img data-original="http://img.dyrs.cc/store/730/629/000/6805b5a7f7bb522c.png!zmm" src="//s.dyrs.cc/static/m/images/blank.gif"
-                                    alt="昆仑域楼盘装修" class="lazy_img auto">
-                            </div>
-                            <p class="ellipsis">昆仑域</p>
-                        </a>
-                                                                                <a href="/building/104703" class="loupan">
-                            <div class="img lazy">
-                                <img data-original="http://img.dyrs.cc/store/348/581/000/1725b0787b58a9d2.jpg!zmm" src="//s.dyrs.cc/static/m/images/blank.gif"
-                                    alt="中国玺楼盘装修" class="lazy_img auto">
-                            </div>
-                            <p class="ellipsis">中国玺</p>
-                        </a>
-                                                </div>
-            <form id="lou" class="tabnav flex-box pr mt10" style="top:0;left:0" data-formvalidate="layer">
-                <input type="hidden" name="kid" value="2dlksj389skj9832huifh82y2h0ioi238iutri23">
-                <input type="hidden" name="desc" value="H5平台分站首页报名参观楼盘">
-                <input type="hidden" name="action" value="visit">
-                <input type="text" class="yy_phone flex1 pdl10" placeholder="您的电话号码" validate="required|phone" maxlength="11" name="phone">
-                <button type="submit" class="button button-primary yy_btn tc">
-                    <span>报名参观楼盘</span>
-                </button>
-            </form>
-        </div>
-                <div class="box9 pdt20 bg-white pdl15 pdr15">
-            <div class="mainPage-title mb10">
-                <div class="left">您身边的线下体验店</div>
-                <a class="right block" href="/store">查看全部 <i class="iconfont icon-icon1"></i></a>
-            </div>
-            <div class="scroll-box">
-                <div class="scroll-container" id="store_list">
-                                                                        <a class="tab-item" href="/store/100000">
-                                <div class="img lazy">
-                                    <img alt="东易日盛原创国际一部" title="东易日盛原创国际一部" data-original="http://img.dyrs.cc/store/185/817/000/1225c73454e413c2.jpg!zs" rel="nofollow" src="//s.dyrs.cc/static/m/images/blank.gif" class="lazy_img auto">
-                                </div>
-                                <div class="text flex1">
-                                    <div class="title ellipsis">东易日盛原创国际一部</div>
-                                    <div class="address ellipsis"><i class="iconfont icon-dianhua"></i> 400-9999-162</div>
-                                </div>
-                            </a>
-                                                                                                <a class="tab-item" href="/store/1136">
-                                <div class="img lazy">
-                                    <img alt="东易日盛原创国际二部" title="东易日盛原创国际二部" data-original="http://img.dyrs.cc/store/176/541/000/5145abdf00031570.jpg!zs" rel="nofollow" src="//s.dyrs.cc/static/m/images/blank.gif" class="lazy_img auto">
-                                </div>
-                                <div class="text flex1">
-                                    <div class="title ellipsis">东易日盛原创国际二部</div>
-                                    <div class="address ellipsis"><i class="iconfont icon-dianhua"></i> 400-9999-162</div>
-                                </div>
-                            </a>
-                                                                                                <a class="tab-item" href="/store/100001">
-                                <div class="img lazy">
-                                    <img alt="东易日盛原创国际三部" title="东易日盛原创国际三部" data-original="http://img.dyrs.cc/store/177/541/000/4455abdf00a72238.jpg!zs" rel="nofollow" src="//s.dyrs.cc/static/m/images/blank.gif" class="lazy_img auto">
-                                </div>
-                                <div class="text flex1">
-                                    <div class="title ellipsis">东易日盛原创国际三部</div>
-                                    <div class="address ellipsis"><i class="iconfont icon-dianhua"></i> 400-9999-162</div>
-                                </div>
-                            </a>
-                                                                                                <a class="tab-item" href="/store/100089">
-                                <div class="img lazy">
-                                    <img alt="东易日盛原创国际四部" title="东易日盛原创国际四部" data-original="http://img.dyrs.cc/store/039/776/000/5775c233d82420cf.jpg!zs" rel="nofollow" src="//s.dyrs.cc/static/m/images/blank.gif" class="lazy_img auto">
-                                </div>
-                                <div class="text flex1">
-                                    <div class="title ellipsis">东易日盛原创国际四部</div>
-                                    <div class="address ellipsis"><i class="iconfont icon-dianhua"></i> 400-9999-162</div>
-                                </div>
-                            </a>
-                                                                                                <a class="tab-item" href="/store/100065">
-                                <div class="img lazy">
-                                    <img alt="东易日盛软装设计部" title="东易日盛软装设计部" data-original="http://img.dyrs.cc/store/130/575/000/4175afd2a73e674e.jpg!zs" rel="nofollow" src="//s.dyrs.cc/static/m/images/blank.gif" class="lazy_img auto">
-                                </div>
-                                <div class="text flex1">
-                                    <div class="title ellipsis">东易日盛软装设计部</div>
-                                    <div class="address ellipsis"><i class="iconfont icon-dianhua"></i> 400-9999-162</div>
-                                </div>
-                            </a>
-                                                            </div>
-            </div>
-            <form id="store" class="tabnav flex-box pr mt10" style="top:0;left:0" data-formvalidate="layer">
-                <input type="hidden" name="kid" value="2dlksj389skj9832huifh82y2h0ioi238iutri23">
-                <input type="hidden" name="desc" value="H5平台分站首页预约到店体验">
-                <input type="hidden" name="action" value="visit">
-                <input type="text" class="yy_phone flex1 pdl10" placeholder="您的电话号码" validate="required|phone" maxlength="11" name="phone">
-                <button type="submit" class="button button-primary yy_btn tc">
-                    <span>预约到店体验</span>
-                </button>
-            </form>
-        </div>
-    
+                
+    {{-- @include('mobile.home.xianxiatiyan') --}}
 
     <div class="box10 bg-white pdt20 pdl15 pdr15 pdb20">
         <div class="mainPage-title mb10">

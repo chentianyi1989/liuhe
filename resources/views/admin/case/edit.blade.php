@@ -179,23 +179,23 @@ function article_save(){
 function addtemplate () {
 	
 	
-	$("<tr>")
+// 	$("<tr>")
 
-	<tr>
-    	<td><input class="input-text" placeholder="位置（客厅、餐厅）"/></td>
-    	<td><input class="input-text" placeholder="图片的描述"/></td>
-    	<td>
-    		<span class="btn-upload form-group">
-    			<input class="input-text upload-url" type="text" name="" id="" readonly nullmsg="请添加附件！" style="width:200px">
-    			<a href="javascript:void();" class="btn btn-primary radius upload-btn"><i class="Hui-iconfont">&#xe642;</i> 浏览文件</a>
-    			<input type="file" multiple name="file-2" class="input-file">
-    		</span>
-    	</td>
-    	<td>
-    		<a title="删除" href="javascript:;" onclick="" class="ml-5" style="text-decoration:none">
-    			<i class="Hui-iconfont">&#xe6e2;</i></a>
-    	</td>
-    </tr>
+// 	<tr>
+//     	<td><input class="input-text" placeholder="位置（客厅、餐厅）"/></td>
+//     	<td><input class="input-text" placeholder="图片的描述"/></td>
+//     	<td>
+//     		<span class="btn-upload form-group">
+//     			<input class="input-text upload-url" type="text" name="" id="" readonly nullmsg="请添加附件！" style="width:200px">
+//     			<a href="javascript:void();" class="btn btn-primary radius upload-btn"><i class="Hui-iconfont">&#xe642;</i> 浏览文件</a>
+//     			<input type="file" multiple name="file-2" class="input-file">
+//     		</span>
+//     	</td>
+//     	<td>
+//     		<a title="删除" href="javascript:;" onclick="" class="ml-5" style="text-decoration:none">
+//     			<i class="Hui-iconfont">&#xe6e2;</i></a>
+//     	</td>
+//     </tr>
 
 }
 

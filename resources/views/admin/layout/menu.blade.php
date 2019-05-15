@@ -5,8 +5,7 @@
 			<dt><i class="Hui-iconfont">&#xe616;</i> 装修案例<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="{{ route('case.index') }}" data-title="装修案例" href="javascript:void(0)">装修案例列表</a></li>
-					<li><a data-href="article-list.html" data-title="装修案例" href="javascript:void(0)">新增装修案例</a></li>
+					<li><a data-href="{{ route('case.index') }}" data-title="装修案例列表" href="javascript:void(0)">装修案例列表</a></li>
 				</ul>
 			</dd>
 		</dl>
@@ -15,8 +14,7 @@
 			<dt><i class="Hui-iconfont">&#xe616;</i> 客户管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="{{ route('baojia.index') }}" data-title="装修案例" href="javascript:void(0)">报价客户</a></li>
-					<li><a data-href="article-list.html" data-title="装修案例" href="javascript:void(0)">新增装修案例</a></li>
+					<li><a data-href="{{ route('baojia.index') }}" data-title="报价客户" href="javascript:void(0)">报价客户</a></li>
 				</ul>
 			</dd>
 		</dl>

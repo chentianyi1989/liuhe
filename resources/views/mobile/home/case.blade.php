@@ -7,7 +7,7 @@
 	<div class="case-box clearfix">
 		<div class="swiper-container mt10" id="swiper2">
 			<div class="swiper-wrapper" id="swiper2_main">
-
+				<!-- 
 				<div class="swiper-slide flex-box middle-j">
 					<div class="anli lazy load-over fl" style="width: 6.8rem">
 						<a href="/case/129090" rel="nofollow"> 
@@ -36,46 +36,19 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 
-				<!-- 
-    				<div class="swiper-slide flex-box middle-j">
-    					<div class="anli lazy load-over fl" style="width: 6.8rem">
-    						<a href="/case/110699" rel="nofollow"> <img
-    							class="lazy_img auto bgimg"
-    							data-original="http://artwork.dyrs.cc/photo/016/078/000/44257b2da3c3953e.jpg!hm"
-    							src="//s.dyrs.cc/static/pc/images/blank.gif" alt="">
-    							<div class="bgimg"></div>
-    						</a>
-    						<div class="text">
-    							<div class="title ellipsis"></div>
-    							<div class="sub ellipsis">
-    								<a href="/case/ht1">别墅</a> <a href="/case/s5">美式乡村</a> <a
-    									href="/case/ha3">181-320平米</a>
-    							</div>
-    						</div>
-    						<div class="collect">
-    							<div>
-    								<i class="iconfont icon-tupian"></i> 6
-    							</div>
-    							<div>
-    								<i collect-status="no" class="iconfont icon-xin"
-    									collect-id="110699"
-    									onclick="page.setCollect('110699','case',this)"></i> 34
-    							</div>
-    						</div>
-    					</div>
-    				</div> -->
+				
 			</div>
 			<div></div>
 		</div>
-		<div class="tab">
-			<a href="/case/s2">现代简约</a> 
-			<a href="/case/s1">欧式古典</a> 
-			<a href="/case/s7">新中式</a> 
-			<a href="/case/s34">法式</a> 
-			<a href="/case">更多</a>
-		</div>
+<!-- 		<div class="tab"> -->
+<!-- 			<a href="/case/s2">现代简约</a>  -->
+<!-- 			<a href="/case/s1">欧式古典</a>  -->
+<!-- 			<a href="/case/s7">新中式</a>  -->
+<!-- 			<a href="/case/s34">法式</a>  -->
+<!-- 			<a href="/case">更多</a> -->
+<!-- 		</div> -->
 	</div>
 </div>
 
