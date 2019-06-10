@@ -16,12 +16,27 @@ Route::group(['domain' => env("admin_domain","admin.liuhe"), 'namespace' => 'adm
     
     Route::get('/','IndexController@index')->name("admin.index");
     
-    
+    // 案例 start
     Route::get('/case/index','FitCaseController@index')->name("case.index");
     Route::get('/case/edit','FitCaseController@edit')->name("case.edit");
     Route::get('/case/delete','FitCaseController@delete')->name("case.delete");
     Route::post('/case/save','FitCaseController@save')->name("case.save");
+    // 案例 end
     
+    // 员工管理 start
+    Route::get('/member/index','MemberController@index')->name("member.index");
+    Route::get('/member/edit','MemberController@edit')->name("member.edit");
+    Route::get('/member/delete','MemberController@delete')->name("member.delete");
+    Route::post('/member/save','MemberController@save')->name("member.save");
+    
+    // 员工管理 end
+    
+    // 资讯start
+    Route::get('/information/index','InformationController@index')->name("information.index");
+    Route::get('/information/edit','InformationController@edit')->name("information.edit");
+    Route::get('/information/delete','InformationController@delete')->name("information.delete");
+    Route::post('/information/save','InformationController@save')->name("information.save");
+    // 资讯end
     
     Route::get('/baojia/index','BaoJiaController@index')->name("baojia.index");
     //用户管理
@@ -50,11 +65,18 @@ Route::group(['domain' => env("m_domain","m.liuhe"), 'namespace' => 'mobile'],fu
     Route::get('/','IndexController@index')->name("mobile.index");
     
     // 案例展示
-    Route::get('/case/list','FitCaseController@list')->name("mobile.case.list");
-    Route::get('/case/{id}','FitCaseController@index')->name("mobile.case.index");
+    
+    Route::get('/case','FitCaseController@index')->name("mobile.case.index");
+    Route::get('/case/{id}','FitCaseController@caseOne')->name("mobile.case.caseOne");
+    
     
     Route::get('/other/xianxiamendian','OtherController@xianxiamendian')->name("mobile.other.xianxiamendian");
+    Route::get('/other/baojia','OtherController@baojia')->name("mobile.other.baojia");
+    Route::get('/other/yanfan','OtherController@yanfang')->name("mobile.other.yanfang");
     
+    // 资讯
+    Route::get('/info','InformationController@infos')->name("mobile.info.list");
+    Route::get('/info/{id}','InformationController@info')->name("mobile.info.info");
     
     
     //api

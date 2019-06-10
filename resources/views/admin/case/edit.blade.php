@@ -5,7 +5,7 @@
 @extends('admin.form')
 @section('content')
 
-	<form action="{{ route('case.save')}}" method="post" class="form form-horizontal" id="form-member-add" enctype="multipart/form-data">
+	<form action="{{ route('case.save')}}" method="post" class="form form-horizontal" id="myForm" enctype="multipart/form-data">
 		<input name="id" value="{{ @$case->id}}" readonly="readonly">
     	<div class="row cl">
     		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>标题：</label>
@@ -52,96 +52,160 @@
     	<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3">户型图：</label>
 			<div class="formControls col-xs-8 col-sm-9">
+				<?php 
+				    @$huxingtu = json_decode($case->huxingtu,true); 
+				?>
+				<div>
+					@if ($huxingtu) 
+						<img alt="{{@$huxingtu['name']}}" src="{{ @$huxingtu['url'] }}" width="200">
+					@endif
+				</div>
 				<span class="btn-upload form-group">
     				<input class="input-text upload-url" type="text" name="" id="" readonly nullmsg="请添加附件！" style="width:200px">
     				<a href="javascript:void();" class="btn btn-primary radius upload-btn"><i class="Hui-iconfont">&#xe642;</i> 浏览文件</a>
     				<input type="file" multiple name="huxingtu" class="input-file">
 				</span>
-				<input class="input-text" placeholder="图片的描述" name="huxingtu_name"/>
+				<input class="input-text" placeholder="图片的描述" name="huxingtu_name" value="{{@$huxingtu['name']}}"/>
     		</div>
     	</div>
     	
     	<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3">客厅：</label>
 			<div class="formControls col-xs-8 col-sm-9">
+				<?php 
+				    @$huxingtu = json_decode($case->keting,true); 
+				?>
+				<div>
+					@if ($huxingtu) 
+						<img alt="{{@$huxingtu['name']}}" src="{{ @$huxingtu['url'] }}" width="200">
+					@endif
+				</div>
 				<span class="btn-upload form-group">
     				<input class="input-text upload-url" type="text" name="" id="" readonly nullmsg="请添加附件！" style="width:200px">
     				<a href="javascript:void();" class="btn btn-primary radius upload-btn"><i class="Hui-iconfont">&#xe642;</i> 浏览文件</a>
     				<input type="file" multiple name="keting" class="input-file">
 				</span>
-				<input class="input-text" placeholder="图片的描述" name="keting_name"/>
+				<input class="input-text" placeholder="图片的描述" name="keting_name" value="{{@$huxingtu['name']}}"/>
     		</div>
     	</div>
     	
     	<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3">卧室：</label>
 			<div class="formControls col-xs-8 col-sm-9">
+				<?php 
+				@$huxingtu = json_decode($case->woshi,true); 
+				?>
+				<div>
+					@if ($huxingtu) 
+						<img alt="{{@$huxingtu['name']}}" src="{{ @$huxingtu['url'] }}" width="200">
+					@endif
+				</div>
 				<span class="btn-upload form-group">
     				<input class="input-text upload-url" type="text" name="" id="" readonly nullmsg="请添加附件！" style="width:200px">
     				<a href="javascript:void();" class="btn btn-primary radius upload-btn"><i class="Hui-iconfont">&#xe642;</i> 浏览文件</a>
     				<input type="file" multiple name="woshi" class="input-file">
 				</span>
-				<input class="input-text" placeholder="图片的描述" name="woshi_name"/>
+				<input class="input-text" placeholder="图片的描述" name="woshi_name" value="{{@$huxingtu['name']}}"/>
     		</div>
     	</div>
     	
     	<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3">书房：</label>
 			<div class="formControls col-xs-8 col-sm-9">
+				<?php 
+				@$huxingtu = json_decode($case->shufang,true); 
+				?>
+				<div>
+					@if ($huxingtu) 
+						<img alt="{{@$huxingtu['name']}}" src="{{ @$huxingtu['url'] }}" width="200">
+					@endif
+				</div>
 				<span class="btn-upload form-group">
     				<input class="input-text upload-url" type="text" name="" id="" readonly nullmsg="请添加附件！" style="width:200px">
     				<a href="javascript:void();" class="btn btn-primary radius upload-btn"><i class="Hui-iconfont">&#xe642;</i> 浏览文件</a>
     				<input type="file" multiple name="shufang" class="input-file">
 				</span>
-				<input class="input-text" placeholder="图片的描述" name="shufang_name"/>
+				<input class="input-text" placeholder="图片的描述" name="shufang_name" value="{{@$huxingtu['name']}}"/>
     		</div>
     	</div>
     	
     	<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3">餐厅：</label>
 			<div class="formControls col-xs-8 col-sm-9">
+				<?php 
+				@$huxingtu = json_decode($case->canting,true); 
+				?>
+				<div>
+					@if ($huxingtu) 
+						<img alt="{{@$huxingtu['name']}}" src="{{ @$huxingtu['url'] }}" width="200">
+					@endif
+				</div>
 				<span class="btn-upload form-group">
     				<input class="input-text upload-url" type="text" name="" id="" readonly nullmsg="请添加附件！" style="width:200px">
     				<a href="javascript:void();" class="btn btn-primary radius upload-btn"><i class="Hui-iconfont">&#xe642;</i> 浏览文件</a>
     				<input type="file" multiple name="canting" class="input-file">
 				</span>
-				<input class="input-text" placeholder="图片的描述" name="canting_name"/>
+				<input class="input-text" placeholder="图片的描述" name="canting_name" value="{{@$huxingtu['name']}}"/>
     		</div>
     	</div>
     	
     	<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3">玄关：</label>
 			<div class="formControls col-xs-8 col-sm-9">
+				<?php 
+				@$huxingtu = json_decode($case->xunguan,true); 
+				?>
+				<div>
+					@if ($huxingtu) 
+						<img alt="{{@$huxingtu['name']}}" src="{{ @$huxingtu['url'] }}" width="200">
+					@endif
+				</div>
 				<span class="btn-upload form-group">
     				<input class="input-text upload-url" type="text" name="" id="" readonly nullmsg="请添加附件！" style="width:200px">
     				<a href="javascript:void();" class="btn btn-primary radius upload-btn"><i class="Hui-iconfont">&#xe642;</i> 浏览文件</a>
     				<input type="file" multiple name="xunguan" class="input-file">
 				</span>
-				<input class="input-text" placeholder="图片的描述" name="xunguan_name"/>
+				<input class="input-text" placeholder="图片的描述" name="xunguan_name" value="{{@$huxingtu['name']}}"/>
     		</div>
     	</div>
     	
     	<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3">卫生间：</label>
 			<div class="formControls col-xs-8 col-sm-9">
+				<?php 
+				@$huxingtu = json_decode($case->weishengjian,true); 
+				?>
+				<div>
+					@if ($huxingtu) 
+						<img alt="{{@$huxingtu['name']}}" src="{{ @$huxingtu['url'] }}" width="200">
+					@endif
+				</div>
 				<span class="btn-upload form-group">
     				<input class="input-text upload-url" type="text" name="" id="" readonly nullmsg="请添加附件！" style="width:200px">
     				<a href="javascript:void();" class="btn btn-primary radius upload-btn"><i class="Hui-iconfont">&#xe642;</i> 浏览文件</a>
     				<input type="file" multiple name="weishengjian" class="input-file">
 				</span>
-				<input class="input-text" placeholder="图片的描述" name="weishengjian_name"/>
+				<input class="input-text" placeholder="图片的描述" name="weishengjian_name" value="{{@$huxingtu['name']}}"/>
     		</div>
     	</div>
     	
     	<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3">其他：</label>
 			<div class="formControls col-xs-8 col-sm-9">
+				<?php 
+				@$huxingtu = json_decode($case->qita,true); 
+				?>
+				<div>
+					@if ($huxingtu) 
+						<img alt="{{@$huxingtu['name']}}" src="{{ @$huxingtu['url'] }}" width="200">
+					@endif
+				</div>
 				<span class="btn-upload form-group">
     				<input class="input-text upload-url" type="text" name="" id="" readonly nullmsg="请添加附件！" style="width:200px">
     				<a href="javascript:void();" class="btn btn-primary radius upload-btn"><i class="Hui-iconfont">&#xe642;</i> 浏览文件</a>
     				<input type="file" multiple name="qita" class="input-file">
 				</span>
-				<input class="input-text" placeholder="图片的描述" name="qita_name"/>
+				<input class="input-text" placeholder="图片的描述" name="qita_name" value="{{@$huxingtu['name']}}"/>
     		</div>
     	</div>
     	
@@ -159,8 +223,6 @@
     	</div>
     </form>
 
-	
-
 @endsection
 
 @section('mate.js')
@@ -171,36 +233,17 @@
 <script type="text/javascript" src="{{asset('/plugin/webuploader/0.1.5/webuploader.js')}}"></script> 
 
 <script type="text/javascript">
-function article_save(){
-	alert("刷新父级的时候会自动关闭弹层。")
-	window.parent.location.reload();
-}
+// function article_save(){
+// 	alert("刷新父级的时候会自动关闭弹层。")
+// 	window.parent.location.reload();
+// }
 
-function addtemplate () {
-	
-	
-// 	$("<tr>")
-
-// 	<tr>
-//     	<td><input class="input-text" placeholder="位置（客厅、餐厅）"/></td>
-//     	<td><input class="input-text" placeholder="图片的描述"/></td>
-//     	<td>
-//     		<span class="btn-upload form-group">
-//     			<input class="input-text upload-url" type="text" name="" id="" readonly nullmsg="请添加附件！" style="width:200px">
-//     			<a href="javascript:void();" class="btn btn-primary radius upload-btn"><i class="Hui-iconfont">&#xe642;</i> 浏览文件</a>
-//     			<input type="file" multiple name="file-2" class="input-file">
-//     		</span>
-//     	</td>
-//     	<td>
-//     		<a title="删除" href="javascript:;" onclick="" class="ml-5" style="text-decoration:none">
-//     			<i class="Hui-iconfont">&#xe6e2;</i></a>
-//     	</td>
-//     </tr>
-
-}
 
 $(function(){
-	
+	$("#myForm").ajaxForm(function (resp) {
+		alert("操作成功");
+		$.closeParentLayer();
+	});
 });
 </script>
 @endsection

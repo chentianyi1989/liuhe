@@ -5,7 +5,7 @@
     <div class="form-common-body">
         <form id="price" method="post" data-formvalidate>
 <!--             <input type="hidden"  name="action" value="price"> -->
-<!--             <input type="hidden"  name="desc" value="H5平台分站首页免费获取家装报价"> -->
+            <input type="hidden"  name="source" value="H5平台分站首页免费获取家装报价">
             <div class="form-input">
                 <input class="text-sub bg-form" type="text" name="mianji"  placeholder="您的房屋面积" validate="required|number" autocomplete="off">
             </div>
@@ -23,20 +23,12 @@
 
 
 <script type="text/javascript">
+
 function baojia() {
-	alert(1);
-	$.ajax({
-		 url : "{{route('mobile.api.baojia.save')}}",
-		 data : $('#price').serialize(),
-		 type:'post',
-		 success : function(res){
-			 alert(res);
-		     var html = template('designer_temp',{datas:res})
-		     $('#designer_list').html(html)
-		     $('.lazy_img').lazyload(var_lazy);
-		 }
-		})
-			
+
+	$("#price").baojia(function (res) {
+		alert("1111111");
+	});
 }
 
 </script>

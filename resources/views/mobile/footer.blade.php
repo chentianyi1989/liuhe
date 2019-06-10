@@ -1,12 +1,11 @@
 <div class="foot-warp-bottom clearfix">
 	<div class="foot-c1 clearfix">
-		<a class="ding-one " href="/"> <img
-			src="http://img.dyrs.cc/store/437/840/000/6985c9347145eba4.png!c"
-			class="show1"> <span class="num-text act1">官网首页</span>
-		</a> <a class="ding-one" href="/service/quotation"> <img
-			src="http://img.dyrs.cc/special/910/100/108910/bj.png!c" class="show"
-			style="width: 0.38rem"> <span class="num-text">免费报价</span>
-
+		<a class="ding-one " href="/"> 
+			<img src="http://img.dyrs.cc/store/437/840/000/6985c9347145eba4.png!c" class="show1"> 
+			<span class="num-text act1">官网首页</span>
+		</a> <a class="ding-one" href="{{route('mobile.other.baojia')}}"> 
+			<img src="http://img.dyrs.cc/special/910/100/108910/bj.png!c" class="show" style="width: 0.38rem"> 
+			<span class="num-text">免费报价</span>
 		</a>
 		<!-- <a href="tel:" rel="nofollow" > <div class="ding-one"> -->
 		<a href="tel:400-9999-162" rel="nofollow">

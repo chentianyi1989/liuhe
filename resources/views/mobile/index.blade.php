@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="//t.dyrs.cc/static/m/styles/yuanchuang/style1.css?20181030">
 
 <script type="text/javascript" src="{{asset('/plugin/jquery.min.js')}}"></script> 
-
+<script type="text/javascript" src="{{asset('/plugin/common.js')}}"></script> 
     
 </head>
 <body>
@@ -70,11 +70,11 @@
 	<div class="box4 bg-white mt10">
         <ul class="flex-box flex-around">
             <li class="tc">
-                <a href="/service/quotation"><i class="iconfont icon-jisuanqi"></i></a>
+                <a href="{{route('mobile.other.baojia')}}"><i class="iconfont icon-jisuanqi"></i></a>
                 <p>快速报价</p>
             </li>
             <li class="tc">
-                <a href="/service/inspection"><i class="iconfont icon-moniyanfang"></i></a>
+                <a href="{{route('mobile.other.yanfang')}}"><i class="iconfont icon-moniyanfang"></i></a>
                 <p>免费验房</p>
             </li>
             <li class="tc">
@@ -253,114 +253,9 @@
     </div>
 
 
-            <div class="box13 bg-white pdt20 pdl15 pdr15 pdt15">
-            <div class="mainPage-title mb10">
-                <div class="left">装修头条</div>
-                <a href="/column/guide" class="right block">查看更多 <i class="iconfont icon-icon1"></i></a>
-            </div>
-            <div class="topic">
-                <div class="topic-con">
-                                            <a class="top-item" href="/story/201708/1022007" rel="nofollow">
-                            <div class="time">
-                                <div class="yue">12</div>
-                                <div class="ri">/14</div>
-                            </div>
-                            <div class="text">
-                                <div class="title ellipsis">北京别墅设计：装修误区大揭秘</div>
-                                <div class="msg ellipsis2-auto">
-                                    现在大多数买房的80后，90后，在拿到房钥匙之后就犯了难，要装修成什么样子？买什么样的材料？被坑怎么办？预算不够怎么办？所以今天小编就为大家讲讲：北京别墅设计：装修误区大揭秘。
-                                </div>
-                            </div>
-                        </a>
-                                            <a class="top-item" href="/story/201710/1027586" rel="nofollow">
-                            <div class="time">
-                                <div class="yue">12</div>
-                                <div class="ri">/14</div>
-                            </div>
-                            <div class="text">
-                                <div class="title ellipsis">北京别墅装修装饰多少钱</div>
-                                <div class="msg ellipsis2-auto">
-                                    北京别墅装修装饰多少钱？这是困扰很多别墅业主的头疼问题，怕被装修公司骗，自己又不知道装修需要多少钱，下面小编就和大家说说北京别墅装修装饰多少钱。
-                                </div>
-                            </div>
-                        </a>
-                                            <a class="top-item" href="/story/201806/1052649" rel="nofollow">
-                            <div class="time">
-                                <div class="yue">12</div>
-                                <div class="ri">/14</div>
-                            </div>
-                            <div class="text">
-                                <div class="title ellipsis">别墅装修设计 受欢迎的风格</div>
-                                <div class="msg ellipsis2-auto">
-                                    2018年别墅装修受欢迎的三种风格，还要选择一个喜欢的装修风格，东易日盛原创国际小编给大家带来的是：别墅装修受欢迎的风格
-                                </div>
-                            </div>
-                        </a>
-                                            <a class="top-item" href="/story/201803/1042971" rel="nofollow">
-                            <div class="time">
-                                <div class="yue">12</div>
-                                <div class="ri">/14</div>
-                            </div>
-                            <div class="text">
-                                <div class="title ellipsis">北京别墅装修公司哪家好？如何选择靠谱的北京别墅装修公司</div>
-                                <div class="msg ellipsis2-auto">
-                                    现如今不少房主都遇见一个比较头疼的问题“如何找到一家靠谱的装修公司，成为了社会大众所比较关注。”下面小编陪大家一起来唠唠：北京别墅装修公司哪家好？如何选择靠谱的北京别墅装修公司。
-                                </div>
-                            </div>
-                        </a>
-                                            <a class="top-item" href="/story/201809/1060800" rel="nofollow">
-                            <div class="time">
-                                <div class="yue">12</div>
-                                <div class="ri">/14</div>
-                            </div>
-                            <div class="text">
-                                <div class="title ellipsis">北京别墅装修公司 这样做才能装修好一个别墅</div>
-                                <div class="msg ellipsis2-auto">
-                                    面对别墅、Townhouse、跃层住宅等大户型居室，更应注意由于面积大，而引发的系列问题，许多烦恼完全可以在设计过程中进行规避。在这东易日盛原创国际小编给大家分享：北京别墅装修公司 这样做才能装修好一个别墅
-                                </div>
-                            </div>
-                        </a>
-                                            <a class="top-item" href="/story/201809/1060306" rel="nofollow">
-                            <div class="time">
-                                <div class="yue">12</div>
-                                <div class="ri">/14</div>
-                            </div>
-                            <div class="text">
-                                <div class="title ellipsis">北京装修公司 一年四季什么时候装修最好？</div>
-                                <div class="msg ellipsis2-auto">
-                                    关于什么时候装修最好，一直以来非常受大家关注。不同季节装修，所要面临的问题也各有不同，比如春天潮湿、夏天太热、冬天太冷等等，似乎只有秋天装修合适，今天东易日盛原创国际小编给大家带来的是：北京装修公司 一年四季什么时候装修最好？
-                                </div>
-                            </div>
-                        </a>
-                                    </div>
-            </div>
-        </div>
-        <div class="flex-box flex-between bg-white pdl15 pdr15 tt_btn_box pdt15">
-        <a href="/column/13">
-            <div class="flex-box flex1 middle flex-column btn btn_1">
-                <i class="iconfont icon-loudou f22"></i>
-                <p class="mt5">装修前</p>
-            </div>
-        </a>
-        <a href="/column/15">
-            <div class="flex-box flex1 middle flex-column btn btn_2">
-                <i class="iconfont icon-zhuangxiu f22"></i>
-                <p class="mt5">装修中</p>
-            </div>
-        </a>
-        <a href="/column/19">
-            <div class="flex-box flex1 middle flex-column btn btn_3">
-                <i class="iconfont icon-mianfeiyanfang-jinhuang f22"></i>
-                <p class="mt5">家装指南</p>
-            </div>
-        </a>
-        <a href="/column/11">
-            <div class="flex-box flex1 middle flex-column btn btn_4">
-                <i class="iconfont icon-zhinan f22"></i>
-                <p class="mt5">东易动态</p>
-            </div>
-        </a>
-    </div>
+            
+	@include('mobile.home.info')
+
 
             <div class="box15 bg-white pdl15 pdr15 pdt25">
             <div class="swiper-container" id="swiper3">
@@ -536,108 +431,6 @@ $(document).ready(function () {
     }
 
 </style>
-
-<script>
-    var csrfToken = '2A2EB917-23DE-DE5C-18C8-C4F1FCD6E78E';
-	var collect_type = 'case';
-</script>
-
- <script type="text/html" id="designer_temp">
-  </script>
-  <script type="text/html" id="store_temp">
-  </script>
-<script>
-
-
-
-
-//     var page = Page({
-//         onReady: function () {
-//             this.swiper1()
-//             var mySwiper = new Swiper('#swiper2', {
-//                 // autoplay: true,//可选选项，自动滑动
-//                 freeMode : true,
-//                  on:{
-//                     touchMove: function(event){
-//                         //你的事件
-//                         $(window).scroll()
-//                     },
-//                 },
-//                 slideChangeTransitionEnd : function (){
-//                     $(window).scroll()
-//                 }
-//             })
-//             var mySwiper = new Swiper('#swiper3', {
-//                 autoplay: {
-//                      delay: 3000,
-//                      disableOnInteraction: false,
-//                 },
-//             })
-//         },
-//         designer:function(){
-//             $.ajax({
-//                 url : "/api/index/index_designer_store.php",
-//                 data : {
-//                     type : 'designer'
-//                 },
-//                 type:'get',
-//                 success : function(res){
-//                     var html = template('designer_temp',{datas:res})
-//                     $('#designer_list').html(html)
-//                     $('.lazy_img').lazyload(var_lazy);
-//                 }
-//             })
-//         },
-//         store:function(){
-//             $.ajax({
-//                 url : "/api/index/index_designer_store.php",
-//                 data : {
-//                     type : 'store'
-//                 },
-//                 type:'get',
-//                 success : function(res){
-//                     var html = template('store_temp',{datas:res})
-//                     $('#store_list').html(html)
-//                     $('.lazy_img').lazyload(var_lazy);
-//                 }
-//             })
-//         },
-//         swiper1: function () {
-//             var cla = '#swiper1';
-//             new Swiper(cla, {
-//                 slidesPerView: 1,
-//                 spaceBetween: 30,
-//                 loop: true,
-//                 autoplay: {
-//                      delay: 2500,
-//                      disableOnInteraction: false,
-//                 },
-//                 pagination: {
-//                     el: cla + ' .swiper-pagination',
-//                     clickable: true,
-//                 },
-//                 on: {
-//                     init: function () {
-//                         $(cla).find('.swiper-wrapper .swiper-slide').eq(0).find('img').show();
-//                         $(cla).find('.swiper-wrapper .swiper-slide').eq(0).next().find('img').show();
-//                         $(cla).find('.swiper-wrapper .swiper-slide').eq(0).prev().find('img').show();
-//                         $(window).scroll();
-//                     },
-//                     slideChangeTransitionEnd: function () {
-//                         $(cla).find('.swiper-wrapper .swiper-slide').eq(this.activeIndex).find('img').show();
-//                         $(cla).find('.swiper-wrapper .swiper-slide').eq(this.activeIndex).next().find('img').show();
-//                         $(cla).find('.swiper-wrapper .swiper-slide').eq(this.activeIndex).prev().find('img').show();
-//                         $(window).scroll();
-//                     }
-//                 }
-//             });
-//         },
-//         closeFn:function(dom){
-//             $(dom).parents('.notice-info').fadeOut(5e2)
-//         }
-//     })
-// page.collectionList('case');
-</script>
 
 </body>
 </html>

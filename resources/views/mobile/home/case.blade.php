@@ -1,7 +1,7 @@
 <div class="box6 mt10 bg-white">
 	<div class="mainPage-title">
-		<div class="left">家装案例品鉴111</div>
-		<a class="right block" href="/case">查看全部 <i
+		<div class="left">家装案例品鉴</div>
+		<a class="right block" href="{{route('mobile.case.index')}}">查看全部 <i
 			class="iconfont icon-icon1"></i></a>
 	</div>
 	<div class="case-box clearfix">

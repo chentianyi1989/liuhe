@@ -33,9 +33,9 @@
 			@foreach($cases as $item)
 			<tr class="text-c">
 				<td><input type="checkbox" value="{{ $item->id or ''}}"></td>
-				<td>{{ $item->id or ''}}</td>
-				<td>{{ $item->title or ''}}</td>
-				<td>{{ $item->mianji or ''}}</td>
+				<td>{{ @$item->id}}</td>
+				<td>{{ @$item->title }}</td>
+				<td>{{ @$item->mianji }}</td>
 				<td>
 					@if (isset(config('sys.fengge')[$item->fengge]))
 						{{ config('sys.fengge')[$item->fengge] }}

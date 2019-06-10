@@ -19,9 +19,13 @@ class OtherController extends Controller {
         return view('mobile.other.xianxiamendian');
     }
     
-    public function mb (Request $request) {
+    public function baojia (Request $request) {
+        return view('mobile.other.baojia');
+    }
+    
+    public function yanfang (Request $request) {
         
-        return view('home.mabao');
+        return view('mobile.other.yanfang');
     }
     
     public function bet (Request $request) {
@@ -30,8 +34,6 @@ class OtherController extends Controller {
             $_user = auth('member')->user();
             if ($_user){
                 
-                 
-               
                 $haomas= $request["haomas"];
                 $code = $haomas["code"];
                 

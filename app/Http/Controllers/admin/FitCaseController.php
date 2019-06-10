@@ -1,7 +1,6 @@
 <?php
 namespace App\Http\Controllers\admin;
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\FitCase;
@@ -26,8 +25,6 @@ class FitCaseController extends Controller {
         
         $uploadService = new UploadService();
         
-        echo "woshi_name:",$data["woshi_name"],$request->get("woshi_name");
-        
         $result = [
 //             "id"=>$data["id"],
             "fengge"=>$data["fengge"],
@@ -35,31 +32,71 @@ class FitCaseController extends Controller {
             "mianji"=>$data["mianji"],
             "title"=>$data["title"],
             "shejilinian"=>$data["shejilinian"],
-            "huxingtu"=>json_encode([
-                "name"=>"".$data["huxingtu_name"],
-                "url"=>$uploadService->upload("case",@$data["huxingtu"])]),
-            "keting"=>json_encode([
-                "name"=>"".$data["keting_name"],
-                "url"=>$uploadService->upload("case",@$data["keting"])]),
-            "woshi"=>json_encode([
-                "name"=>"".$data["woshi_name"],
-                "url"=>$uploadService->upload("case",@$data["woshi"])]),
-            "shufang"=>json_encode([
-                "name"=>"".$data["shufang_name"],
-                "url"=>$uploadService->upload("case",@$data["shufang"])]),
-            "canting"=>json_encode([
-                "name"=>"".$data["canting_name"],
-                "url"=>$uploadService->upload("case",@$data["canting"])]),
-            "xunguan"=>json_encode([
-                "name"=>"".$data["xunguan_name"],
-                "url"=>$uploadService->upload("case",@$data["xunguan"])]),
-            "weishengjian"=>json_encode([
-                "name"=>"".$data["weishengjian_name"],
-                "url"=>$uploadService->upload("case",@$data["weishengjian"])]),
-            "qita"=>json_encode([
-                "name"=>"".$data["qita_name"],
-                "url"=>$uploadService->upload("case",@$data["qita"])]),
         ];
+        
+        if (!empty($data["huxingtu"])) {
+            $result[] = json_encode([
+                "name"=>"".$data["huxingtu_name"],
+                "url"=>$uploadService->upload("case",@$data["huxingtu"])]);
+        }else {
+            unset($data["huxingtu"]);
+        }
+        
+        if (!empty($data["keting"])) {
+            $result[] = json_encode([
+                "name"=>"".$data["keting_name"],
+                "url"=>$uploadService->upload("case",@$data["keting"])]);
+        }else {
+            unset($data["keting"]);
+        }
+        
+        if (!empty($data["woshi"])) {
+            $result[] = json_encode([
+                "name"=>"".$data["woshi_name"],
+                "url"=>$uploadService->upload("case",@$data["woshi"])]);
+        }else {
+            unset($data["woshi"]);
+        }
+        
+        if (!empty($data["shufang"])) {
+            $result[] = json_encode([
+                "name"=>"".$data["shufang_name"],
+                "url"=>$uploadService->upload("case",@$data["shufang"])]);
+        }else {
+            unset($data["shufang"]);
+        }
+        
+        if (!empty($data["canting"])) {
+            $result[] = json_encode([
+                "name"=>"".$data["canting_name"],
+                "url"=>$uploadService->upload("case",@$data["canting"])]);
+        }else {
+            unset($data["canting"]);
+        }
+        
+        if (!empty($data["xunguan"])) {
+            $result[] = json_encode([
+                "name"=>"".$data["xunguan_name"],
+                "url"=>$uploadService->upload("case",@$data["xunguan"])]);
+        }else {
+            unset($data["xunguan"]);
+        }
+        
+        if (!empty($data["weishengjian"])) {
+            $result[] = json_encode([
+                "name"=>"".$data["weishengjian_name"],
+                "url"=>$uploadService->upload("case",@$data["weishengjian"])]);
+        }else {
+            unset($data["weishengjian"]);
+        }
+        
+        if (!empty($data["qita"])) {
+            $result[] = json_encode([
+                "name"=>"".$data["qita_name"],
+                "url"=>$uploadService->upload("case",@$data["qita"])]);
+        }else {
+            unset($data["qita"]);
+        }
         
         if (!empty($_REQUEST["id"])) {//isset($_REQUEST["id"])
             $id = $_REQUEST["id"];

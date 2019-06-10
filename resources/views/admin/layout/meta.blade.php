@@ -18,10 +18,13 @@
     <link rel="stylesheet" type="text/css" href="{{asset('/admin/hui/h-ui.admin/skin/default/skin.css')}}" id="skin" />
     <link rel="stylesheet" type="text/css" href="{{asset('/admin/hui/h-ui.admin/css/style.css')}}" />
     
-    <script type="text/javascript" src="{{asset('/plugin/jquery.min.js')}}"></script> 
+    <script type="text/javascript" src="{{asset('/plugin/jquery.js')}}"></script> 
+    <script type="text/javascript" src="{{asset('/plugin/jquery.form.js')}}"></script> 
     <script type="text/javascript" src="{{asset('/admin/hui/h-ui/js/H-ui.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('/admin/hui/h-ui.admin/js/H-ui.admin.js')}}"></script> 
     <script type="text/javascript" src="{{asset('/plugin/layer/2.4/layer.js')}}"></script>
+    <script type="text/javascript" src="{{asset('/plugin/My97DatePicker/4.8/WdatePicker.js')}}"></script>
+    <script type="text/javascript" src="{{asset('/plugin/common.js')}}"></script>
 
 <!--[if IE 6]>
 <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
