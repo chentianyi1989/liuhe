@@ -2,19 +2,20 @@ $(function () {
 	$.fn.extend({
 		"baojia":function (success){
 			form = $(this);
-			$.ajax({
-				//{{route('mobile.api.baojia.save')}}
-				 url : "/api/baojia/save",
-				 data : form.serialize(),
-				 type:'post',
-				 success : function(res){
-					 if (success) {
-						 success(res);
-					 } else {
-						 alert("提交成功");
-					}
-				 }
-			})
+			alert(1);
+//			$.ajax({
+//				//{{route('mobile.api.baojia.save')}}
+//				 url : "/api/baojia/save",
+//				 data : form.serialize(),
+//				 type:'post',
+//				 success : function(res){
+//					 if (success) {
+//						 success(res);
+//					 } else {
+//						 alert("提交成功");
+//					}
+//				 }
+//			})
 		},
 //		"ajaxSubmit":function(success){
 //			

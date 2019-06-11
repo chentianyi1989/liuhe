@@ -1,46 +1,7 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="description" content="">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="wap-font-scale" content="no">
-<meta name="viewport"
-	content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
-<title>北京别墅装修公司-东易日盛原创国际</title>
-<meta name="keywords" content="别墅装修,北京别墅装修,北京别墅装修公司,北京别墅装饰,别墅室内设计">
-<meta name="description"
-	content="东易日盛集团高端豪宅装饰品牌—原创国际别墅设计，专为别墅客户提供优质室内装修设计服务。贵宾专线：400-9999-162.">
+@extends("mobile.main") 
 
+@section('content')
 
-
-<script src="//t.dyrs.cc/static/m/scripts/init.js?20181030"></script>
-<link rel="stylesheet"
-	href="//t.dyrs.cc/static/m/styles/vendor.css?20181030">
-<link rel="stylesheet"
-	href="//t.dyrs.cc/static/m/styles/yuanchuang/main.css?20181030">
-<!-- <script type="text/javascript" src="http://pv.dyrs.com.cn/js/staticdata.js"></script> -->
-<link rel="canonical" href="//ycgj.dyrs.com.cn" />
-<link rel="stylesheet"
-	href="//t.dyrs.cc/static/m/styles/yuanchuang/style1.css?20181030">
-
-<script type="text/javascript" src="{{asset('/plugin/jquery.min.js')}}"></script>
-
-
-
-<link rel="stylesheet" href="/css/case/vendor.css">
-<link rel="stylesheet" href="/css/case/main.css">
-<link rel="canonical" href="http://www.dyrs.com.cn/case/134444">
-
-<link rel="stylesheet" href="/css/case/style2.css">
-<link href="/css/case/jquery.css" rel="stylesheet">
-
-
-
-</head>
-<body>
-
-	@include('mobile.header')
 	
 	<div class="container caseMsg" id="wrapper">
 		<div class="topimg lazy load-over">
@@ -239,33 +200,31 @@
 				<p>{{@$qita['name']}}</p>
 			</div>
 			@endif
-			<div class="company-address">
-				<a class="div block" href="http://m.dyrs.com.cn/store/100054">
-					<div class="content">
-						<div class="cicle lazy">
-							<img class="lazy_img auto"
-								data-original="http://img.dyrs.cc/store/188/862/000/9935cb577a938698.jpg!zs"
-								src="http://img.dyrs.cc/store/188/862/000/9935cb577a938698.jpg!zs"
-								alt="原创国际别墅设计中心">
-						</div>
-						<div class="text ellipsis">原创国际别墅设计中心</div>
-						<i class="iconfont icon-icon1"></i>
-					</div>
-				</a>
-			</div>
+<!-- 			<div class="company-address"> -->
+<!-- 				<a class="div block" href="http://m.dyrs.com.cn/store/100054"> -->
+<!-- 					<div class="content"> -->
+<!-- 						<div class="cicle lazy"> -->
+<!-- 							<img class="lazy_img auto" -->
+<!-- 								src="http://img.dyrs.cc/store/188/862/000/9935cb577a938698.jpg!zs" -->
+<!-- 								alt="原创国际别墅设计中心"> -->
+<!-- 						</div> -->
+<!-- 						<div class="text ellipsis">原创国际别墅设计中心</div> -->
+<!-- 						<i class="iconfont icon-icon1"></i> -->
+<!-- 					</div> -->
+<!-- 				</a> -->
+<!-- 			</div> -->
 		</div>
 
-		<div class="change-detail2">
-			<a class="btn" href="http://m.dyrs.com.cn/case/134443"
-				title="天润尚院330平米新中式风格装修效果图">上一套案例</a> <a class="btn"
-				href="http://m.dyrs.com.cn/case/134445" title="大河宸章380平现代港式风格装修效果图">下一套案例</a>
-
-		</div>
+<!-- 		<div class="change-detail2"> -->
+<!-- 			<a class="btn" href="http://m.dyrs.com.cn/case/134443" -->
+<!-- 				title="天润尚院330平米新中式风格装修效果图">上一套案例</a> <a class="btn" -->
+<!-- 				href="http://m.dyrs.com.cn/case/134445" title="大河宸章380平现代港式风格装修效果图">下一套案例</a> -->
+<!-- 		</div> -->
 
 	</div>
 
+@endsection
 
+@section('mate.js')
 
-	@include('mobile.footer')
-</body>
-</html>
+@endsection

@@ -1,38 +1,13 @@
-<!doctype html>
-<html>
-<head>
-    <meta charset="utf-8">
-<meta name="description" content="">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="wap-font-scale" content="no">
-<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
-<title>北京别墅装修公司-东易日盛原创国际</title>
-<meta name="keywords" content="别墅装修,北京别墅装修,北京别墅装修公司,北京别墅装饰,别墅室内设计">
-<meta name="description" content="东易日盛集团高端豪宅装饰品牌—原创国际别墅设计，专为别墅客户提供优质室内装修设计服务。贵宾专线：400-9999-162.">
-
-
-
-<script src="//t.dyrs.cc/static/m/scripts/init.js?20181030"></script>
-<link rel="stylesheet" href="//t.dyrs.cc/static/m/styles/vendor.css?20181030">
-<link rel="stylesheet" href="//t.dyrs.cc/static/m/styles/yuanchuang/main.css?20181030">
-<!-- <script type="text/javascript" src="http://pv.dyrs.com.cn/js/staticdata.js"></script> -->
-<link rel="canonical" href="//ycgj.dyrs.com.cn" />
-<link rel="stylesheet" href="//t.dyrs.cc/static/m/styles/yuanchuang/style1.css?20181030">
-
-<script type="text/javascript" src="{{asset('/plugin/jquery.min.js')}}"></script> 
-<script type="text/javascript" src="{{asset('/plugin/common.js')}}"></script> 
-    
-</head>
-<body>
 
 
 
 
 
+@extends("mobile.main") 
 
-<div class="index-page" id="wrapper">
-    
-    @include('mobile.header')
+@section('content')
+
+
     
     @include('mobile.home.ad') 
     
@@ -107,7 +82,6 @@
             
             
     @include('mobile.home.case')         
-            
             
     @include('mobile.home.design')    
             
@@ -283,23 +257,6 @@
         </div>
     </div>
 
-</div>
-<!-- 底部JS -->
-<script src="//t.dyrs.cc/static/m/scripts/vendor.js?20181030"></script>
-<script src="//t.dyrs.cc/static/m/scripts/main.js?20181030"></script>
-<script src="//m.dyrs.com.cn/js/source.js"></script>
-
-<div style=" display:none;">
-    
-<!--     <script src="https://s11.cnzz.com/z_stat.php?id=1260426547&web_id=1260426547" language="JavaScript"></script> -->
-    
-<!--     <script src="https://s19.cnzz.com/z_stat.php?id=1272427119&web_id=1272427119" language="JavaScript"></script> -->
-</div>
-
-    <div style="display:none;">
-        <script src="https://s11.cnzz.com/z_stat.php?id=1261598084&web_id=1261598084" language="JavaScript"></script>
-    </div>
-
 <!--客服-->
 <script>
     host = document.domain;
@@ -315,122 +272,10 @@
     })
     
 </script>
-https://s11.cnzz.com/z_stat.php?id=1260426547&web_id=1260426547
 
 
-<script src="http://www.dyrs.com.cn/js/gtag-UA-113658501-1.js"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){
-        dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'UA-113658501-1');
-</script>
-<script src="//pv.dyrs.com.cn/js/dyrs.js"></script>
+@endsection
 
+@section('mate.js')
 
-
-<!--Google统计-->
-
-<footer style="height:200px;" class="footer_bottom_margin_jj">
-    <div class="footer tc">
-        <div class="pdl15 pdr15">
-            <a href="http://ycgj.m.dyrs.com.cn" class="text-primary">触屏版</a>
-            <span>&nbsp;|&nbsp;</span>
-            <a href="http://ycgj.dyrs.com.cn" class="gopc text-title">电脑版</a>
-        <div class="">东易日盛家居装饰集团股份有限公司<br>Copyright © 2019 京ICP备11009321号</div>
-        <div class="f12" style="color: #666666;">*材料以分公司实际提供同等品牌为准*设计师级别由东易日盛家居装饰集团股份有限公司内部评定选出*南北方工艺细节有所差别</div>
-        </div>
-    </div>
-</footer>
-
-<script type="text/javascript">
-$(document).ready(function () {
-	if ($('body').find('.foot-warp-bottom').hasClass('foot-warp-bottom')) {
-		xh=$(window).height()-($('.foot-warp-bottom').offset().top-$(document).scrollTop());//元素到浏览器底部的高度
-        // $('.footer_bottom_margin').attr('style','margin-bottom: '+xh+'px');
-        $('.footer_bottom_margin_jj').css('margin-bottom',xh+'px');
-        $('.footer_bottom_margin_jj').css('height','168px');
-	}
-});
-</script>
-<style>
-    img {
-        border: 0;
-        display: block;
-        margin: 0 auto;
-    }
-
-    .foot-c1 {
-        width: 94%;
-        margin: 0 auto 0;
-    }
-
-    .ding-one {
-        width: 33%;
-        margin: 0 auto;
-        float: left;
-        text-align: center;
-    }
-	
-	.ding-one img {
-        margin: 0 auto;
-    }
-	
-    .num-text {
-        display: block;
-        font-size: .24rem;
-        color: #333;
-        margin-top: .1rem;
-        padding-bottom: 5px;
-    }
-    .num-text1 {
-        display: block;
-        font-size: .24rem;
-        color: #333;
-        margin-top: .1rem;
-        padding-bottom: 5px;
-    }
-    .num-text.act{
-        color:#d45947
-    }
-	.num-text.act1{
-        color:#b17f32
-    }
-
-    .ding-one:nth-child(3) {
-        text-align: center;
-        margin-right: 0;
-    }
-
-    .foot-warp-bottom {
-        height: .98rem;
-        width: 100%;
-        bottom: 0;
-        left: 0;
-        z-index: 9999;
-        position: fixed;
-        background: #f1f1f1;
-        border: 1px solid #d2d2d2;
-    }
-
-    .foot-warp-bottom .show {
-        display: block;
-        width: .35rem;
-        margin-top: 10px;
-    }
-
-    .foot-warp-bottom .show1 {
-        display: block;
-        width: .355rem;
-        margin-top: 10px;
-    }
-    .ding-one.act .num-text {
-        color:#d45947
-    }
-
-</style>
-
-</body>
-</html>
+@endsection

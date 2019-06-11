@@ -10,13 +10,13 @@
     </div>
     <div class="bottomimg">
         <img src="/m/baojia/image/service05.jpg" alt="客户服务免费快速报价免费报价">
-        <form id="price" data-formvalidate="layer">
+        <form id="price" method="post" action="{{route('mobile.api.baojia.save')}}">
             <input value="H5客户服务免费快速报价免费报价" name="source" type="hidden">
             <input validate="required" style="top:.4rem" placeholder="您的称呼" autocomplete="off" name="name" type="text">
             <input validate="required|phone" style="top:1.34rem" placeholder="您接收报价的号码" maxlength="11" name="phone" autocomplete="off" type="text">
             <input style="top:2.2rem" placeholder="您的房屋面积" name="mianji" autocomplete="off" type="text">
             <input style="top:3.1rem" placeholder="您的楼盘/小区名称" name="loupan" autocomplete="off" type="text">
-            <input type="button" class="button button-primary" value="立即计算" onclick="baojia()">
+            <input type="submit" class="button button-primary" value="立即计算" >
         </form>
     </div>
     <div class="phone tc"><i class="iconfont icon-dianhua"></i> 400-6600-598</div>
@@ -73,15 +73,14 @@
 
 @section("jscss")
 
-
-
 <script>
-function baojia() {
 
-	$("#price").baojia(function (res) {
-		alert("1111111");
+$(function () {
+
+	$("#price").ajaxForm(function (resp) {
+		alert("报价成功");
 	});
-}
+})
 </script>
 
 @endsection

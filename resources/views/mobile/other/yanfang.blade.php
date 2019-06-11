@@ -29,13 +29,13 @@
     </div>
     <div class="bottomimg">
         <img src="/m/yanfang/image/service07.jpg" alt="免费上门验房服务">
-        <form method="post" id="yuyue" data-formvalidate="layer">
+        <form id="yuyue" method="post" action="{{route('mobile.api.baojia.save')}}">
             <input value="H5客户服务免费上门验房免费预约" name="source" type="hidden">
             <div class="form-title">免费上门验房服务</div>
             <input validate="required" style="top:1.34rem" placeholder="您的称呼" name="name" autocomplete="off" type="text">
             <input validate="required|phone" style="top:2.2rem" placeholder="您的手机号码" maxlength="11" name="phone" autocomplete="off">
             <input style="top:3.1rem" placeholder="您的楼盘/小区名称" autocomplete="off" name="loupan" type="text">
-            <input class="button button-primary" type="button" value="免费预约" onclick="baojia()">
+            <input class="button button-primary" type="submit" value="免费预约" >
         </form>
     </div>
     <div class="phone tc"><i class="iconfont icon-dianhua"></i> 400-6600-598</div>
@@ -197,17 +197,25 @@
 </div>
 @endsection
 
-@section("jscss")
+@section("mate.js")
 
 
 
 <script>
-function baojia() {
+// function baojia() {
 
-	$("#yuyue").baojia(function (res) {
-		alert("提交成功");
+// 	$("#yuyue").baojia(function (res) {
+// 		alert("提交成功");
+// 	});
+// }
+
+$(function () {
+
+	$("#yuyue").ajaxForm(function (resp) {
+		alert("预约成功");
 	});
-}
+})
+
 </script>
 
 @endsection

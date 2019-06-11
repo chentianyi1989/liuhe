@@ -1,9 +1,15 @@
 <div class="head">
 	<div class="tit ellipsis">
-		<h1>东易日盛装饰</h1>
+		<h1>
+			@hasSection('head.title')
+               @yield('head.title')
+            @else
+ 				意空间室内软装设计美学坊
+            @endif
+		</h1>
 	</div>
 	<div class="cur-city ellipsis">
-		<i class="iconfont icon-dingwei"></i> <span>北京别墅 ycTgY5YTSnk5PsqumqZboxtXaKU6Io6K</span>
+		<i class="iconfont icon-dingwei"></i> <span></span>
 	</div>
 	<div class="public-meun" id="navBtn">
 		<i></i> <i></i> <i></i>
