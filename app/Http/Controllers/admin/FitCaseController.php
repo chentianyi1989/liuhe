@@ -114,7 +114,7 @@ class FitCaseController extends Controller {
         $case = [];
         if ($id){
             $case = FitCase::findOrFail($id);
-            $case->update($data);
+//             $case->update($data);
         } else {
             
         }

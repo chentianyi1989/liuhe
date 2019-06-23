@@ -56,11 +56,10 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        
+        
         'auth.admin' => \App\Http\Middleware\AdminAuthMiddleware::class,
-        'auth.member' => \App\Http\Middleware\MemberAuthMiddleware::class,
+        'auth.web' => \App\Http\Middleware\MemberAuthMiddleware::class,
         'authorize' => \App\Http\Middleware\Authorize::class,
-        'web.maintain' => \App\Http\Middleware\WebMainTain::class,
-        'auth.daili' => \App\Http\Middleware\DailiAuthMiddleware::class,
-        'auth.wap' => \App\Http\Middleware\WapMemberAuthMiddleware::class,
     ];
 }

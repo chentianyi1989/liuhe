@@ -23,11 +23,28 @@
 			<dt><i class="Hui-iconfont">&#xe616;</i> 员工管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="{{ route('member.index') }}" data-title="设计师" href="javascript:void(0)">设计师</a></li>
+					<li><a data-href="{{ route('member.index') }}" data-title="员工列表" href="javascript:void(0)">员工列表</a></li>
 				</ul>
 			</dd>
 		</dl>
-	
+		<dl id="menu-article">
+			<dt><i class="Hui-iconfont">&#xe616;</i> 培训管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="{{ route('learn.index') }}" data-title="培训资源" href="javascript:void(0)">培训资源</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-article">
+			<dt><i class="Hui-iconfont">&#xe616;</i> 项目管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="{{ route('learn.index') }}" data-title="项目列表" href="javascript:void(0)">项目列表</a></li>
+					<li><a data-href="{{ route('project.create') }}" data-title="项目立项" href="javascript:void(0)">项目立项</a></li>
+					<li><a data-href="{{ route('learn.index') }}" data-title="我的任务" href="javascript:void(0)">我的任务</a></li>
+				</ul>
+			</dd>
+		</dl>
 	
 	
 		<dl id="menu-article">

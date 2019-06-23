@@ -26,7 +26,7 @@
     		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>头像：</label>
     		<div class="formControls col-xs-8 col-sm-9">
     			<div>
-					@if ($bean->tuxiang) 
+					@if (@$bean->tuxiang) 
 						<img alt="" src="{{ @$bean->tuxiang }}" width="200">
 					@endif
 				</div>

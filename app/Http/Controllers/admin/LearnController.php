@@ -5,13 +5,13 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Services\UploadService;
-use App\Models\Member;
-class MemberController extends Controller {
+use App\Models\Learn;
+class LearnController extends Controller {
     
     public function index (Request $request) {
         
-        $members = Member::paginate(config('admin.page-size'));
-        return view('admin.member.index',compact("members"));
+        $beans = Learn::paginate(config('admin.page-size'));
+        return view('admin.learn.index',compact("beans"));
     }
     
     public function add (Request $request) {
@@ -22,26 +22,19 @@ class MemberController extends Controller {
         
         $data = $request->all();
         
-//         if(isset($data["tuping"])) {
-//             $data["tuping"] = json_encode($data["tuping"]);
-//         }
-//         $woshi = $data["woshi"];
-//         echo "woshi:",$woshi;
-        
-        if (!empty($data["tuxiang"])) {
+        if (!empty($data["url"])) {
             $uploadService = new UploadService();
-            $data["tuxiang"] = $uploadService->upload("member",@$data["tuxiang"]);
+            $data["url"] = $uploadService->upload("learn",@$data["url"]);
         }else {
-            unset($data["tuxiang"]);
+            unset($data["url"]);
         }
         
         if (!empty($_REQUEST["id"])) {//isset($_REQUEST["id"])
             $id = $_REQUEST["id"];
-            $case = Member::findOrFail($id);
+            $case = Learn::findOrFail($id);
             $case->update($data);
         } else {
-            $data["password"] = "123456";
-            Member::create($data);
+            Learn::create($data);
         }
         return $this->responseSuccess();
     }
@@ -50,21 +43,19 @@ class MemberController extends Controller {
         
         $id = $request["id"];
         $data = $request->all();
-        $bean =[];
+        $bean = [];
         if ($id){
-            $bean = Member::findOrFail($id);
+            $bean = learn::findOrFail($id);
         } else {
         }
-        return view('admin.member.edit',compact("bean"));
+        return view('admin.learn.edit',compact("bean"));
     }
-    
-
     
     public function delete (Request $request) {
         
         @$ids = $request["id"];
         if ($ids){
-            Member::destroy($ids);
+            Learn::destroy($ids);
         } 
         return $this->responseSuccess();
     }

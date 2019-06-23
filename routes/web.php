@@ -10,9 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'Web\IndexController@maintain')->name('web.maintain');
 
-
-Route::group(['domain' => env("admin_domain","admin.liuhe"), 'namespace' => 'admin'],function ($router){
+Route::group(['domain' => env("admin_domain","admin.liuhe"), 'namespace' => 'admin','middleware' => ['loginMidd']],function ($router){
+    
+    
+    Route::group(['middleware' => 'auth.member:member'],function ($router){
+        
+    })
+    
+    
     
     Route::get('/','IndexController@index')->name("admin.index");
     
@@ -45,6 +52,24 @@ Route::group(['domain' => env("admin_domain","admin.liuhe"), 'namespace' => 'adm
 //     Route::group(['middleware' => ['authorize']], function($router){
 //         Route::get('/','index\\IndexController@index');
 //     });
+
+    // 培训资料 start
+    Route::get('/learn/index','LearnController@index')->name("learn.index");
+    Route::get('/learn/edit','LearnController@edit')->name("learn.edit");
+    Route::get('/learn/delete','LearnController@delete')->name("learn.delete");
+    Route::post('/learn/save','LearnController@save')->name("learn.save");
+    // 培训资料 end
+    
+    // 项目流程 start
+    Route::get('/project/create','ProjectController@create')->name("project.create");
+    
+        
+    
+    
+    //
+    
+    // login
+    
 });
 
 
