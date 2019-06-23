@@ -10,13 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'Web\IndexController@maintain')->name('web.maintain');
-
-Route::group(['domain' => env("admin_domain","admin.liuhe"), 'namespace' => 'admin','middleware' => ['loginMidd']],function ($router){
+// Route::get('/', 'Web\IndexController@maintain')->name('web.maintain');
+//,'middleware' => ['loginMidd']
+Route::group(['domain' => env("admin_domain","admin.liuhe"), 'namespace' => 'admin'],function ($router){
     
     
   
-    
     
     
     Route::get('/','IndexController@index')->name("admin.index");
