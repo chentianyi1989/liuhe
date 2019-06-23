@@ -15,9 +15,7 @@ Route::get('/', 'Web\IndexController@maintain')->name('web.maintain');
 Route::group(['domain' => env("admin_domain","admin.liuhe"), 'namespace' => 'admin','middleware' => ['loginMidd']],function ($router){
     
     
-    Route::group(['middleware' => 'auth.member:member'],function ($router){
-        
-    })
+  
     
     
     
