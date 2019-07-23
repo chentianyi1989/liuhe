@@ -28,13 +28,10 @@
 			</dd>
 		</dl>
 		<dl id="menu-article">
-			<dt><i class="Hui-iconfont">&#xe616;</i> 培训管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dt><i class="Hui-iconfont">&#xe616;</i> 资源管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
 					<li><a data-href="{{ route('learn.index') }}" data-title="培训资源" href="javascript:void(0)">培训资源</a></li>
-					<li><a data-href="{{ route('learn.index') }}" data-title="设计部培训" href="javascript:void(0)">设计部培训</a></li>
-					<li><a data-href="{{ route('learn.index') }}" data-title="市场部培训" href="javascript:void(0)">市场部培训</a></li>
-					<li><a data-href="{{ route('learn.index') }}" data-title="施工部培训" href="javascript:void(0)">施工部培训</a></li>
 				</ul>
 			</dd>
 		</dl>

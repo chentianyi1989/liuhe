@@ -14,6 +14,11 @@ class LearnController extends Controller {
         return view('admin.learn.index',compact("beans"));
     }
     
+    public function lists () {
+        $beans = Learn::paginate(config('admin.page-size'));
+        return view('admin.learn.lists',compact("beans"));
+    }
+    
     public function add (Request $request) {
         return view('admin.member.add');
     }

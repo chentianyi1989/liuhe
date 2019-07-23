@@ -29,19 +29,13 @@ class LoginController extends Controller {
         
         $url = $request->get('url');
         
-        echo "$username:$password";
+        $member = Member::where("username",$username)->find(1) ;
         
-        if (Auth::guard('user')->attempt(['username' => $username,'password'=>$password],true))
-        {
-            $user = auth('user')->user();
-            echo "aaaaa";
-            LogMemberLogin::create([
-                'member_id' => $user->id,
-                'ip' => $request->getClientIp(),
-                'username' => $user->username,
-            ]);
+        if ($member->password==$password) {
+            Auth::guard('member')->login($member);
             return redirect()->intended('/');
         }
+        
         return responseWrong('用户名或密码错误');
     }
     
@@ -74,31 +68,6 @@ class LoginController extends Controller {
                 return $result;
             }
         }
-    }
-    
-    public function bet (Request $request) {
-        
-        
-        
-        try{
-            $haomas= $request["haomas"];
-            $tema_haomas = $haomas["tema"];
-            $gameReord = [];
-            $gameReord["tema"] = json_encode($tema_haomas,JSON_UNESCAPED_UNICODE);
-            //         $gameReord["tema"] = '[{"moeny":"2","sx":"猴","code":"1"}]';
-            echo json_encode($gameReord["tema"]);
-            $gameReord["member_id"] = 1;
-            $gameReord["name"] = "test";
-            $gameReord["code"] = "";
-            
-            GameRecord::create($gameReord);
-        }
-        catch (\Exception $e){
-            $error_code = $e->errorInfo[1];
-            return 'houston, we have a duplicate entry problem';
-        }
-        
-        return "code1";
     }
     
 }

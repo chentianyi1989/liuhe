@@ -11,11 +11,8 @@
 |
 */
 // Route::get('/', 'Web\IndexController@maintain')->name('web.maintain');
-//,'middleware' => ['loginMidd']
-Route::group(['domain' => env("admin_domain","admin.liuhe"), 'namespace' => 'admin'],function ($router){
-    
-    
-  
+//'middleware' => ['auth.admin']
+Route::group(['domain' => env("admin_domain","admin.liuhe"), 'namespace' => 'admin',],function ($router){
     
     
     Route::get('/','IndexController@index')->name("admin.index");
@@ -52,6 +49,7 @@ Route::group(['domain' => env("admin_domain","admin.liuhe"), 'namespace' => 'adm
 
     // 培训资料 start
     Route::get('/learn/index','LearnController@index')->name("learn.index");
+    Route::get('/learn/lists','LearnController@lists')->name("learn.lists");
     Route::get('/learn/edit','LearnController@edit')->name("learn.edit");
     Route::get('/learn/delete','LearnController@delete')->name("learn.delete");
     Route::post('/learn/save','LearnController@save')->name("learn.save");
@@ -65,7 +63,10 @@ Route::group(['domain' => env("admin_domain","admin.liuhe"), 'namespace' => 'adm
     
     //
     
-    // login
+    // login start
+    Route::post('/login','LoginController@login')->name("login");
+    
+    //
     
 });
 
@@ -94,11 +95,6 @@ Route::group(['domain' => env("m_domain","m.liuhe"), 'namespace' => 'mobile'],fu
     
     Route::get('/other/xianxiamendian','OtherController@xianxiamendian')->name("mobile.other.xianxiamendian");
     Route::get('/other/baojia','OtherController@baojia')->name("mobile.other.baojia");
-    Route::get('/other/yanfan','OtherController@yanfang')->name("mobile.other.yanfang");
-    
-    // 资讯
-    Route::get('/info','InformationController@infos')->name("mobile.info.list");
-    Route::get('/info/{id}','InformationController@info')->name("mobile.info.info");
     
     
     //api

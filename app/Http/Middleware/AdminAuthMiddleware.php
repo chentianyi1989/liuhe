@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Auth, Route, URL;
 use Closure;
 
-class Authorize
+class AdminAuthMiddleware 
 {
     /**
      * Handle an incoming request.
@@ -15,22 +15,40 @@ class Authorize
      *
      * @return mixed
      */
-    public function handle($request, Closure $next,$guard = null)
-    {
-//         echo "guard:$guard";
-
-        $user = auth('member')->user();
+    public function handle($request, Closure $next,$guard = null) {
         
-        if(!$user) {
-            if (Auth::guard($guard)->guest()) {
-                if ($request->ajax() || $request->wantsJson()) {
-                    return response('Unauthorized.', 401);
-                } else {
-                    //                 echo route("login");
-                    return redirect()->guest("login");
-                }
+//         echo "guard:$guard <br/>";
+        
+        $current_uri = $request->getRequestUri();
+        
+        $ignore_uri = [
+            '/login','/login.html',
+            '/logout'
+        ];
+//         echo "aaa".in_array($current_uri, $ignore_uri)."<br/>";
+        if (in_array($current_uri, $ignore_uri)) {
+            return $next($request);
+        } else {
+            
+            if (Auth::guard('member')->check()) {
+                return $next($request);
+            } else {
+                return redirect('/admin/login.html');
             }
         }
+
+//         $user = auth('member')->user();
+        
+//         if(!$user) {
+//             if (Auth::guard($guard)->guest()) {
+//                 if ($request->ajax() || $request->wantsJson()) {
+//                     return response('Unauthorized.', 401);
+//                 } else {
+//                     //                 echo route("login");
+//                     return redirect()->guest("login");
+//                 }
+//             }
+//         }
         
         
         /* 判断当前用户是否登录或缓存是否过期 */
