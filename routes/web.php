@@ -93,9 +93,12 @@ Route::group(['domain' => env("m_domain","m.liuhe"), 'namespace' => 'mobile'],fu
     Route::get('/case/{id}','FitCaseController@caseOne')->name("mobile.case.caseOne");
     
     
+    
+    Route::get('/info/list','InformationController@infos')->name("mobile.info.list");
+    
     Route::get('/other/xianxiamendian','OtherController@xianxiamendian')->name("mobile.other.xianxiamendian");
     Route::get('/other/baojia','OtherController@baojia')->name("mobile.other.baojia");
-    
+    Route::get('/other/yanfang','OtherController@yanfang')->name("mobile.other.yanfang");
     
     //api
     Route::group(['namespace' => 'api','prefix' => '/api'],function ($router){
