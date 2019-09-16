@@ -1,6 +1,6 @@
 <div class="head">
 	<div class="tit ellipsis">
-		<h1 style="font-size: 25px">
+		<h1 style="font-size: 30px">
 			@hasSection('head.title')
                @yield('head.title')
             @else
@@ -12,7 +12,7 @@
 <!-- 		<i class="iconfont icon-dingwei"></i> <span></span> -->
 	</div>
 	<div class="public-meun" id="navBtn">
-		<i></i> <i></i> <i></i>
+<!-- 		<i></i> <i></i> <i></i> -->
 	</div>
 </div>
 
