@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{asset('/m/css/vendor.css')}}">
     <link rel="stylesheet" href="{{asset('/m/css/style2.css')}}">
     <link rel="stylesheet" href="{{asset('/m/css/style1.css')}}">
+    <link rel="stylesheet" href="{{asset('/plugin/swiper/4.5/css/swiper.min.css')}}">
     
     <script src="//t.dyrs.cc/static/m/scripts/init.js?20181030"></script>
     <script src="/plugin/js/vendor.js"></script>

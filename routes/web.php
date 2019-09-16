@@ -58,8 +58,6 @@ Route::group(['domain' => env("admin_domain","admin.liuhe"), 'namespace' => 'adm
     // 项目流程 start
     Route::get('/project/create','ProjectController@create')->name("project.create");
     
-        
-    
     
     //
     
