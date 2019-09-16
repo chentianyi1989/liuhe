@@ -6862,7 +6862,7 @@ body.page_picList .fancybox-caption:after {
 }
 
 .form-common-title .title {
-	font-size: 24px;
+/* 	font-size: 24px; */
 	color: #333
 }
 
@@ -6887,7 +6887,7 @@ body.page_picList .fancybox-caption:after {
 	background-color: #4a403a;
 	text-indent: 10px;
 	color: #999;
-	font-size: 12px
+	font-size: 20px
 }
 
 .form-common-body form .form-input .error {
