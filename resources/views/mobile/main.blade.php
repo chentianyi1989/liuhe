@@ -30,7 +30,7 @@
 
 	@yield('mate.js')
 </head>
-<body>
+<body >
 	
 <div class="index-page" id="wrapper">
     
