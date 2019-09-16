@@ -165,7 +165,8 @@
 
 .index-page .box1 .menu .text {
 	display: block;
-	color: #333
+	color: #333;
+	font-size: 25px;
 }
 
 .index-page .box1 .menu .icon1 {
