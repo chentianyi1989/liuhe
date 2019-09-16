@@ -757,7 +757,7 @@ button, input[type=button] {
 }
 
 body {
-	font-size: 14px;
+	font-size: 30px;
 	color: #666;
 	position: relative;
 	padding-top: 45px;
@@ -6908,7 +6908,7 @@ body.page_picList .fancybox-caption:after {
 	display: block;
 	text-align: center;
 	color: #fff;
-	font-size: 12px
+	font-size: 20px
 }
 
 .form-common-body .tel i {
@@ -7178,7 +7178,7 @@ img.lazy_img.load-over {
 	-webkit-user-select: none;
 	-ms-user-select: none;
 	padding: 12px 20px;
-	font-size: 14px;
+/* 	font-size: 14px; */
 	border-radius: 2px
 }
 

@@ -140,8 +140,8 @@
 .index-page .notice-info {
 	margin-bottom: 20px;
 	box-shadow: 0 0 20px #ddd;
-	height: 30px;
-	line-height: 30px;
+	height: 60px;
+	line-height: 60px;
 	border-radius: 15px;
 	color: #b17f32;
 	padding: 0 50px 0 40px;
@@ -160,7 +160,7 @@
 }
 
 .index-page .box1 .menu .iconfont {
-	font-size: 50px
+	font-size: 60px;
 }
 
 .index-page .box1 .menu .text {
@@ -265,11 +265,11 @@
 .index-page .box4 {
 	padding: 15px 0;
 	color: #333;
-	font-size: 12px
+/* 	font-size: 12px */
 }
 
 .index-page .box4 i {
-	font-size: 20px
+	font-size: 60px;
 }
 
 .index-page .box5 {
