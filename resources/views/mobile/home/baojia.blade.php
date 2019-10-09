@@ -23,8 +23,6 @@
 //     		$("#price").baojia();
 //     	}
         $(function () {
-
-            
         	$("#price").ajaxForm(function (resp) {
         		alert("报价成功");
         	});

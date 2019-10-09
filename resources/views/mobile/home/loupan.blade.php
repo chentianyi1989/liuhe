@@ -27,13 +27,18 @@
                             <p class="ellipsis">中国玺</p>
                         </a>
                                                 </div>
-            <form id="lou" class="tabnav flex-box pr mt10" style="top:0;left:0" data-formvalidate="layer">
-                <input type="hidden" name="kid" value="2dlksj389skj9832huifh82y2h0ioi238iutri23">
-                <input type="hidden" name="desc" value="H5平台分站首页报名参观楼盘">
-                <input type="hidden" name="action" value="visit">
+            <form id="loupan" class="tabnav flex-box pr mt10" style="top:0;left:0" data-formvalidate="layer"
+            	action="{{route('mobile.api.baojia.save')}}" method="post"
+            	>
+                <input type="hidden"  name="source" value="报名参观楼盘">
                 <input type="text" class="yy_phone flex1 pdl10" placeholder="您的电话号码" validate="required|phone" maxlength="11" name="phone">
-                <button type="submit" class="button button-primary yy_btn tc">
-                    <span>报名参观楼盘</span>
-                </button>
+                <input type="submit" class="button button-primary yy_btn tc" value="报名参观楼盘" >
             </form>
+            <script type="text/javascript">
+                $(function () {
+                	$("#loupan").ajaxForm(function (resp) {
+                		alert("报名参观楼盘申请成功");
+                	});
+                })
+            </script>
         </div>

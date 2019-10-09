@@ -35,7 +35,7 @@ class FitCaseController extends Controller {
         ];
         
         if (!empty($data["huxingtu"])) {
-            $result[] = json_encode([
+            $result["huxingtu"] = json_encode([
                 "name"=>"".$data["huxingtu_name"],
                 "url"=>$uploadService->upload("case",@$data["huxingtu"])]);
         }else {
@@ -43,7 +43,7 @@ class FitCaseController extends Controller {
         }
         
         if (!empty($data["keting"])) {
-            $result[] = json_encode([
+            $result["keting"] = json_encode([
                 "name"=>"".$data["keting_name"],
                 "url"=>$uploadService->upload("case",@$data["keting"])]);
         }else {
@@ -51,7 +51,7 @@ class FitCaseController extends Controller {
         }
         
         if (!empty($data["woshi"])) {
-            $result[] = json_encode([
+            $result["woshi"] = json_encode([
                 "name"=>"".$data["woshi_name"],
                 "url"=>$uploadService->upload("case",@$data["woshi"])]);
         }else {
@@ -59,7 +59,7 @@ class FitCaseController extends Controller {
         }
         
         if (!empty($data["shufang"])) {
-            $result[] = json_encode([
+            $result["shufang"] = json_encode([
                 "name"=>"".$data["shufang_name"],
                 "url"=>$uploadService->upload("case",@$data["shufang"])]);
         }else {
@@ -67,7 +67,7 @@ class FitCaseController extends Controller {
         }
         
         if (!empty($data["canting"])) {
-            $result[] = json_encode([
+            $result["canting"] = json_encode([
                 "name"=>"".$data["canting_name"],
                 "url"=>$uploadService->upload("case",@$data["canting"])]);
         }else {
@@ -75,7 +75,7 @@ class FitCaseController extends Controller {
         }
         
         if (!empty($data["xunguan"])) {
-            $result[] = json_encode([
+            $result["xunguan"] = json_encode([
                 "name"=>"".$data["xunguan_name"],
                 "url"=>$uploadService->upload("case",@$data["xunguan"])]);
         }else {
@@ -83,7 +83,7 @@ class FitCaseController extends Controller {
         }
         
         if (!empty($data["weishengjian"])) {
-            $result[] = json_encode([
+            $result["weishengjian"] = json_encode([
                 "name"=>"".$data["weishengjian_name"],
                 "url"=>$uploadService->upload("case",@$data["weishengjian"])]);
         }else {
@@ -91,13 +91,13 @@ class FitCaseController extends Controller {
         }
         
         if (!empty($data["qita"])) {
-            $result[] = json_encode([
+            $result["qita"] = json_encode([
                 "name"=>"".$data["qita_name"],
                 "url"=>$uploadService->upload("case",@$data["qita"])]);
         }else {
             unset($data["qita"]);
         }
-        
+        var_dump($result);
         if (!empty($_REQUEST["id"])) {//isset($_REQUEST["id"])
             $id = $_REQUEST["id"];
             $case = FitCase::findOrFail($id);

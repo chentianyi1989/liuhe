@@ -5,38 +5,29 @@
 	
 	<div class="container caseMsg" id="wrapper">
 		<div class="topimg lazy load-over">
+			<?php 
+					 $huxingtu = json_decode($case->huxingtu,true); 
+			?>
 			<img class="lazy_img auto pa load-over"
-				data-original="http://artwork.dyrs.cc/photo/541/248/000/4525bbd999145fb9.jpg!hml"
-				src="http://artwork.dyrs.cc/photo/541/248/000/4525bbd999145fb9.jpg!hml"
-				alt="鸿园现代简约风格260㎡别墅"
+				src="{{@$huxingtu['url']}}"
+				alt="{{@$huxingtu['name']}}"
 				style="display: block; width: 100%; height: auto; top: -0.044484%; left: 0px;">
 			<div class="text">
 				<!-- <div class="title">鸿园现代简约风格260㎡别墅</div> -->
 				<h1 class="title">{{ @$case->title }}</h1>
 				<div class="sub">
-					<a href="http://m.dyrs.com.cn/case/ht1">{{ @$case->fengge_name }}</a> 
-					<a href="http://m.dyrs.com.cn/case/s2">{{ @$case->leixing_name }}</a> 
-					<a href="http://m.dyrs.com.cn/case/ha3">{{ @$case->mianji }}</a>
+					<a href="">{{ @$case->fengge_name }}</a> 
+					<a href="">{{ @$case->leixing_name }}</a> 
+					<a href="">{{ @$case->mianji }}</a>
 				</div>
 			</div>
-			<!-- 
-			<div class="opration">
-				<div>
-					<i collect-id="134444" collect-status="no"
-						class="iconfont icon-xin"
-						onclick="page.setCollect('134444','case',this)"></i>
-				</div>
-				<div class="share" onclick="page.openShare()">
-					<i class="iconfont icon-fenxiang-copy"></i>
-				</div>
-			</div> -->
 		</div>
 		
 		<div class="pr bg-white pdb30 border-bottom">
 			<div class="tab-design">
 				<div class="designer">
 					<div class="photo lazy load-over">
-						<a href="http://m.dyrs.com.cn/designer/2366" rel="nofollow"><img
+						<a href="" rel="nofollow"><img
 							class="lazy_img auto pa load-over"
 							src="/resources/s1.jpg"
 							alt="装修设计师宋辉"
@@ -44,7 +35,7 @@
 					</div>
 					<div class="text">
 						<div class="title text-black ellipsis">
-							<a href="" url="http://m.dyrs.com.cn/designer/2366">邵婷</a>
+							<a href="" url="">邵婷</a>
 						</div>
 						<div class="sub">设计师总监</div>
 					</div>
@@ -71,9 +62,7 @@
 					<div class="swiper-slide swiper-slide-active" style="width: 750px;">
 						<div class="detail-text-img">
 							<div class="img">
-							<?php 
-							 $huxingtu = json_decode($case->huxingtu,true); 
-							?>
+							
 						
 								<img class="lazy_img load-over"
 									src="{{@$huxingtu['url']}}"

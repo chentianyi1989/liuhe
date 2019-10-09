@@ -12,7 +12,7 @@ class BaoJiaController extends Controller
         
         
         
-        $baoJias = BaoJia::paginate(config('admin.page-size'));
+        $baoJias = BaoJia::paginate(9999);//config('admin.page-size')
         //         return $this->toPage($games);
         return view('admin.baoJia.index',compact("baoJias"));
     }

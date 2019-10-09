@@ -62,17 +62,20 @@
 		</a>
 	</div>
 	<div class="pdl15 pdr15">
-		<form id="design" class="tabnav flex-box pr mt10"
+		<form id="design" class="tabnav flex-box pr mt10" action="{{route('mobile.api.baojia.save')}}" method="post"
 			style="top: 0; left: 0" data-formvalidate="layer">
-			<input type="hidden" name="kid"
-				value="2dlksj389skj9832huifh82y2h0ioi238iutri23"> <input
-				type="hidden" name="desc" value="H5平台分站首页报名专属全屋设计"> <input
-				type="hidden" name="action" value="design"> <input type="text"
+			<input type="hidden"  name="source" value="专属全屋设计"> 
+			<input type="text"
 				class="yy_phone flex1 pdl10" placeholder="您的电话号码"
 				validate="required|phone" maxlength="11" name="phone">
-			<button type="submit" class="button button-primary yy_btn tc">
-				<span>专属全屋设计</span>
-			</button>
+			<input type="submit" class="button button-primary yy_btn tc" value="专属全屋设计" >
 		</form>
 	</div>
+	<script type="text/javascript">
+        $(function () {
+        	$("#design").ajaxForm(function (resp) {
+        		alert("专属全屋设计申请成功");
+        	});
+        })
+    </script>
 </div>

@@ -22,6 +22,7 @@
 				<th width="25"><input type="checkbox" name="" value=""></th>
 				<th width="80">ID</th>
 				<th width="100">电话</th>
+				<th width="100">分类</th>
 				<th width="100">楼盘</th>
 				<th width="100">地区</th>
 				<th width="40">面积</th>
@@ -33,6 +34,7 @@
 				<td><input type="checkbox" value="{{ @$item->id}}"></td>
 				<td>{{ @$item->id }}</td>
 				<td>{{ @$item->phone }}</td>
+				<td>{{ @$item->source }}</td>
 				<td>{{ @$item->loupan }}</td>
 				<td>{{ @$item->diqu }}</td>
 				<td>{{ @$item->mianji }}</td>
