@@ -65,7 +65,7 @@
 		<img class="lazy_img auto bgimg load-over"
 			src="{{$keting['url']}}"
 			alt="{{$case->title}}"
-			style="display: block; width: auto; height: 100%; left: -21.0913%; top: 0px;">
+			style="display: block; width: auto; height: 100%;width:100%; top: 0px;">
 			<div class="bgimg"></div>
 		</a> 
 		<!-- 

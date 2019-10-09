@@ -55,32 +55,47 @@
 				</div>
 			</div>
 			<div style="height: 15px; background: #f7f7f7"></div>
+			
 			<div class="detail-title ml15 mr15">户型图</div>
-			<div class="swiper-container swiper-container-horizontal">
-				<div class="swiper-wrapper"
-					style="transform: translate3d(0px, 0px, 0px);">
-					<div class="swiper-slide swiper-slide-active" style="width: 750px;">
-						<div class="detail-text-img">
-							<div class="img">
-							
-						
-								<img class="lazy_img load-over"
-									src="{{@$huxingtu['url']}}"
-									alt="{{@$huxingtu['name']}}" style="display: inline;">
-							</div>
-						</div>
-					</div>
+<!-- 			<div class="swiper-container swiper-container-horizontal"> -->
+<!-- 				<div class="swiper-wrapper" -->
+<!-- 					style="transform: translate3d(0px, 0px, 0px);"> -->
+<!--					<div class="swiper-slide swiper-slide-active" style="width: 750px;">-->
+<!-- 						<div class="detail-text-img"> -->
+<!-- 							<div class="img"> -->
+<!-- 								<img class="lazy_img load-over" -->
+<!-- 									src="{{@$huxingtu['url']}}" -->
+<!-- 									alt="{{@$huxingtu['name']}}" style="display: inline;"> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 				<div class="swiper-button-prev swiper-button-disabled" tabindex="0" -->
+<!-- 					role="button" aria-label="Previous slide" aria-disabled="true"> -->
+<!-- 					<i class="iconfont icon-xiayiye-copy"></i> -->
+<!-- 				</div> -->
+<!-- 				<div class="swiper-button-next" tabindex="0" role="button" -->
+<!-- 					aria-label="Next slide" aria-disabled="false"> -->
+<!-- 					<i class="iconfont icon-xiayiye"></i> -->
+<!-- 				</div> -->
+<!-- 				<span class="swiper-notification" aria-live="assertive" -->
+<!-- 					aria-atomic="true"></span> -->
+<!-- 			</div> -->
+
+
+			<div class="detail-title ml15 mr15">户型图</div>
+			<div class="detail-text-img">
+		
+				<div class="img">
+					<a class=""
+						href="{{@$huxingtu['url']}}"
+						data-fancybox="gallery" rel="a1" title="{{@$case->title}}"> 
+						<img class="lazy_img load-over"
+						src="{{@$huxingtu['url']}}"
+						alt="{{@$case->title}}" style="display: inline;">
+					</a>
 				</div>
-				<div class="swiper-button-prev swiper-button-disabled" tabindex="0"
-					role="button" aria-label="Previous slide" aria-disabled="true">
-					<i class="iconfont icon-xiayiye-copy"></i>
-				</div>
-				<div class="swiper-button-next" tabindex="0" role="button"
-					aria-label="Next slide" aria-disabled="false">
-					<i class="iconfont icon-xiayiye"></i>
-				</div>
-				<span class="swiper-notification" aria-live="assertive"
-					aria-atomic="true"></span>
+				<p>{{@$huxingtu['name']}}</p>
 			</div>
 
 			<div class="detail-title ml15 mr15">客厅</div>
@@ -107,7 +122,7 @@
 					   @$woshi = json_decode($case->woshi,true);
 					?>
 					<a class=""
-						href="http://artwork.dyrs.cc/photo/535/248/000/5945bbd9975bf1bb.jpg!sxl"
+						href="{{@$woshi['url']}}"
 						data-fancybox="gallery" rel="a1" title="{{@$case->title}}"> 
 						<img class="lazy_img load-over"
 						src="{{@$woshi['url']}}"
@@ -124,7 +139,7 @@
 					   @$canting = json_decode($case->canting,true);
 					?>
 					<a class=""
-						href="http://artwork.dyrs.cc/photo/538/248/000/8815bbd9984233a4.jpg!sxl"
+						href="{{@$canting['url']}}"
 						data-fancybox="gallery" rel="a1" title="{{@$case->title}}"> 
 						<img
 						class="lazy_img load-over"
@@ -143,7 +158,7 @@
 					@$chufang = json_decode($case->chufang,true);
 					?>
 					<a class=""
-						href="http://artwork.dyrs.cc/photo/539/248/000/6955bbd99883a97b.jpg!sxl"
+						href="{{@$canting['url']}}"
 						data-fancybox="gallery" rel="a1" title="{{@$case->title}}"> 
 						<img class="lazy_img load-over"
 						src="{{@$canting['url']}}"
@@ -161,7 +176,7 @@
 			?>
 				<div class="img">
 					<a class=""
-						href="http://artwork.dyrs.cc/photo/542/248/000/75bbd9995d3558.jpg!sxl"
+						href="{{@$xunguan['url']}}"
 						data-fancybox="gallery" rel="a1" title="{{@$case->title}}"> 
 						<img class="lazy_img load-over"
 						src="{{@$xunguan['url']}}"
@@ -179,7 +194,7 @@
 			?>
 				<div class="img">
 					<a class=""
-						href="http://artwork.dyrs.cc/photo/530/248/000/7825bbd9960924e1.jpg!sxl"
+						href="{{@$qita['url']}}"
 						data-fancybox="gallery" rel="a1" title="{{@$case->title}}"> 
 						<img class="lazy_img"
 						src="{{@$qita['url']}}"
@@ -189,26 +204,6 @@
 				<p>{{@$qita['name']}}</p>
 			</div>
 			@endif
-<!-- 			<div class="company-address"> -->
-<!-- 				<a class="div block" href="http://m.dyrs.com.cn/store/100054"> -->
-<!-- 					<div class="content"> -->
-<!-- 						<div class="cicle lazy"> -->
-<!-- 							<img class="lazy_img auto" -->
-<!-- 								src="http://img.dyrs.cc/store/188/862/000/9935cb577a938698.jpg!zs" -->
-<!-- 								alt="原创国际别墅设计中心"> -->
-<!-- 						</div> -->
-<!-- 						<div class="text ellipsis">原创国际别墅设计中心</div> -->
-<!-- 						<i class="iconfont icon-icon1"></i> -->
-<!-- 					</div> -->
-<!-- 				</a> -->
-<!-- 			</div> -->
-		</div>
-
-<!-- 		<div class="change-detail2"> -->
-<!-- 			<a class="btn" href="http://m.dyrs.com.cn/case/134443" -->
-<!-- 				title="天润尚院330平米新中式风格装修效果图">上一套案例</a> <a class="btn" -->
-<!-- 				href="http://m.dyrs.com.cn/case/134445" title="大河宸章380平现代港式风格装修效果图">下一套案例</a> -->
-<!-- 		</div> -->
 
 	</div>
 
